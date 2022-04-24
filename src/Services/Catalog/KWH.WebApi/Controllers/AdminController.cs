@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using KWH.BAL.IRepository;
+using KWH.Common.Infrastrcture;
+using KWH.Common.ViewModel;
 using KWH.DAL.Entities;
 using KWH.WebApi.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace KWH.WebApi.Controllers
 {
@@ -58,17 +61,25 @@ namespace KWH.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<RFId>> SubmitRFData(RFIdDtos model)
+        public async Task<HttpResponseMessage> SubmitRFData(RFIdViewModel model)
         {
+            RFIdDtos dtos = new RFIdDtos();
+
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
 
-            var RFFormModel = _mapper.Map<RFId>(model);
+            dtos.TimeIn = model.TimeIn;
+            dtos.TimeOut = model.TimeOut;
+
+            var RFFormModel = _mapper.Map<RFId>(dtos);
             var response = await _adminService.SubmitRFData(RFFormModel);
-            //return response > 0 ? Ok(response) : NotFound();
-            return CreatedAtAction(nameof(SubmitRFData), new { RFIdNo = response.RFIdNo }, response);
+            if (response == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            } 
+            return new HttpResponseMessage(HttpStatusCode.OK); 
         }
 
         [HttpPost]

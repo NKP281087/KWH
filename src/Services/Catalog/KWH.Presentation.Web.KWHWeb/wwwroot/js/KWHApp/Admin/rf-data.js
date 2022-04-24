@@ -28,6 +28,7 @@ $(document).on('click',"#btnUpdateRF", function () {
         data: data,
         dataType: "json",
         success: function (result) {
+
             successMessage('Data Added Successfully!');
 
             window.setTimeout(function () { window.location.href = baseurl + '/Admin/RFData' }, 1000);

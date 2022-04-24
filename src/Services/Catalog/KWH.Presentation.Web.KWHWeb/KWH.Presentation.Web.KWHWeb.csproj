@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\KWHApp\kwscommon.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\KWH.Presentation.BAL.IRepository\KWH.Presentation.BAL.IRepository.csproj" />
     <ProjectReference Include="..\KWH.Presentation.BAL.RepositoryImplementation\KWH.Presentation.BAL.RepositoryImplementation.csproj" />
   </ItemGroup>

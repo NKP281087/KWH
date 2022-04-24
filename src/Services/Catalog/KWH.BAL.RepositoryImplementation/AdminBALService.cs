@@ -35,7 +35,17 @@ namespace KWH.BAL.RepositoryImplementation
 
         public async Task<RFId> SubmitRFData(RFId entity)
         {
-            await _context.AddAsync(entity);
+            RFId rFId = new RFId
+            {
+                TimeIn = entity.TimeIn,
+                TimeOut = entity.TimeOut,
+                IsActive = entity.IsActive,
+                OnHold = false,
+                CreatedOn= DateTime.Now,
+                CreatedBy= entity.CreatedBy,
+            };
+
+            await _context.AddAsync(rFId);
             await _context.SaveChangesAsync();
             return entity;
         }

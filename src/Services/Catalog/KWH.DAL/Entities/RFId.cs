@@ -10,7 +10,7 @@ namespace KWH.DAL.Entities
     public class RFId
     {
         [Key]
-        public int RFIdNo { get; set; }
+        public int RFIdNo { get; set; } 
 
         [Required]
         public string TimeIn { get; set; }

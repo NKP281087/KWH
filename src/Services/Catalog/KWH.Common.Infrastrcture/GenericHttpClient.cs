@@ -74,7 +74,10 @@ namespace KWH.Common.Infrastrcture
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + modelObject.Token);
                 client.BaseAddress = new Uri(BaseURL);
-                var result = await client.PostAsync(ApiUrl, new StringContent(JsonConvert.SerializeObject(modelObject.ModelObject)));
+                 
+                StringContent content = new StringContent(JsonConvert.SerializeObject(modelObject.ModelObject), Encoding.UTF8, "application/json");
+                var result = await client.PostAsync(ApiUrl, content);
+                //var result = await client.PostAsync(ApiUrl, new StringContent(JsonConvert.SerializeObject(modelObject.ModelObject)));
 
                 var contents = await result.Content.ReadAsStringAsync();
                 if (!result.IsSuccessStatusCode)

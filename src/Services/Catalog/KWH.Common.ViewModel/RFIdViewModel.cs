@@ -8,9 +8,9 @@ namespace KWH.Common.ViewModel
 {
     public class RFIdViewModel
     {
-        public int RFIdNo { get; set; }
-        public string TimeIn { get; set; }
-        public string TimeOut { get; set; }
-        public bool IsActive { get; set; }
+        public int RFIdNo { get; set; } = 0;
+        public string TimeIn { get; set; } = string.Empty;
+        public string TimeOut { get; set; } = string.Empty;
+        public bool IsActive { get; set; } = true;
     }
 }

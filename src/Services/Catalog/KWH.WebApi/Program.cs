@@ -1,6 +1,7 @@
 using KWH.BAL.IRepository;
 using KWH.BAL.RepositoryImplementation;
 using KWH.DAL.DataContext;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,12 @@ builder.Services.AddDbContext<KWHContext>(options =>
 {
     options.UseSqlServer(connection);
 });
+
+//builder.Services.Configure<ApiBehaviorOptions>(o =>
+//{
+//    o.InvalidModelStateResponseFactory = actionContext =>
+//        new BadRequestObjectResult(actionContext.ModelState);
+//});
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
