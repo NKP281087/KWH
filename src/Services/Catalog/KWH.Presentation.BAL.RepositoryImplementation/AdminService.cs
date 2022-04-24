@@ -12,7 +12,7 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
     public class AdminService : IAdminService
     {
         private readonly GenericHttpClient httpClient;
-        private string baseURL = "http://localhost:41809/";
+        private string baseURL = "http://localhost:5098/";
         public AdminService()
         {
             httpClient = new GenericHttpClient();

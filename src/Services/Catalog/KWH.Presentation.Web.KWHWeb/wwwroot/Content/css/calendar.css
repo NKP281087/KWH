@@ -1,0 +1,174 @@
+/* Reset */
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-spacing: 0;
+}
+
+/* Calendar Wrapper */
+.ui-datepicker {
+    display: none;
+    width: 230px;
+    padding: 5px;
+    cursor: default;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    /* -webkit-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0); */
+    /*-moz-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);*/
+    /* box-shadow: 0px 14px 13px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0); */
+    /* border-radius: 0; */
+    /* margin-bottom: 75px; */
+    color: #3D3D3D;
+    border: none;
+    box-shadow: 0px 10px 10px #E6E4FA4D;
+}
+.ui-datepicker.ui-widget-content{
+    border:none;
+}
+/* Calendar Header */
+.ui-datepicker-header {
+	position: relative;
+	padding-bottom: 5px;
+    border:none;
+    border-radius: 0;
+	/*border-bottom: 1px solid #d6d6d6;*/
+    background: transparent;
+}
+
+.ui-datepicker-title { text-align: center; }
+
+/* Month */
+.ui-datepicker-month {
+    position: relative;
+    /*padding-right: 15px;*/
+    color: #3D3D3D;
+    text-transform: capitalize;
+}
+
+/*.ui-datepicker-month:before {
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 5px;
+	height: 5px;
+	content: '';
+
+	background: #a5cd4e;
+	background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5cd4e), color-stop(100%,#6b8f1a));
+	background: -webkit-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+	background: -o-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+	background: -ms-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+	background: linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}*/
+
+/* Year */
+.ui-datepicker-year {
+    /*padding-left: 8px;*/
+    color: #3D3D3D;
+}
+
+/* Prev Next Month */
+.ui-datepicker-prev
+.ui-datepicker-next{
+	position: absolute;
+	top: -5px;
+	padding: 5px;
+	cursor: pointer;    
+}
+
+.ui-datepicker-prev, .ui-datepicker-prev:hover {
+	/*left: 2px;
+	padding-left: 0;*/    
+     top:2px;
+}
+
+.ui-datepicker-next, .ui-datepicker-next:hover {
+	/*right: 2px;
+	padding-right: 0;*/    
+     top:2px;
+}
+
+.ui-datepicker-header .ui-datepicker-prev,
+.ui-datepicker-header .ui-datepicker-next {
+    display: block;
+    width: 27px;
+    height: 23px;
+    text-indent: -9999px;
+    background: url(../images/icons/arrow-right.svg);
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #D5C8E0;
+    border-radius: 0 5px 5px 0;
+}
+
+.ui-datepicker-header .ui-datepicker-prev {
+    background-image: url(../images/icons/arrow-left.svg);
+    border-radius: 5px 0 0 5px;
+
+}
+
+
+
+/*.ui-datepicker-header .ui-datepicker-prev-hover span { background-position: 0px -10px; }
+
+.ui-datepicker-header .ui-datepicker-next-hover span { background-position: -5px -10px; }*/
+
+/* Calendar "Days" */
+.ui-datepicker-calendar th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: normal;
+    color: rgba(62, 62, 62, 0.5);
+    font-weight: 600;
+}
+
+.ui-datepicker-calendar td {
+    text-align: center;
+    line-height: 20px;
+    color: #3D3D3D;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    display: block;
+    width: 28px;
+    border-radius: 50%;
+    outline: none;
+    text-decoration: none;
+    color: #3D3D3D;
+    border: 1px solid transparent;
+    background: transparent;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Day Active State*/
+.ui-datepicker-calendar .ui-state-active {
+    color: #fff;
+    border-color: #342e43;
+    text-align: center;
+    background-color: #342e43;
+}
+
+/* Other Months Days*/
+.ui-datepicker-other-month .ui-state-default { color: #565656; }
+
+.hide-calendar .ui-datepicker-calendar {
+  display: none;
+}

@@ -20,7 +20,7 @@ namespace KWH.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRFIdData")]
+        [Route("GetAllRFData")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]                 
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -35,12 +35,12 @@ namespace KWH.WebApi.Controllers
         }
 
 
-        [HttpGet("{id}")]
-        [Route("GetRFIdById/{id}")]
+        [HttpGet]
+        [Route("GetRFById/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetRFIdById(int id)
+        public async Task<IActionResult> GetRFById(int id)
         {
 
             var data = await _adminService.GetRFById(id);

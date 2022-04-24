@@ -1,0 +1,3525 @@
+/*---------------------------- PTS Color Variable -----------------------------------*/
+/* line 63, ../sass/_pts-variables.scss */
+.bg-orange {
+  background-color: #FF6D6A !important;
+}
+
+/* line 66, ../sass/_pts-variables.scss */
+.termination-bg {
+  background-color: #F4EDF0;
+}
+
+/* line 69, ../sass/_pts-variables.scss */
+.termination-light-bg {
+  background-color: rgba(255, 109, 106, 0.05);
+}
+
+/* line 73, ../sass/_pts-variables.scss */
+.bg-skyBlue {
+  background-color: #3EB2FF !important;
+}
+
+/* line 76, ../sass/_pts-variables.scss */
+.bg-light-skyBlue {
+  background-color: #E6F2FB;
+}
+
+/* line 79, ../sass/_pts-variables.scss */
+.bg-audit-skyBlue {
+  background-color: rgba(62, 178, 255, 0.05);
+}
+
+/* line 82, ../sass/_pts-variables.scss */
+.supplier-bg-lightest-pink {
+  background-color: rgba(197, 43, 150, 0.05);
+}
+
+/* line 85, ../sass/_pts-variables.scss */
+.supplier-bg-light-pink {
+  background-color: #F0E8F4;
+}
+
+/* line 89, ../sass/_pts-variables.scss */
+.bg-violet {
+  background-color: #913EFF !important;
+}
+
+/* line 92, ../sass/_pts-variables.scss */
+.bg-pink {
+  background-color: #C52B96 !important;
+}
+
+/* line 96, ../sass/_pts-variables.scss */
+.bg-light-purple {
+  background-color: #ECE9FB;
+}
+
+/* line 99, ../sass/_pts-variables.scss */
+.bg-lightest-purple {
+  background-color: rgba(145, 62, 255, 0.05);
+}
+
+/* line 101, ../sass/_pts-variables.scss */
+.dark-yellow {
+  background-color: #FFAA00;
+}
+
+/* line 105, ../sass/_pts-variables.scss */
+.risk-yellow-lightest {
+  background-color: rgba(255, 170, 0, 0.05);
+}
+
+/* line 108, ../sass/_pts-variables.scss */
+.risk-yellow-light {
+  background-color: #F4F1E9;
+}
+
+/* line 113, ../sass/_pts-variables.scss */
+.bg-green-li {
+  background-color: #E5F5ED;
+}
+
+/* line 117, ../sass/_pts-variables.scss */
+.bg-green {
+  background-color: #2CD93E;
+}
+
+/* line 120, ../sass/_pts-variables.scss */
+.bg-navy-blue {
+  background-color: #3E71FF !important;
+}
+
+/* line 124, ../sass/_pts-variables.scss */
+.bg-navy-blue-05 {
+  background-color: rgba(62, 113, 255, 0.05);
+}
+
+/* line 126, ../sass/_pts-variables.scss */
+.bg-see-green {
+  background-color: rgba(44, 217, 62, 0.05) !important;
+}
+
+/* line 130, ../sass/_pts-variables.scss */
+.bg-lightest-navy-blue {
+  background-color: rgba(62, 113, 255, 0.07);
+}
+
+/* line 133, ../sass/_pts-variables.scss */
+.bg-light-navy-blue {
+  background-color: rgba(62, 113, 255, 0.16);
+}
+
+/* line 136, ../sass/_pts-variables.scss */
+.bg-lightest-yellow {
+  background-color: rgba(255, 170, 0, 0.07);
+}
+
+/* line 139, ../sass/_pts-variables.scss */
+.bg-lightest-pink {
+  background-color: rgba(197, 43, 150, 0.07);
+}
+
+/* line 142, ../sass/_pts-variables.scss */
+.bg-lightest-orange {
+  background-color: rgba(255, 109, 106, 0.07);
+}
+
+/* line 145, ../sass/_pts-variables.scss */
+.bg-lightest-green {
+  background-color: rgba(44, 217, 62, 0.07);
+}
+
+/* line 148, ../sass/_pts-variables.scss */
+.bg-lightest-violet {
+  background-color: rgba(145, 62, 255, 0.07);
+}
+
+/* line 151, ../sass/_pts-variables.scss */
+.bg-lightest-skyBlue {
+  background-color: rgba(62, 178, 255, 0.07);
+}
+
+/* line 156, ../sass/_pts-variables.scss */
+.bg-grey {
+  background-color: #F3F6FB;
+}
+
+/* line 159, ../sass/_pts-variables.scss */
+.yellowBtn {
+  background-color: #FFAA00;
+  padding: 14px 44px 13px 45px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+}
+
+/* line 167, ../sass/_pts-variables.scss */
+.light-yellow {
+  background-color: rgba(245, 164, 54, 0.1);
+}
+
+/* line 169, ../sass/_pts-variables.scss */
+.btn-success {
+  background-color: #34C372;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  display: inline-block;
+  padding: 16px 17px 14px;
+  font-weight: 500;
+}
+
+/* line 180, ../sass/_pts-variables.scss */
+.btnGrey {
+  background-color: #ECECEC;
+  color: #000;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  display: inline-block;
+  padding: 16px 17px 14px;
+  font-weight: 500;
+}
+
+/*font size an font weight mixins*/
+/*clear fix mixins*/
+/*Box sizeing mixins*/
+/*Center Block mixins*/
+/*Float mixins*/
+/*Display inline block mixins*/
+/*Text align block mixins*/
+/* Positional mixins */
+/* Calculate-width function */
+/*mixin for transition animation*/
+/*mixin for grid system*/
+/* mixin for small select + input + label */
+/* mixin for table-alignment */
+/*mixin for table width */
+/* vertical center for all child */
+/* span width display type and width */
+/* start calender with updated UI */
+/* End calender with updated UI */
+/* start custom file upload */
+/* form inline block */
+/* label inline width checkbox */
+@media screen and (max-width: 1139px) {
+  /* line 4, ../sass/responsive.scss */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* line 9, ../sass/responsive.scss */
+  .table-wrap {
+    overflow: auto;
+  }
+  /* line 12, ../sass/responsive.scss */
+  .table-wrap.hg-fxd {
+    max-height: 200px;
+  }
+
+  /* line 16, ../sass/responsive.scss */
+  .container {
+    width: 100%;
+    padding: 0 15px 50px 15px;
+  }
+
+  /* line 20, ../sass/responsive.scss */
+  .header .nav > ul > li {
+    width: 20%;
+  }
+  /* line 22, ../sass/responsive.scss */
+  .header .nav > ul > li > a {
+    width: 100%;
+  }
+
+  /* start sub nav accomndation page */
+  /* line 30, ../sass/responsive.scss */
+  .sub-nav ul li a {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+
+  /* end sub nav accomndation page */
+  /* start member update user */
+  /* line 330, ../sass/_pts-mixins.scss */
+  .member-update-user label {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 334, ../sass/_pts-mixins.scss */
+  .member-update-user select {
+    width: 100%;
+  }
+  /* line 337, ../sass/_pts-mixins.scss */
+  .member-update-user input[type="text"] {
+    width: 100%;
+  }
+  /* line 40, ../sass/responsive.scss */
+  .member-update-user input[type="password"] {
+    width: 100%;
+  }
+  /* line 44, ../sass/responsive.scss */
+  .member-update-user .email-setting i {
+    width: 100%;
+    margin-top: 15px;
+  }
+  /* line 48, ../sass/responsive.scss */
+  .member-update-user .email-setting .port-name {
+    display: inline-block;
+    vertical-align: bottom;
+    width: auto;
+  }
+  /* line 53, ../sass/responsive.scss */
+  .member-update-user .user-privileges label {
+    width: 180px;
+  }
+
+  /* End member update user */
+  /*dairy note page */
+  /* line 59, ../sass/responsive.scss */
+  #calendar .ui-datepicker-calendar .ui-state-default {
+    width: auto;
+  }
+
+  /* line 63, ../sass/responsive.scss */
+  #calendar table {
+    width: 100%;
+    text-align: center;
+  }
+
+  /*dairy note page */
+  /* travel client search result page */
+  /* line 72, ../sass/responsive.scss */
+  .travel-client-search-result .controls label {
+    width: 90px;
+    padding-right: 10px;
+  }
+  /* line 78, ../sass/responsive.scss */
+  .travel-client-search-result .financials label {
+    /*width: 150px;*/
+  }
+
+  /* travel client search result page */
+  /* css start add accommondation page */
+  /* line 85, ../sass/responsive.scss */
+  .add-new-accommodation input[type="text"] {
+    width: 200px;
+  }
+
+  /* css end add accommondation page */
+  /* CSS start travel itinerary */
+  /* line 92, ../sass/responsive.scss */
+  .travel-itinerary-common h2 span + span {
+    padding-left: 35px;
+  }
+
+  /* CSS end travel itinerary */
+  /* css start travel-client-booking-edit */
+  /* line 99, ../sass/responsive.scss */
+  .travel-client-booking-edit ul li input[type="text"] {
+    width: 90%;
+  }
+
+  /* line 102, ../sass/responsive.scss */
+  .travel-client-booking-edit ul li > span {
+    width: 9%;
+  }
+
+  /* css end travel-client-booking-edit */
+  /* css start travel-account-transactions */
+  /* line 110, ../sass/responsive.scss */
+  .travel-account-transactions ul li input,
+  .travel-account-transactions ul li select {
+    width: 110px;
+  }
+  /* line 116, ../sass/responsive.scss */
+  .travel-account-transactions .table {
+    width: 800px;
+  }
+
+  /* css end travel-account-transactions */
+  /*css start for travel-member-reporting */
+  /* line 122, ../sass/responsive.scss */
+  .travel-member-reporting .search ul li + li {
+    padding-left: 20px;
+  }
+
+  /*css end for travel-member-reporting */
+  /* line 129, ../sass/responsive.scss */
+  .large-popup + .lb-container {
+    max-width: 750px;
+    margin-left: -350px;
+  }
+
+  /* line 136, ../sass/responsive.scss */
+  .travel-client-moneydue .make-payment .detail {
+    width: 100%;
+  }
+
+  /* line 140, ../sass/responsive.scss */
+  .travel-client-moneydue .make-payment .icon-type {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  /* line 146, ../sass/responsive.scss */
+  .container-fluid {
+    padding: 0 15px;
+  }
+
+  /* line 149, ../sass/responsive.scss */
+  .travel-client-icons.accoundOvrvw ul li a span {
+    display: block;
+    margin: auto;
+  }
+  /* line 150, ../sass/responsive.scss */
+  .travel-client-icons.accoundOvrvw ul li a span.after-hover {
+    display: none !important;
+  }
+  /* line 155, ../sass/responsive.scss */
+  .travel-client-icons.accoundOvrvw ul li a:hover .after-hover {
+    display: block !important;
+  }
+  /* line 158, ../sass/responsive.scss */
+  .travel-client-icons.accoundOvrvw ul li a.active .after-hover {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 1340px) {
+  /* line 165, ../sass/responsive.scss */
+  .dashboard-content {
+    overflow: auto;
+  }
+
+  /* line 166, ../sass/responsive.scss */
+  .dashboard-column {
+    width: 250px;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  /* line 169, ../sass/responsive.scss */
+  .sm-12 {
+    margin-bottom: 12px;
+  }
+
+  /* line 172, ../sass/responsive.scss */
+  .desktop-hide {
+    display: block;
+  }
+
+  /* line 175, ../sass/responsive.scss */
+  .mobile-hide {
+    display: none;
+  }
+
+  /*start navigation*/
+  /*end navigation*/
+  /* start sub nav accomndation page */
+  /* line 239, ../sass/responsive.scss */
+  .sub-nav ul li {
+    width: 50%;
+  }
+  /* line 241, ../sass/responsive.scss */
+  .sub-nav ul li a {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+  /* line 244, ../sass/responsive.scss */
+  .sub-nav ul li + li {
+    margin-top: 5px;
+  }
+  /* line 247, ../sass/responsive.scss */
+  .sub-nav ul li:not(:nth-child(1)) {
+    text-align: left;
+  }
+
+  /* end sub nav accomndation page */
+  /*css start travel client search */
+  /* line 255, ../sass/responsive.scss */
+  .travel-client-icons {
+    overflow: auto;
+  }
+  /* line 257, ../sass/responsive.scss */
+  .travel-client-icons ul {
+    width: 1000px;
+  }
+
+  /* line 262, ../sass/responsive.scss */
+  .travel-search-client .mmb-20 {
+    margin-bottom: 20px;
+  }
+
+  /*css end travel client search */
+  /*css start accomndation search page */
+  /* line 268, ../sass/responsive.scss */
+  .accommodation .acmd-checkbox li + li {
+    margin-left: 70px;
+  }
+
+  /*css end accomndation search page */
+  /* css start travel search result */
+  /* line 275, ../sass/responsive.scss */
+  .travel-client-search-result .controls label {
+    width: 200px;
+  }
+
+  /* css end travel search result */
+  /* css start add new accommondation */
+  /* line 283, ../sass/responsive.scss */
+  .add-new-accommodation input[type="text"] {
+    width: 100%;
+  }
+  /* line 287, ../sass/responsive.scss */
+  .add-new-accommodation ul li span {
+    width: 100%;
+  }
+  /* line 330, ../sass/_pts-mixins.scss */
+  .add-new-accommodation ul li span label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 334, ../sass/_pts-mixins.scss */
+  .add-new-accommodation ul li span select {
+    width: 100%;
+  }
+  /* line 337, ../sass/_pts-mixins.scss */
+  .add-new-accommodation ul li span input[type="text"] {
+    width: 100%;
+  }
+  /* line 290, ../sass/responsive.scss */
+  .add-new-accommodation ul li span:not(:nth-child(1)) {
+    margin-left: 0;
+  }
+  /* line 292, ../sass/responsive.scss */
+  .add-new-accommodation ul li span:not(:nth-child(1)) select,
+  .add-new-accommodation ul li span:not(:nth-child(1)) input[type="text"] {
+    width: 100%;
+  }
+  /* line 297, ../sass/responsive.scss */
+  .add-new-accommodation ul li span + span {
+    margin-top: 10px;
+  }
+
+  /* css end add new accommondation */
+  /* css start member edit */
+  /* line 307, ../sass/responsive.scss */
+  .member-update-user.member-edit-user .email-setting .grid-box h2 i {
+    float: none;
+    display: block;
+  }
+
+  /* css end member edit */
+  /* css start add-new-flight-consolidator page */
+  /* line 317, ../sass/responsive.scss */
+  .add-new-flight-consolidator .add-new-sup,
+  .add-new-transport .add-new-sup {
+    padding-left: 0;
+  }
+  /* line 319, ../sass/responsive.scss */
+  .add-new-flight-consolidator .add-new-sup input,
+  .add-new-transport .add-new-sup input {
+    margin-bottom: 20px;
+  }
+
+  /* line 324, ../sass/responsive.scss */
+  .add-new-transport .radio-group {
+    margin-top: 10px;
+  }
+
+  /* css end add-new-flight-consolidator page */
+  /* css start travel member email template */
+  /* line 329, ../sass/responsive.scss */
+  .travel-member-email-temp .email-temp .table {
+    max-width: 500px;
+  }
+  /* line 331, ../sass/responsive.scss */
+  .travel-member-email-temp .email-temp .table input[type="text"] {
+    width: 150px;
+  }
+
+  /* css end travel member email template */
+  /* CSS start travel itinerary common */
+  /* line 339, ../sass/responsive.scss */
+  .travel-itinerary-common h2 span + span {
+    padding-left: 20px;
+  }
+  /* line 342, ../sass/responsive.scss */
+  .travel-itinerary-common h2 span.pl {
+    padding-left: 30px;
+  }
+
+  /* CSS end travel itinerary common */
+  /* CSS start travel itinerary summary  */
+  /* line 350, ../sass/responsive.scss */
+  .travel-client-summary .client-details ul li span {
+    width: 100%;
+  }
+  /* line 352, ../sass/responsive.scss */
+  .travel-client-summary .client-details ul li span + span {
+    padding-left: 0;
+  }
+  /* line 356, ../sass/responsive.scss */
+  .travel-client-summary .booking-detail ul li p {
+    width: 50%;
+  }
+  /* line 359, ../sass/responsive.scss */
+  .travel-client-summary .add-infor {
+    min-height: 200px;
+  }
+
+  /* CSS start travel itinerary summary  */
+  /* css start travel-booking-debit */
+  /* line 367, ../sass/responsive.scss */
+  .travel-booking-debit .debit-history .table {
+    width: 960px;
+  }
+  /* line 533, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul {
+    zoom: 1;
+    margin: 0 -10px;
+  }
+  /* line 72, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul:before, .travel-booking-debit .new-debit ul:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  /* line 79, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul:after {
+    clear: both;
+  }
+  /* line 536, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  /* line 330, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li label {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 334, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li select {
+    width: 100%;
+  }
+  /* line 337, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li input[type="text"] {
+    width: 100%;
+  }
+  /* line 340, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li select,
+  .travel-booking-debit .new-debit ul li input[type="text"] {
+    height: 30px;
+  }
+  /* line 541, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li label {
+    margin-bottom: 5px;
+  }
+  /* line 374, ../sass/responsive.scss */
+  .travel-booking-debit .new-debit ul li:nth-child(n+5) {
+    margin-top: 15px;
+  }
+
+  /* css end travel booking debit */
+  /* css start travel-account-unclaimed */
+  /* line 383, ../sass/responsive.scss */
+  .travel-account-unclaimed .table {
+    width: 964px;
+  }
+
+  /* css end travel-account-unclaimed */
+  /* css start travel-account-transactions */
+  /* line 391, ../sass/responsive.scss */
+  .travel-account-transactions ul li {
+    width: 49%;
+  }
+  /* line 393, ../sass/responsive.scss */
+  .travel-account-transactions ul li:nth-child(n+3) {
+    margin-top: 15px;
+  }
+  /* line 396, ../sass/responsive.scss */
+  .travel-account-transactions ul li + li {
+    padding-left: 0;
+  }
+
+  /* css end travel-account-transactions */
+  /*css start travel-member-reporting */
+  /* line 408, ../sass/responsive.scss */
+  .travel-member-reporting .search ul.inc-result li {
+    margin-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 0;
+    width: 24%;
+  }
+  /* line 413, ../sass/responsive.scss */
+  .travel-member-reporting .search ul.inc-result li:first-child {
+    width: 100%;
+  }
+
+  /*css end travel-member-reporting */
+  /*css start travel-moneydue-sendemail */
+  /* line 424, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .textarea-box {
+    width: 80%;
+  }
+  /* line 427, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .btn-grp {
+    width: 19%;
+  }
+
+  /*css end travel-moneydue-sendemail */
+  /*css start travel-account-profitclaim */
+  /* line 434, ../sass/responsive.scss */
+  .travel-account-profitclaim .table {
+    width: 964px;
+  }
+  /* line 437, ../sass/responsive.scss */
+  .travel-account-profitclaim .refine {
+    width: 150px;
+  }
+
+  /*css end travel-account-profitclaim */
+  /*css start travel member Assign Enquiry */
+  /* line 444, ../sass/responsive.scss */
+  .enq-to-assign .table {
+    width: 964px;
+  }
+
+  /*css end travel member Assign Enquiry */
+  /*css start activity-search-detail */
+  /* line 452, ../sass/responsive.scss */
+  .activity-search-detail .product-avil table {
+    width: 708px;
+  }
+  /* line 457, ../sass/responsive.scss */
+  .activity-search-detail .information ul li input[type="text"] {
+    width: 90%;
+  }
+
+  /*css end activity-search-detail */
+  /*css start transport-search */
+  /* line 467, ../sass/responsive.scss */
+  .transport-search .traval-option,
+  .transport-result-view .traval-option,
+  .suplier-activites-result .traval-option {
+    margin-top: 0px;
+  }
+  /* line 470, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text,
+  .transport-search .acmd-text,
+  .transport-result-view .form-inline-block .acmd-text,
+  .transport-result-view .acmd-text,
+  .suplier-activites-result .form-inline-block .acmd-text,
+  .suplier-activites-result .acmd-text {
+    margin: 15px 0 0 0;
+  }
+  /* line 473, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li,
+  .transport-search .acmd-text li,
+  .transport-result-view .form-inline-block .acmd-text li,
+  .transport-result-view .acmd-text li,
+  .suplier-activites-result .form-inline-block .acmd-text li,
+  .suplier-activites-result .acmd-text li {
+    width: 33.33%;
+  }
+  /* line 474, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li:nth-child(1), .transport-search .form-inline-block .acmd-text li:nth-child(2), .transport-search .form-inline-block .acmd-text li:nth-child(3),
+  .transport-search .acmd-text li:nth-child(1),
+  .transport-search .acmd-text li:nth-child(2),
+  .transport-search .acmd-text li:nth-child(3),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(1),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(2),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(3),
+  .transport-result-view .acmd-text li:nth-child(1),
+  .transport-result-view .acmd-text li:nth-child(2),
+  .transport-result-view .acmd-text li:nth-child(3),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(1),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(2),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(3),
+  .suplier-activites-result .acmd-text li:nth-child(1),
+  .suplier-activites-result .acmd-text li:nth-child(2),
+  .suplier-activites-result .acmd-text li:nth-child(3) {
+    width: 33.33%;
+  }
+  /* line 479, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li:nth-child(3n+1),
+  .transport-search .acmd-text li:nth-child(3n+1),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(3n+1),
+  .transport-result-view .acmd-text li:nth-child(3n+1),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(3n+1),
+  .suplier-activites-result .acmd-text li:nth-child(3n+1) {
+    padding-left: 0;
+  }
+  /* line 482, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li:nth-child(n+4),
+  .transport-search .acmd-text li:nth-child(n+4),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(n+4),
+  .transport-result-view .acmd-text li:nth-child(n+4),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(n+4),
+  .suplier-activites-result .acmd-text li:nth-child(n+4) {
+    margin-top: 10px;
+  }
+
+  /*css end transport-search */
+  /* css start by siddhant */
+  /* line 495, ../sass/responsive.scss */
+  .edit-members .trading-names-info input[type="text"].small-box,
+  .edit-members .trading-names-info textarea.small-box {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* line 503, ../sass/responsive.scss */
+  .right-text {
+    text-align: left;
+  }
+
+  /* line 507, ../sass/responsive.scss */
+  .accommodation-search-detail .contact-detail span {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  /* line 512, ../sass/responsive.scss */
+  .accommodation-search-detail .contact-detail span + span {
+    width: 87%;
+  }
+
+  /* line 516, ../sass/responsive.scss */
+  .accommodation-search-detail .contact-detail i {
+    width: 10%;
+    text-align: center;
+  }
+
+  /* css end by siddhant */
+}
+@media screen and (max-width: 767px) {
+  /* line 525, ../sass/responsive.scss */
+  .breadcrumb ul li {
+    line-height: 1.5;
+  }
+
+  /* line 526, ../sass/responsive.scss */
+  .tab-wrapper .tab-link {
+    margin-top: 0;
+    padding-left: 0;
+  }
+  /* line 529, ../sass/responsive.scss */
+  .tab-wrapper .tab-link a {
+    font-size: 14px !important;
+    padding: 9px 11px 9px 30px !important;
+    background-size: 15px !important;
+  }
+
+  /* line 535, ../sass/responsive.scss */
+  .travel-account-overview.overAccountView ul li > label {
+    font-size: 14px;
+  }
+
+  /* line 538, ../sass/responsive.scss */
+  .travel-account-overview.overAccountView ul li > span {
+    font-size: 14px;
+  }
+
+  /* line 541, ../sass/responsive.scss */
+  .heading h2 {
+    height: auto;
+    overflow: hidden;
+  }
+
+  /* line 545, ../sass/responsive.scss */
+  .mce-container * {
+    white-space: pre-line !important;
+  }
+
+  /* line 548, ../sass/responsive.scss */
+  .mmb-12 {
+    margin-bottom: 12px;
+  }
+
+  /* line 551, ../sass/responsive.scss */
+  .mmb-10 {
+    margin-bottom: 10px;
+  }
+
+  /* line 554, ../sass/responsive.scss */
+  .mmb-20 {
+    margin-bottom: 20px;
+  }
+
+  /* line 557, ../sass/responsive.scss */
+  .mmb-30 {
+    margin-bottom: 30px;
+  }
+
+  /* line 561, ../sass/responsive.scss */
+  .member-update-user i {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+  }
+  /* line 567, ../sass/responsive.scss */
+  .member-update-user.member-edit-user .email-setting .grid-box i {
+    width: 180px;
+  }
+  /* line 570, ../sass/responsive.scss */
+  .member-update-user.member-edit-user .email-setting .grid-box h2 i {
+    float: none;
+    display: block;
+  }
+
+  /* start sub nav accomndation page */
+  /* line 579, ../sass/responsive.scss */
+  .sub-nav ul li {
+    width: 100%;
+  }
+
+  /* end sub nav accomndation page */
+  /* start diary note */
+  /* line 533, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul {
+    zoom: 1;
+    margin: 0 -10px;
+  }
+  /* line 72, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul:before, .lb-dairy-note ul:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  /* line 79, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul:after {
+    clear: both;
+  }
+  /* line 536, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul li {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+  }
+  /* line 330, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul li label {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 334, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul li select {
+    width: 100%;
+  }
+  /* line 337, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul li input[type="text"] {
+    width: 100%;
+  }
+  /* line 541, ../sass/_pts-mixins.scss */
+  .lb-dairy-note ul li label {
+    margin-bottom: 5px;
+  }
+  /* line 590, ../sass/responsive.scss */
+  .lb-dairy-note ul li + li {
+    margin-top: 10px;
+  }
+
+  /* end diary note */
+  /*Start Globel light box*/
+  /* line 598, ../sass/responsive.scss */
+  .wrap-light-box .lb-container {
+    width: 100%;
+    padding: 0 15px;
+    margin-left: 0;
+    overflow: auto;
+    left: 0;
+  }
+  /* line 604, ../sass/responsive.scss */
+  .wrap-light-box .lb-container .grid-box {
+    max-height: 400px;
+  }
+  /* line 607, ../sass/responsive.scss */
+  .wrap-light-box .lb-container a.lb-close {
+    right: 25px;
+    background: #fff;
+  }
+
+  /*End Globel light box*/
+  /* css start add client */
+  /* line 614, ../sass/responsive.scss */
+  .travel-add-client ul li {
+    width: 100%;
+    display: block;
+  }
+  /* line 617, ../sass/responsive.scss */
+  .travel-add-client ul li input[type="text"],
+  .travel-add-client ul li select {
+    width: 100%;
+  }
+  /* line 621, ../sass/responsive.scss */
+  .travel-add-client ul li + li {
+    margin-top: 20px;
+  }
+
+  /* css end add client */
+  /*css client search start */
+  /* line 630, ../sass/responsive.scss */
+  .travel-search-client .search-client .from-grp select {
+    width: 135px;
+  }
+  /* line 633, ../sass/responsive.scss */
+  .travel-search-client .search-client .from-grp .input-grp input {
+    width: 75px;
+    font-size: 12px;
+    padding: 0;
+  }
+  /* line 639, ../sass/responsive.scss */
+  .travel-search-client .search-client ul li {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+  }
+  /* line 643, ../sass/responsive.scss */
+  .travel-search-client .search-client ul li + li {
+    margin-top: 20px;
+  }
+  /* line 648, ../sass/responsive.scss */
+  .travel-search-client .search-result-table .filter {
+    text-align: left;
+  }
+  /* line 650, ../sass/responsive.scss */
+  .travel-search-client .search-result-table .filter input[type="text"] {
+    width: 85px;
+  }
+
+  /*css client search End */
+  /* travel client search result page */
+  /* line 658, ../sass/responsive.scss */
+  .travel-client-search-result h2 {
+    overflow: hidden;
+  }
+  /* line 660, ../sass/responsive.scss */
+  .travel-client-search-result h2 span {
+    float: left;
+    padding-right: 10px;
+    width: 50%;
+  }
+  /* line 664, ../sass/responsive.scss */
+  .travel-client-search-result h2 span:last-child {
+    float: left;
+  }
+  /* line 670, ../sass/responsive.scss */
+  .travel-client-search-result .form-inline ul li {
+    width: 100%;
+  }
+  /* line 672, ../sass/responsive.scss */
+  .travel-client-search-result .form-inline ul li + li {
+    margin-top: 20px;
+  }
+  /* line 675, ../sass/responsive.scss */
+  .travel-client-search-result .form-inline ul li + li.width-75 {
+    width: 100%;
+  }
+  /* line 682, ../sass/responsive.scss */
+  .travel-client-search-result .options-prices .table {
+    width: 400px;
+  }
+  /* line 686, ../sass/responsive.scss */
+  .travel-client-search-result .client .table {
+    width: 100%;
+  }
+  /* line 689, ../sass/responsive.scss */
+  .travel-client-search-result .financials h2 span {
+    float: right;
+  }
+
+  /* travel client search result page */
+  /* css start acomendation search page */
+  /* line 695, ../sass/responsive.scss */
+  .accommodation .acmd-text li,
+  .accommodation .acmd-checkbox li {
+    width: 100%;
+  }
+  /* line 698, ../sass/responsive.scss */
+  .accommodation .acmd-text li + li,
+  .accommodation .acmd-checkbox li + li {
+    margin-top: 10px;
+  }
+  /* line 701, ../sass/responsive.scss */
+  .accommodation .acmd-text li:nth-child(1),
+  .accommodation .acmd-checkbox li:nth-child(1) {
+    width: 100%;
+  }
+
+  /* line 705, ../sass/responsive.scss */
+  .accommodation .acmd-checkbox li + li {
+    margin-left: 0;
+  }
+
+  /* css end acomendation search page */
+  /* css start accomendation search result page */
+  /* line 711, ../sass/responsive.scss */
+  .accommodation-search-result .btn-set {
+    text-align: left;
+  }
+  /* line 714, ../sass/responsive.scss */
+  .accommodation-search-result .short-by select {
+    width: 49%;
+  }
+  /* line 717, ../sass/responsive.scss */
+  .accommodation-search-result .result-listing .title {
+    margin-top: 15px;
+  }
+
+  /* line 721, ../sass/responsive.scss */
+  .accommodation-search-detail-edit .form-inline-block ul li {
+    width: 100%;
+  }
+  /* line 723, ../sass/responsive.scss */
+  .accommodation-search-detail-edit .form-inline-block ul li:nth-child(1) {
+    width: 100%;
+  }
+  /* line 726, ../sass/responsive.scss */
+  .accommodation-search-detail-edit .form-inline-block ul li + li {
+    margin-top: 10px;
+  }
+
+  /* line 730, ../sass/responsive.scss */
+  .accommodation-search-detail-edit .information ul li label {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  /* line 734, ../sass/responsive.scss */
+  .accommodation-search-detail-edit .image-preview .img-box {
+    height: auto;
+  }
+
+  /* css end accomendation search result page */
+  /*css start travel dashbord*/
+  /* line 739, ../sass/responsive.scss */
+  .dashboard ul li {
+    width: 50%;
+    text-align: center;
+  }
+  /* line 742, ../sass/responsive.scss */
+  .dashboard ul li a {
+    display: block;
+    text-align: center;
+  }
+  /* line 746, ../sass/responsive.scss */
+  .dashboard ul li span {
+    display: block;
+    margin-top: 10px;
+  }
+  /* line 750, ../sass/responsive.scss */
+  .dashboard ul li:nth-child(n+5) {
+    margin-top: 0;
+  }
+  /* line 753, ../sass/responsive.scss */
+  .dashboard ul li:nth-child(n+3) {
+    margin-top: 20px;
+  }
+  /* line 756, ../sass/responsive.scss */
+  .dashboard ul li i {
+    margin-right: 0;
+  }
+
+  /* css end travel dashbord */
+  /* css start travel member email template */
+  /* line 763, ../sass/responsive.scss */
+  .travel-member-email-temp .email-temp .table input[type="text"] {
+    width: 150px;
+  }
+
+  /* line 769, ../sass/responsive.scss */
+  .preview-emailtemplate-popup .new-email-template li input[type='text'],
+  .open-emailtemplate-popup .new-email-template li input[type='text'] {
+    width: 80%;
+  }
+
+  /* line 773, ../sass/responsive.scss */
+  .travel-member-email-temp .new-email-template {
+    max-width: 100%;
+  }
+  /* line 775, ../sass/responsive.scss */
+  .travel-member-email-temp .new-email-template ul li input[type="text"] {
+    width: 100%;
+  }
+
+  /* css end travel member email template */
+  /* css start member system image */
+  /* line 781, ../sass/responsive.scss */
+  .system-img .table {
+    width: 450px;
+  }
+
+  /* css end memeber system images*/
+  /* css start member traval booking */
+  /* line 787, ../sass/responsive.scss */
+  .travel-client-booking .table {
+    width: 708px;
+  }
+  /* line 790, ../sass/responsive.scss */
+  .travel-client-booking .payment-out-ht {
+    min-height: auto;
+  }
+  /* line 794, ../sass/responsive.scss */
+  .travel-client-booking .email-link .btn {
+    font-size: 12px;
+  }
+  /* line 798, ../sass/responsive.scss */
+  .travel-client-booking .confirm {
+    padding-left: 5px;
+    margin-left: 5px;
+    left: auto;
+    right: 0;
+    text-align: right;
+  }
+
+  /* css end memeber traval booking */
+  /*css start remove travel booking */
+  /* line 809, ../sass/responsive.scss */
+  .booking-remove .confirm {
+    width: 260px;
+  }
+  /* line 812, ../sass/responsive.scss */
+  .booking-remove .table {
+    width: 708px;
+  }
+
+  /*css end remove travel booking */
+  /* css start booking edit or send email */
+  /* line 820, ../sass/responsive.scss */
+  .accommodation-sendemail .recipients ul li label {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  /* line 825, ../sass/responsive.scss */
+  .accommodation-sendemail .recipients ul li input[type="text"] {
+    width: 90%;
+  }
+  /* line 830, ../sass/responsive.scss */
+  .accommodation-sendemail .content ul li label {
+    width: 48%;
+  }
+  /* line 833, ../sass/responsive.scss */
+  .accommodation-sendemail .content .editor {
+    width: 100%;
+  }
+  /* line 835, ../sass/responsive.scss */
+  .accommodation-sendemail .content .editor + .btn {
+    margin: 15px 0 0 0;
+  }
+
+  /* css end booking edit or send email */
+  /* css booking remove light box */
+  /* line 845, ../sass/responsive.scss */
+  .remove-light-box .email-fields label {
+    margin-bottom: 10px;
+  }
+  /* line 848, ../sass/responsive.scss */
+  .remove-light-box .email-fields input[type="text"] {
+    width: 90%;
+  }
+  /* line 853, ../sass/responsive.scss */
+  .remove-light-box .basic-feilds ul li {
+    width: 100%;
+  }
+  /* line 855, ../sass/responsive.scss */
+  .remove-light-box .basic-feilds ul li + li {
+    margin-top: 10px;
+  }
+  /* line 861, ../sass/responsive.scss */
+  .remove-light-box .email-textarea .btn {
+    margin-top: 10px;
+  }
+
+  /* css end booking remove light box */
+  /* css start travel memeber guest */
+  /* line 869, ../sass/responsive.scss */
+  .travel-client-guests .add-guest ul li {
+    width: 100%;
+  }
+  /* line 871, ../sass/responsive.scss */
+  .travel-client-guests .add-guest ul li input[type="text"] {
+    width: 100%;
+  }
+  /* line 874, ../sass/responsive.scss */
+  .travel-client-guests .add-guest ul li + li {
+    margin-top: 10px;
+  }
+
+  /* css end travel memeber guest */
+  /* css start travel child pages */
+  /* line 881, ../sass/responsive.scss */
+  .travel-client-summary .booking-detail ul li p {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  /* line 889, ../sass/responsive.scss */
+  .travel-client-going .add-guests ul li {
+    width: 50%;
+  }
+  /* line 891, ../sass/responsive.scss */
+  .travel-client-going .add-guests ul li:nth-child(n+3) {
+    margin-top: 25px;
+  }
+  /* line 894, ../sass/responsive.scss */
+  .travel-client-going .add-guests ul li:nth-child(n+6) {
+    margin-top: 0px;
+  }
+  /* line 900, ../sass/responsive.scss */
+  .travel-client-going .table {
+    width: 708px;
+  }
+
+  /* css end travel child pages */
+  /* css start travel-client-booking-edit */
+  /* line 907, ../sass/responsive.scss */
+  .travel-client-booking-edit ul li input[type="text"] {
+    width: 80%;
+  }
+  /* line 910, ../sass/responsive.scss */
+  .travel-client-booking-edit ul li > span {
+    width: 18%;
+  }
+
+  /* line 914, ../sass/responsive.scss */
+  .travel-client-booking-edit .heading a {
+    left: auto;
+    font-size: .9rem;
+    margin-left: 0;
+    right: 5px;
+  }
+
+  /* css end travel-client-booking-edit */
+  /* css start travel client itinerary */
+  /* line 922, ../sass/responsive.scss */
+  .travel-client-itinerary .grid-box.pad-0 {
+    padding: 10px;
+  }
+
+  /* css end travel client itinerary */
+  /* css start travel-account-moneydue */
+  /* line 928, ../sass/responsive.scss */
+  .travel-account-moneydue select {
+    margin: 0;
+  }
+  /* line 931, ../sass/responsive.scss */
+  .travel-account-moneydue table {
+    width: 738px;
+    margin-top: 25px;
+  }
+  /* line 936, ../sass/responsive.scss */
+  .travel-account-moneydue .heading-gr h2 {
+    float: none;
+  }
+  /* line 939, ../sass/responsive.scss */
+  .travel-account-moneydue .heading-gr span {
+    float: none;
+    display: block;
+  }
+  /* line 942, ../sass/responsive.scss */
+  .travel-account-moneydue .heading-gr span span {
+    width: 100%;
+    display: block;
+  }
+  /* line 945, ../sass/responsive.scss */
+  .travel-account-moneydue .heading-gr span span select {
+    width: 100%;
+  }
+  /* line 948, ../sass/responsive.scss */
+  .travel-account-moneydue .heading-gr span span input[type="text"] {
+    width: 49%;
+  }
+  /* line 951, ../sass/responsive.scss */
+  .travel-account-moneydue .heading-gr span span + span {
+    margin-top: 10px;
+  }
+
+  /* css end travel-account-moneydue */
+  /* css start travel-booking-debit */
+  /* line 533, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul {
+    zoom: 1;
+    margin: 0 -10px;
+  }
+  /* line 72, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul:before, .travel-booking-debit .new-debit ul:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  /* line 79, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul:after {
+    clear: both;
+  }
+  /* line 536, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+  }
+  /* line 330, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li label {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* line 334, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li select {
+    width: 100%;
+  }
+  /* line 337, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li input[type="text"] {
+    width: 100%;
+  }
+  /* line 340, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li select,
+  .travel-booking-debit .new-debit ul li input[type="text"] {
+    height: 30px;
+  }
+  /* line 541, ../sass/_pts-mixins.scss */
+  .travel-booking-debit .new-debit ul li label {
+    margin-bottom: 5px;
+  }
+  /* line 963, ../sass/responsive.scss */
+  .travel-booking-debit .new-debit ul li:nth-child(n+5) {
+    margin-top: 0px;
+  }
+  /* line 966, ../sass/responsive.scss */
+  .travel-booking-debit .new-debit ul li:nth-child(n+3) {
+    margin-top: 15px;
+  }
+
+  /* css end travel booking debit */
+  /* css start travel-account-transactions */
+  /* line 975, ../sass/responsive.scss */
+  .travel-account-transactions ul li {
+    width: 100%;
+  }
+  /* line 977, ../sass/responsive.scss */
+  .travel-account-transactions ul li:nth-child(n+3) {
+    margin-top: 15px;
+  }
+  /* line 980, ../sass/responsive.scss */
+  .travel-account-transactions ul li + li {
+    margin-top: 15px;
+  }
+
+  /* css end travel-account-transactions */
+  /*ccs travel client itineary pages */
+  /* line 989, ../sass/responsive.scss */
+  .travel-itinerary-common .main-iti .grid-box {
+    height: auto;
+  }
+  /* line 992, ../sass/responsive.scss */
+  .travel-itinerary-common h2 span {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  /* line 993, ../sass/responsive.scss */
+  .travel-itinerary-common h2 span:nth-child(1), .travel-itinerary-common h2 span:last-child {
+    display: block;
+    width: 100%;
+  }
+  /* line 1000, ../sass/responsive.scss */
+  .travel-itinerary-common h2 span + span, .travel-itinerary-common h2 span.pl {
+    padding-left: 0;
+  }
+
+  /*ccs travel client itineary pages */
+  /* css start traval memeber itineary image */
+  /* line 1011, ../sass/responsive.scss */
+  .travel-member-iti-settings .welcome-note textarea,
+  .travel-member-iti-settings .money-text ul li textarea {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* css end traval memeber itineary image */
+  /*css start add dairy not on client search page*/
+  /* line 1020, ../sass/responsive.scss */
+  .add-dairy-note-popup .top-row li:nth-child(1), .add-dairy-note-popup .top-row li:nth-child(2) {
+    width: 50%;
+    margin-top: 0;
+  }
+  /* line 1024, ../sass/responsive.scss */
+  .add-dairy-note-popup .top-row li:nth-child(1) > span, .add-dairy-note-popup .top-row li:nth-child(2) > span {
+    width: 50px;
+  }
+
+  /*css end add dairy not on client search page*/
+  /*css start travel-account-overview */
+  /* line 1032, ../sass/responsive.scss */
+  .travel-account-overview label {
+    width: 50%;
+  }
+  /* line 1035, ../sass/responsive.scss */
+  .travel-account-overview span {
+    width: 48%;
+  }
+
+  /*css end travel-account-overview */
+  /*css start travel-member-reporting */
+  /* line 1045, ../sass/responsive.scss */
+  .travel-member-reporting .search ul.inc-result li {
+    width: 49%;
+  }
+  /* line 1052, ../sass/responsive.scss */
+  .travel-member-reporting .search > ul li span.inline {
+    width: 49%;
+    margin: 10px 0;
+  }
+  /* line 1056, ../sass/responsive.scss */
+  .travel-member-reporting .search > ul li + li {
+    padding-left: 0;
+  }
+  /* line 1059, ../sass/responsive.scss */
+  .travel-member-reporting .search > ul li:nth-child(2) {
+    margin-left: 0px;
+  }
+
+  /*css end travel-member-reporting */
+  /*css start travel-moneydue-sendemail */
+  /* line 1069, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .textarea-box,
+  .travel-moneydue-sendemail .btn-grp {
+    width: 100%;
+  }
+  /* line 1073, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .btn-grp {
+    padding-left: 0;
+  }
+  /* line 1075, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .btn-grp a {
+    margin-right: 20px;
+  }
+  /* line 1080, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .content .radio-grp,
+  .travel-moneydue-sendemail .content .select-btn {
+    width: 100%;
+  }
+  /* line 1084, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .content .select-btn {
+    margin-top: 20px;
+  }
+  /* line 1089, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .attachments .right,
+  .travel-moneydue-sendemail .attachments .left {
+    width: 100%;
+    float: none;
+  }
+  /* line 1094, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .attachments .left {
+    border-bottom: 1px solid #6b238e;
+    padding-bottom: 15px;
+    border-right: none;
+    padding-right: 0;
+  }
+  /* line 1100, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .attachments .right {
+    padding-left: 0;
+    padding-top: 15px;
+  }
+  /* line 1106, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .recipients ul li label {
+    width: 20%;
+  }
+  /* line 1109, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .recipients ul li input[type="text"] {
+    width: 70%;
+  }
+
+  /*css end travel-moneydue-sendemail */
+  /*css start travel-account-profitclaim */
+  /* line 1117, ../sass/responsive.scss */
+  .travel-account-profitclaim p + .align-right {
+    margin-top: 20px;
+  }
+
+  /*css end travel-account-profitclaim */
+  /*css start travel-client-files*/
+  /* line 1129, ../sass/responsive.scss */
+  .travel-client-booking h2,
+  .travel-client-files h2,
+  .travel-client-guests h2,
+  .travel-client-money h2,
+  .travel-client-sagepay h2,
+  .travel-itinerary-common h2 {
+    zoom: 1;
+  }
+  /* line 72, ../sass/_pts-mixins.scss */
+  .travel-client-booking h2:before, .travel-client-booking h2:after,
+  .travel-client-files h2:before,
+  .travel-client-files h2:after,
+  .travel-client-guests h2:before,
+  .travel-client-guests h2:after,
+  .travel-client-money h2:before,
+  .travel-client-money h2:after,
+  .travel-client-sagepay h2:before,
+  .travel-client-sagepay h2:after,
+  .travel-itinerary-common h2:before,
+  .travel-itinerary-common h2:after {
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  /* line 79, ../sass/_pts-mixins.scss */
+  .travel-client-booking h2:after,
+  .travel-client-files h2:after,
+  .travel-client-guests h2:after,
+  .travel-client-money h2:after,
+  .travel-client-sagepay h2:after,
+  .travel-itinerary-common h2:after {
+    clear: both;
+  }
+  /* line 1131, ../sass/responsive.scss */
+  .travel-client-booking h2 span,
+  .travel-client-files h2 span,
+  .travel-client-guests h2 span,
+  .travel-client-money h2 span,
+  .travel-client-sagepay h2 span,
+  .travel-itinerary-common h2 span {
+    width: 50%;
+    float: left;
+    line-height: normal;
+    padding: 10px 0;
+  }
+  /* line 1132, ../sass/responsive.scss */
+  .travel-client-booking h2 span:nth-child(1), .travel-client-booking h2 span:nth-child(2), .travel-client-booking h2 span:last-child,
+  .travel-client-files h2 span:nth-child(1),
+  .travel-client-files h2 span:nth-child(2),
+  .travel-client-files h2 span:last-child,
+  .travel-client-guests h2 span:nth-child(1),
+  .travel-client-guests h2 span:nth-child(2),
+  .travel-client-guests h2 span:last-child,
+  .travel-client-money h2 span:nth-child(1),
+  .travel-client-money h2 span:nth-child(2),
+  .travel-client-money h2 span:last-child,
+  .travel-client-sagepay h2 span:nth-child(1),
+  .travel-client-sagepay h2 span:nth-child(2),
+  .travel-client-sagepay h2 span:last-child,
+  .travel-itinerary-common h2 span:nth-child(1),
+  .travel-itinerary-common h2 span:nth-child(2),
+  .travel-itinerary-common h2 span:last-child {
+    width: 50%;
+    float: left;
+    padding: 10px 0;
+  }
+
+  /*css end travel-client-files*/
+  /*css start travel-remittanceAdvice */
+  /* line 1151, ../sass/responsive.scss */
+  .travel-remittanceAdvice .content ul li {
+    margin-bottom: 15px;
+  }
+  /* line 1153, ../sass/responsive.scss */
+  .travel-remittanceAdvice .content ul li label {
+    margin-bottom: 10px;
+  }
+  /* line 1156, ../sass/responsive.scss */
+  .travel-remittanceAdvice .content ul li input[type="text"],
+  .travel-remittanceAdvice .content ul li input[type="number"] {
+    width: 100%;
+  }
+
+  /*css end travel-remittanceAdvice */
+  /*css start transport-search */
+  /* line 1172, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li,
+  .transport-search .form-inline-block .acmd-checkbox li,
+  .transport-search .acmd-text li,
+  .transport-result-view .form-inline-block .acmd-text li,
+  .transport-result-view .form-inline-block .acmd-checkbox li,
+  .transport-result-view .acmd-text li,
+  .suplier-activites-result .form-inline-block .acmd-text li,
+  .suplier-activites-result .form-inline-block .acmd-checkbox li,
+  .suplier-activites-result .acmd-text li {
+    width: 100%;
+  }
+  /* line 1173, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li:nth-child(1), .transport-search .form-inline-block .acmd-text li:nth-child(2), .transport-search .form-inline-block .acmd-text li:nth-child(3),
+  .transport-search .form-inline-block .acmd-checkbox li:nth-child(1),
+  .transport-search .form-inline-block .acmd-checkbox li:nth-child(2),
+  .transport-search .form-inline-block .acmd-checkbox li:nth-child(3),
+  .transport-search .acmd-text li:nth-child(1),
+  .transport-search .acmd-text li:nth-child(2),
+  .transport-search .acmd-text li:nth-child(3),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(1),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(2),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(3),
+  .transport-result-view .form-inline-block .acmd-checkbox li:nth-child(1),
+  .transport-result-view .form-inline-block .acmd-checkbox li:nth-child(2),
+  .transport-result-view .form-inline-block .acmd-checkbox li:nth-child(3),
+  .transport-result-view .acmd-text li:nth-child(1),
+  .transport-result-view .acmd-text li:nth-child(2),
+  .transport-result-view .acmd-text li:nth-child(3),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(1),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(2),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(3),
+  .suplier-activites-result .form-inline-block .acmd-checkbox li:nth-child(1),
+  .suplier-activites-result .form-inline-block .acmd-checkbox li:nth-child(2),
+  .suplier-activites-result .form-inline-block .acmd-checkbox li:nth-child(3),
+  .suplier-activites-result .acmd-text li:nth-child(1),
+  .suplier-activites-result .acmd-text li:nth-child(2),
+  .suplier-activites-result .acmd-text li:nth-child(3) {
+    width: 100%;
+  }
+  /* line 1178, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li:nth-child(n+4),
+  .transport-search .form-inline-block .acmd-checkbox li:nth-child(n+4),
+  .transport-search .acmd-text li:nth-child(n+4),
+  .transport-result-view .form-inline-block .acmd-text li:nth-child(n+4),
+  .transport-result-view .form-inline-block .acmd-checkbox li:nth-child(n+4),
+  .transport-result-view .acmd-text li:nth-child(n+4),
+  .suplier-activites-result .form-inline-block .acmd-text li:nth-child(n+4),
+  .suplier-activites-result .form-inline-block .acmd-checkbox li:nth-child(n+4),
+  .suplier-activites-result .acmd-text li:nth-child(n+4) {
+    margin-top: 10px;
+  }
+  /* line 1181, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li:last-child,
+  .transport-search .form-inline-block .acmd-checkbox li:last-child,
+  .transport-search .acmd-text li:last-child,
+  .transport-result-view .form-inline-block .acmd-text li:last-child,
+  .transport-result-view .form-inline-block .acmd-checkbox li:last-child,
+  .transport-result-view .acmd-text li:last-child,
+  .suplier-activites-result .form-inline-block .acmd-text li:last-child,
+  .suplier-activites-result .form-inline-block .acmd-checkbox li:last-child,
+  .suplier-activites-result .acmd-text li:last-child {
+    width: 100%;
+  }
+  /* line 1185, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-text li + li,
+  .transport-search .form-inline-block .acmd-checkbox li + li,
+  .transport-search .acmd-text li + li,
+  .transport-result-view .form-inline-block .acmd-text li + li,
+  .transport-result-view .form-inline-block .acmd-checkbox li + li,
+  .transport-result-view .acmd-text li + li,
+  .suplier-activites-result .form-inline-block .acmd-text li + li,
+  .suplier-activites-result .form-inline-block .acmd-checkbox li + li,
+  .suplier-activites-result .acmd-text li + li {
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  /* line 1192, ../sass/responsive.scss */
+  .transport-search .form-inline-block .acmd-checkbox li + li,
+  .transport-result-view .form-inline-block .acmd-checkbox li + li,
+  .suplier-activites-result .form-inline-block .acmd-checkbox li + li {
+    padding: 0 10px;
+  }
+
+  /*css end transport-search */
+  /*css start add-new-activeties */
+  /* line 1201, ../sass/responsive.scss */
+  .add-new-activeties .contact-detail input[type="text"] {
+    width: 100%;
+  }
+  /* line 1205, ../sass/responsive.scss */
+  .add-new-activeties .getAllFacility {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  /* line 1210, ../sass/responsive.scss */
+  .add-new-activeties .product-avai .table {
+    width: 708px;
+    margin-top: 0;
+  }
+  /* line 1215, ../sass/responsive.scss */
+  .add-new-activeties .add-new-sup {
+    padding-left: 0;
+  }
+  /* line 1217, ../sass/responsive.scss */
+  .add-new-activeties .add-new-sup input[type="text"] {
+    width: 120px;
+  }
+
+  /*css end add-new-activeties */
+  /* css start suplier-activites-result */
+  /* line 1224, ../sass/responsive.scss */
+  .suplier-activites-result .short-by-fillter a {
+    font-size: 12px;
+  }
+
+  /* css end suplier-activites-result */
+  /*css start travel-member-cust-service */
+  /* line 1230, ../sass/responsive.scss */
+  .travel-member-cust-service .table {
+    width: 708px;
+  }
+  /* line 1234, ../sass/responsive.scss */
+  .travel-member-cust-service .search input[type="text"],
+  .travel-member-cust-service .search label {
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    height: 25px;
+  }
+  /* line 1240, ../sass/responsive.scss */
+  .travel-member-cust-service .search input[type="text"] + input[type="text"],
+  .travel-member-cust-service .search label + input[type="text"] {
+    margin: 10px 0;
+  }
+  /* line 1244, ../sass/responsive.scss */
+  .travel-member-cust-service .search select {
+    width: 50%;
+    float: right;
+    height: 25px;
+  }
+
+  /*css end travel-member-cust-service */
+  /*css start travel-member-ptsdownload */
+  /* line 1255, ../sass/responsive.scss */
+  .travel-member-ptsdownload ul li input[type="text"] {
+    width: 100%;
+  }
+  /* line 1258, ../sass/responsive.scss */
+  .travel-member-ptsdownload ul li a {
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*css end travel-member-ptsdownload */
+  /*css start add new accommodation */
+  /* line 1266, ../sass/responsive.scss */
+  .add-new-accommodation .information input[type="text"] {
+    width: 68%;
+  }
+
+  /*css end  add new accommodation */
+  /* css start travel-account-debits */
+  /* line 1275, ../sass/responsive.scss */
+  .travel-account-debits .refine-container {
+    text-align: left;
+  }
+
+  /* css end travel-account-debits */
+  /* line 1286, ../sass/responsive.scss */
+  .accommodation-search-detail .form-block-mobile ul li {
+    display: block !important;
+    width: 100% !important;
+  }
+  /* line 1290, ../sass/responsive.scss */
+  .accommodation-search-detail .form-block-mobile ul li input {
+    margin-bottom: 10px;
+  }
+  /* line 1294, ../sass/responsive.scss */
+  .accommodation-search-detail .form-block-mobile ul li input[type="checkbox"],
+  .accommodation-search-detail .form-block-mobile ul li input[type="radio"] {
+    margin-bottom: 0;
+  }
+
+  /* css start Siddhant css */
+  /* line 1309, ../sass/responsive.scss */
+  .edit-members .trading-names-info input[type="text"],
+  .edit-members .trading-names-info textarea {
+    width: 100%;
+  }
+  /* line 1314, ../sass/responsive.scss */
+  .edit-members .trading-names-info input[type="text"].small-box,
+  .edit-members .trading-names-info textarea.small-box {
+    margin-bottom: 10px;
+  }
+
+  /* line 1321, ../sass/responsive.scss */
+  .right-text {
+    text-align: left;
+  }
+
+  /* line 1329, ../sass/responsive.scss */
+  .edit-members .custombox .box-2 {
+    width: 100%;
+  }
+  /* line 1334, ../sass/responsive.scss */
+  .edit-members .custombox .box-1 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* line 1338, ../sass/responsive.scss */
+  .edit-members .custombox .box-1 .cell-1, .edit-members .custombox .box-1 .cell-2 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* line 1344, ../sass/responsive.scss */
+  .edit-members .custombox .box-1 .cell-3 {
+    width: 100%;
+  }
+
+  /* line 1356, ../sass/responsive.scss */
+  .travel-member-cust-service .search .block-mobile {
+    display: block;
+  }
+  /* line 1359, ../sass/responsive.scss */
+  .travel-member-cust-service .search .block-mobile label {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    width: auto;
+    padding-top: 5px;
+  }
+  /* line 1367, ../sass/responsive.scss */
+  .travel-member-cust-service .search .block-mobile select {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    width: auto;
+  }
+
+  /* line 1393, ../sass/responsive.scss */
+  .options-prices.booking-option table tbody tr td:nth-child(2) input, .options-prices.booking-option table tbody tr td:nth-child(3) input {
+    width: 100%;
+  }
+
+  /* css end Siddhant css*/
+  /* line 1407, ../sass/responsive.scss */
+  .popup-outer-container .popup-inner-container .text-table td {
+    display: block;
+    padding: 4px;
+  }
+
+  /* line 1413, ../sass/responsive.scss */
+  .red-text {
+    margin-left: 0;
+  }
+
+  /* line 1419, ../sass/responsive.scss */
+  .two-col-container > div {
+    display: block;
+    padding: 10px 0;
+  }
+  /* line 1424, ../sass/responsive.scss */
+  .two-col-container .main-content {
+    padding-left: 0;
+  }
+  /* line 1428, ../sass/responsive.scss */
+  .two-col-container .right-sidebar {
+    text-align: left;
+  }
+
+  /* line 1437, ../sass/responsive.scss */
+  .travel-client-search-result .financials label + span {
+    width: 29%;
+  }
+
+  /* line 1446, ../sass/responsive.scss */
+  .travel-search-result-detail .form-inline-block ul li {
+    width: 100%;
+  }
+  /* line 1449, ../sass/responsive.scss */
+  .travel-search-result-detail .form-inline-block ul li:nth-child(1) {
+    width: 100%;
+    margin-top: 20px;
+  }
+  /* line 1454, ../sass/responsive.scss */
+  .travel-search-result-detail .form-inline-block ul li input[type="number"] {
+    width: 100%;
+  }
+
+  /* line 1466, ../sass/responsive.scss */
+  .travel-search-result-detail .form-inline-block ul li input[type="number"] {
+    width: 100%;
+  }
+
+  /* line 1474, ../sass/responsive.scss */
+  .email-link {
+    display: block;
+    width: 100%;
+  }
+
+  /* line 1479, ../sass/responsive.scss */
+  .update-btn-cnt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  /* line 1486, ../sass/responsive.scss */
+  .accommodation-search-detail .contact-detail span {
+    width: 35%;
+    margin-right: 3%;
+  }
+
+  /* line 1491, ../sass/responsive.scss */
+  .accommodation-search-detail .contact-detail span + span {
+    width: 51%;
+  }
+
+  /* line 1495, ../sass/responsive.scss */
+  .accommodation-search-detail .contact-detail i {
+    width: 2%;
+    text-align: right;
+  }
+
+  /* line 1500, ../sass/responsive.scss */
+  .travel-client-moneydue .make-payment .icon-type {
+    width: 11%;
+  }
+
+  /* line 1504, ../sass/responsive.scss */
+  .travel-client-moneydue .make-payment .card-section {
+    border-right: none;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  /* line 1511, ../sass/responsive.scss */
+  .travel-client-moneydue .make-payment .card-section:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    left: -21px;
+    bottom: 0;
+    background: #6bbce9;
+    position: absolute;
+  }
+
+  /* line 1522, ../sass/responsive.scss */
+  .travel-client-moneydue .make-payment .card-section:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    right: -21px;
+    bottom: 0;
+    background: #6bbce9;
+    position: absolute;
+  }
+
+  /* line 1533, ../sass/responsive.scss */
+  .notes-table {
+    table-layout: inherit;
+  }
+
+  /* line 1536, ../sass/responsive.scss */
+  .login-page .login-container {
+    min-height: calc(100vh - 66px) !important;
+  }
+
+  /* line 1537, ../sass/responsive.scss */
+  .forget-page .forget-container {
+    min-height: calc(100vh - 66px) !important;
+  }
+
+  /* line 1538, ../sass/responsive.scss */
+  .pts-sub-footer {
+    padding: 15px 10px !important;
+  }
+
+  /* line 1539, ../sass/responsive.scss */
+  .pts-sub-header .header-container {
+    padding: 0 15px 10px 5px;
+  }
+  /* line 1540, ../sass/responsive.scss */
+  .pts-sub-header .header-container ul {
+    flex-flow: column;
+    margin-top: 12px;
+    align-items: flex-start;
+  }
+  /* line 1541, ../sass/responsive.scss */
+  .pts-sub-header .header-container ul li {
+    margin: 0 !important;
+  }
+  /* line 1542, ../sass/responsive.scss */
+  .pts-sub-header .header-container ul li + li {
+    margin-top: 5px !important;
+  }
+  /* line 1543, ../sass/responsive.scss */
+  .pts-sub-header .header-container ul li a {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 1320px) {
+  /* line 1555, ../sass/responsive.scss */
+  footer .flex-footer .col-2 {
+    width: 230px;
+  }
+  /* line 1557, ../sass/responsive.scss */
+  footer .pts-sub-footer {
+    padding: 8px 15px;
+  }
+  /* line 1558, ../sass/responsive.scss */
+  footer .pts-sub-footer p + p {
+    text-align: right;
+  }
+  /* line 1559, ../sass/responsive.scss */
+  footer .pts-sub-footer .container {
+    padding: 0;
+  }
+
+  /* line 1564, ../sass/responsive.scss */
+  .financials-view {
+    overflow: auto;
+  }
+
+  /* line 1565, ../sass/responsive.scss */
+  .financials-view ul {
+    min-width: 1200px;
+  }
+
+  /* line 1566, ../sass/responsive.scss */
+  .file-upload-section .table {
+    min-width: 1200px !important;
+  }
+}
+@media screen and (max-width: 1050px) {
+  /* line 1569, ../sass/responsive.scss */
+  .reporting .MemTab li a {
+    padding: 15px 20px;
+  }
+
+  /* line 1572, ../sass/responsive.scss */
+  .wrap-light-box .lb-container.add-client-note-popup, .wrap-light-box .lb-container.updaloadNewFiles, .wrap-light-box .lb-container.guest-list-light-box, .wrap-light-box .lb-container.addDiaryPopupForm, .wrap-light-box .lb-container.help-popup, .wrap-light-box .lb-container.open-template-popup, .wrap-light-box .lb-container.preview-emailtemplate-popup, .wrap-light-box .lb-container.open-emailtemplate-popup {
+    max-width: calc(100% - 30px) !important;
+    padding: 0;
+    min-width: 0 !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  /* line 1585, ../sass/responsive.scss */
+  .fixed-footer {
+    padding-bottom: 0;
+  }
+
+  /* line 1586, ../sass/responsive.scss */
+  footer {
+    position: static !important;
+  }
+  /* line 1587, ../sass/responsive.scss */
+  footer .flex-footer {
+    flex-flow: wrap;
+  }
+  /* line 1588, ../sass/responsive.scss */
+  footer .flex-footer .open-hours {
+    margin-top: 20px;
+  }
+  /* line 1589, ../sass/responsive.scss */
+  footer .flex-footer .map-footer {
+    margin-top: 18px;
+  }
+  /* line 1590, ../sass/responsive.scss */
+  footer .flex-footer .col-2 {
+    width: 50%;
+  }
+
+  /* line 1595, ../sass/responsive.scss */
+  .reporting .containerRight {
+    flex-flow: wrap;
+    width: 100%;
+  }
+  /* line 1596, ../sass/responsive.scss */
+  .reporting .dataSearch {
+    width: 50%;
+  }
+  /* line 1597, ../sass/responsive.scss */
+  .reporting .currencySelect {
+    width: 48%;
+  }
+  /* line 1598, ../sass/responsive.scss */
+  .reporting .currencySelect select {
+    width: 100%;
+  }
+  /* line 1601, ../sass/responsive.scss */
+  .reporting .MemTab {
+    margin: 15px 0 0;
+  }
+  /* line 1602, ../sass/responsive.scss */
+  .reporting .currencySelect + .selectUser {
+    margin: 15px 15px 0 0;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 991px) {
+  /* line 1608, ../sass/responsive.scss */
+  .custom-client-wrapper-new .custom-send-email .input-wrapper.custom-attachment .icon {
+    width: 42px;
+  }
+
+  /* line 1612, ../sass/responsive.scss */
+  .travel-moneydue-sendemail #SendmoneyForPaymetdueEmail .recipients ul li input[type="text"] {
+    width: 100%;
+  }
+  /* line 1616, ../sass/responsive.scss */
+  .travel-moneydue-sendemail #SendmoneyForPaymetdueEmail .recipients ul li .custom-check label {
+    width: 100%;
+  }
+
+  /* line 1622, ../sass/responsive.scss */
+  .account-transaction .form-flex-wrapper li {
+    flex: 0 0 calc(33% - 22px);
+  }
+  /* line 1624, ../sass/responsive.scss */
+  .account-transaction .form-flex-wrapper li:nth-child(4) {
+    order: 4;
+  }
+  /* line 1625, ../sass/responsive.scss */
+  .account-transaction .form-flex-wrapper li:last-child {
+    order: 5;
+  }
+  /* line 1626, ../sass/responsive.scss */
+  .account-transaction .form-flex-wrapper li.li-double {
+    flex: 0 0 calc(66% - 22px);
+  }
+
+  /* line 1630, ../sass/responsive.scss */
+  .date-picker-wrapper .first-date-selected, .date-picker-wrapper .last-date-selected {
+    height: 26px;
+    width: 26px !important;
+  }
+
+  /* line 1633, ../sass/responsive.scss */
+  .date-picker-wrapper .month-wrapper table .day:not(.checked), .date-picker-wrapper .month-wrapper table .day.first-date-selected, .date-picker-wrapper .month-wrapper table .day.last-date-selected {
+    line-height: 26px;
+  }
+
+  /* line 1636, ../sass/responsive.scss */
+  .date-picker-wrapper .month-wrapper table .day.real-today {
+    width: 26px !important;
+    height: 26px;
+    line-height: 26px;
+    padding: 0;
+  }
+
+  /* line 1643, ../sass/responsive.scss */
+  .travel-dairy.diAry .col-3 {
+    padding-left: 0 !important;
+  }
+
+  /* line 1647, ../sass/responsive.scss */
+  .todayDiary h2 {
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 1650, ../sass/responsive.scss */
+  .peopleTarget {
+    clear: both;
+  }
+
+  /* line 1652, ../sass/responsive.scss */
+  .reporting .containerRight {
+    flex-flow: column;
+    width: 100%;
+  }
+  /* line 1653, ../sass/responsive.scss */
+  .reporting .dataSearch {
+    width: 100%;
+  }
+  /* line 1654, ../sass/responsive.scss */
+  .reporting .dataSearch input {
+    width: 49%;
+  }
+  /* line 1655, ../sass/responsive.scss */
+  .reporting .dataSearch label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  /* line 1657, ../sass/responsive.scss */
+  .reporting .currencySelect {
+    width: 100%;
+    margin: 15px 0 0;
+  }
+  /* line 1658, ../sass/responsive.scss */
+  .reporting .currencySelect select {
+    width: 100%;
+  }
+  /* line 1660, ../sass/responsive.scss */
+  .reporting .MemTab {
+    margin: 15px 0 0;
+  }
+  /* line 1661, ../sass/responsive.scss */
+  .reporting .currencySelect + .selectUser {
+    margin: 15px 0 0 0;
+    width: 100%;
+  }
+
+  /* line 1665, ../sass/responsive.scss */
+  .account-transaction .form-flex-wrapper li.li-double .custom-input-group li:nth-of-type(2) {
+    margin: 12px auto 5px;
+  }
+
+  /* line 1668, ../sass/responsive.scss */
+  .guest-list-light-box.clientGuestuser #EmailBody > div {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* line 1672, ../sass/responsive.scss */
+  .wrap-light-box .lb-container.clientGuestuser ul.email-fields {
+    padding: 15px;
+  }
+  /* line 1673, ../sass/responsive.scss */
+  .wrap-light-box .lb-container.clientGuestuser ul.email-fields li {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+    padding: 0 !important;
+  }
+
+  /* line 1680, ../sass/responsive.scss */
+  .financials-view ul li {
+    width: auto !important;
+    margin-right: 15px;
+  }
+
+  /* line 1684, ../sass/responsive.scss */
+  .financials-view ul {
+    min-width: 850px;
+  }
+
+  /* line 1687, ../sass/responsive.scss */
+  .client.common-layout, .traval-client-fee .client.grid-box {
+    margin-bottom: 20px;
+  }
+
+  /* line 1690, ../sass/responsive.scss */
+  .client-booking-view {
+    margin-top: 20px;
+  }
+
+  /* line 1693, ../sass/responsive.scss */
+  .financials-view ul li label {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* line 1694, ../sass/responsive.scss */
+  .financials-view ul::after {
+    bottom: 15px;
+  }
+
+  /* line 1695, ../sass/responsive.scss */
+  .financials-view ul li h2 {
+    margin-bottom: 5px;
+  }
+
+  /* line 1696, ../sass/responsive.scss */
+  .financials-view ul li span {
+    padding-right: 0 !important;
+  }
+
+  /* line 1697, ../sass/responsive.scss */
+  .financials-view {
+    padding: 11px 0 15px;
+    margin-bottom: 20px;
+  }
+
+  /* line 1698, ../sass/responsive.scss */
+  .financials-view.financials-Profit-view ul {
+    min-width: 800px;
+  }
+
+  /* line 1700, ../sass/responsive.scss */
+  footer h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  /* line 1702, ../sass/responsive.scss */
+  footer .pts-sub-footer .container {
+    flex-flow: column;
+  }
+  /* line 1703, ../sass/responsive.scss */
+  footer .pts-sub-footer p {
+    margin-bottom: 6px !important;
+  }
+  /* line 1704, ../sass/responsive.scss */
+  footer .pts-sub-footer p + p {
+    width: 100%;
+    text-align: left;
+  }
+  /* line 1708, ../sass/responsive.scss */
+  footer .flex-footer .open-hours {
+    margin-top: 0;
+  }
+  /* line 1711, ../sass/responsive.scss */
+  footer .flex-footer > div {
+    text-align: center;
+    width: 100% !important;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #acabab;
+  }
+  /* line 1712, ../sass/responsive.scss */
+  footer .flex-footer > div:last-child {
+    border: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  /* line 1716, ../sass/responsive.scss */
+  footer .flex-footer .map-footer {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  /* line 1718, ../sass/responsive.scss */
+  footer .flex-footer .map-footer > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  /* line 1721, ../sass/responsive.scss */
+  footer .container ul li img {
+    position: static;
+  }
+  /* line 1722, ../sass/responsive.scss */
+  footer .contact-detail li + li {
+    margin-top: 10px;
+  }
+
+  /* line 1727, ../sass/responsive.scss */
+  .travel-client-files .file-custom {
+    background-size: 15px;
+    background-position: 10px;
+    padding: 10px 2px 10px 30px;
+  }
+  /* line 1731, ../sass/responsive.scss */
+  .travel-client-files .file-custom span {
+    font-size: 14px;
+  }
+
+  /* line 1734, ../sass/responsive.scss */
+  .mt-40 {
+    margin-top: 15px !important;
+  }
+
+  /* line 1737, ../sass/responsive.scss */
+  .travel-client-icons-wrapper {
+    margin: 15px 0;
+  }
+
+  /* line 1740, ../sass/responsive.scss */
+  .file-upload-section {
+    margin-bottom: 20px;
+  }
+}
+/* line 1745, ../sass/responsive.scss */
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  margin-left: 15px;
+  margin-right: 10px;
+  color: #50a5f1;
+  background: #eff3fc;
+  padding: 10px;
+  border-radius: 9px;
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1360px) {
+  /* line 1749, ../sass/responsive.scss */
+  .header-secondary-nav {
+    width: 22%;
+  }
+}
+@media screen and (max-width: 1250px) {
+  /* line 1752, ../sass/responsive.scss */
+  .header-secondary-nav {
+    display: flex;
+    margin-top: 0;
+  }
+
+  /* line 1753, ../sass/responsive.scss */
+  .header .logo-wrapper {
+    width: 110px;
+  }
+
+  /* line 1756, ../sass/responsive.scss */
+  .header .nav > ul {
+    justify-content: space-between;
+  }
+  /* line 1758, ../sass/responsive.scss */
+  .header .nav > ul > li {
+    margin-right: 1%;
+  }
+
+  /* line 1762, ../sass/responsive.scss */
+  .travel-client-money .refunds ul {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* line 1765, ../sass/responsive.scss */
+  .reportingHeading {
+    flex-flow: column;
+    align-items: flex-start !important;
+  }
+  /* line 1766, ../sass/responsive.scss */
+  .reportingHeading h2 {
+    margin-bottom: 15px;
+  }
+  /* line 1767, ../sass/responsive.scss */
+  .reportingHeading #reportTypeTitle {
+    margin-bottom: 0;
+  }
+
+  /* line 1769, ../sass/responsive.scss */
+  .popup-OptionAndPrices .popup-inner {
+    max-width: 90%;
+  }
+
+  /* line 1770, ../sass/responsive.scss */
+  .custom-travel-account-top .account-debits .form-flex-wrapper.top > li {
+    flex: 0 0 calc(30% - 10px);
+  }
+  /* line 1772, ../sass/responsive.scss */
+  .custom-travel-account-top .account-debits .form-flex-wrapper.top > li:last-child {
+    flex: 0 0 calc(30% - 10px);
+  }
+
+  /* line 1776, ../sass/responsive.scss */
+  .ptsDownload .grid-box ul li .btnGroupPreDown {
+    flex-flow: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  /* line 1780, ../sass/responsive.scss */
+  .ptsDownload .grid-box ul li .btnGroupPreDown a {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  /* line 1784, ../sass/responsive.scss */
+  .header .nav {
+    display: block;
+  }
+
+  /* line 1785, ../sass/responsive.scss */
+  .container-fluid {
+    padding: 0 15px;
+  }
+
+  /* line 1786, ../sass/responsive.scss */
+  .header-secondary-nav {
+    width: 30%;
+  }
+
+  /* line 1787, ../sass/responsive.scss */
+  .header .nav > ul > li > a {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 959px) {
+  /* line 1791, ../sass/responsive.scss */
+  .header {
+    position: relative;
+  }
+  /* line 1792, ../sass/responsive.scss */
+  .header .logo-wrapper {
+    width: 90px;
+  }
+  /* line 1794, ../sass/responsive.scss */
+  .header .logo-wrapper .logo img {
+    width: 100%;
+  }
+  /* line 1796, ../sass/responsive.scss */
+  .header .nav {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    z-index: 99;
+    margin-top: 1px;
+  }
+  /* line 1803, ../sass/responsive.scss */
+  .header .nav > ul {
+    flex-flow: column;
+  }
+  /* line 1804, ../sass/responsive.scss */
+  .header .nav > ul > li {
+    width: 100%;
+  }
+  /* line 1806, ../sass/responsive.scss */
+  .header .nav > ul > li > a {
+    height: auto;
+    line-height: 1.5;
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #cecdcd;
+  }
+  /* line 1813, ../sass/responsive.scss */
+  .header .nav > ul > li > a:after {
+    display: none !important;
+  }
+  /* line 1814, ../sass/responsive.scss */
+  .header .nav > ul > li > a:before {
+    display: none !important;
+  }
+  /* line 1815, ../sass/responsive.scss */
+  .header .nav > ul > li ul {
+    position: static;
+    width: 100%;
+  }
+  /* line 1816, ../sass/responsive.scss */
+  .header .nav > ul > li ul li {
+    width: 100%;
+    float: none;
+  }
+  /* line 1820, ../sass/responsive.scss */
+  .header .nav > ul > li:hover ul {
+    display: none;
+  }
+  /* line 1826, ../sass/responsive.scss */
+  .header .row {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    align-items: center;
+  }
+
+  /* line 1828, ../sass/responsive.scss */
+  .header-secondary-nav {
+    width: 100%;
+    flex-shrink: 1;
+    justify-content: flex-end;
+  }
+
+  /* line 1830, ../sass/responsive.scss */
+  .menu-btn {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1350px) {
+  /* line 1838, ../sass/responsive.scss */
+  .account-debits .radio-group label {
+    font-size: 13px;
+  }
+
+  /* line 1843, ../sass/responsive.scss */
+  .travel-client-icons-wrapper ul li {
+    margin-right: 0;
+  }
+  /* line 1845, ../sass/responsive.scss */
+  .travel-client-icons-wrapper ul li a {
+    min-width: initial;
+  }
+}
+@media screen and (max-width: 1024px) {
+  /* line 1854, ../sass/responsive.scss */
+  .member-update-user .email-setting {
+    height: auto !important;
+    padding-bottom: 15px !important;
+  }
+  /* line 1855, ../sass/responsive.scss */
+  .member-update-user .email-setting .col-9, .member-update-user .email-setting .col-3 {
+    width: 100% !important;
+  }
+
+  /* line 1859, ../sass/responsive.scss */
+  .custom-client-wrapper .profile-page .user-details li {
+    flex-basis: 48% !important;
+  }
+
+  /* line 1862, ../sass/responsive.scss */
+  .custom-client-wrapper .user-password {
+    padding: 0;
+  }
+
+  /* line 1863, ../sass/responsive.scss */
+  .custom-client-wrapper .edit-buton {
+    margin-top: 0;
+  }
+
+  /* line 1864, ../sass/responsive.scss */
+  .new-form, .custom-client-wrapper .port-wrapper, .custom-client-wrapper .incoming-server {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* line 1869, ../sass/responsive.scss */
+  .travel-member-user-list .heading.user {
+    margin-bottom: 0 !important;
+  }
+  /* line 1870, ../sass/responsive.scss */
+  .travel-member-user-list .table-user {
+    padding-top: 40px;
+  }
+  /* line 1872, ../sass/responsive.scss */
+  .travel-member-user-list .table-user label {
+    padding-left: 0 !important;
+  }
+
+  /* line 1878, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading {
+    flex-flow: column;
+    align-items: flex-start !important;
+  }
+  /* line 1880, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter {
+    flex-flow: wrap;
+  }
+  /* line 1881, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li {
+    margin-top: 15px;
+  }
+  /* line 1883, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li .btn img {
+    height: 36px;
+  }
+
+  /* line 1889, ../sass/responsive.scss */
+  .travel-client-money .refunds ul {
+    justify-content: flex-start;
+  }
+  /* line 1891, ../sass/responsive.scss */
+  .travel-client-money .refunds ul li {
+    flex: 0 0 33%;
+  }
+  /* line 1892, ../sass/responsive.scss */
+  .travel-client-money .refunds ul:after, .travel-client-money .refunds ul:before {
+    display: none;
+  }
+
+  /* line 1896, ../sass/responsive.scss */
+  .form-flex-wrapper li, .flex-three-form li {
+    flex: 0 0 31%;
+  }
+
+  /* line 1899, ../sass/responsive.scss */
+  .range-li {
+    flex: 0 0 65.5% !important;
+  }
+
+  /* line 1902, ../sass/responsive.scss */
+  .not-editable {
+    justify-content: flex-start;
+  }
+
+  /* line 1905, ../sass/responsive.scss */
+  .client-form-wrapper ul {
+    width: 100%;
+  }
+  /* line 1906, ../sass/responsive.scss */
+  .client-form-wrapper ul + ul {
+    width: 100%;
+    padding-left: 0;
+  }
+  /* line 1907, ../sass/responsive.scss */
+  .client-form-wrapper ul + ul li {
+    flex: 0 0 65%;
+  }
+  /* line 1908, ../sass/responsive.scss */
+  .client-form-wrapper ul + ul li.width-100 {
+    flex: 0 0 31%;
+  }
+
+  /* line 1913, ../sass/responsive.scss */
+  .quick-note-field li {
+    flex-basis: 31% !important;
+  }
+  /* line 1914, ../sass/responsive.scss */
+  .quick-note-field li:first-child {
+    flex-basis: 65% !important;
+  }
+
+  /* line 1916, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li {
+    flex: 0 0 31% !important;
+  }
+  /* line 1918, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li .switch {
+    margin-right: 4%;
+  }
+  /* line 1919, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li:nth-child(3n) .switch {
+    margin-right: 0;
+  }
+  /* line 1922, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li:nth-child(4n) .switch {
+    margin-right: 4%;
+  }
+
+  /* line 1927, ../sass/responsive.scss */
+  .client-note-table .table tr th:last-child {
+    width: 90px !important;
+  }
+  /* line 1928, ../sass/responsive.scss */
+  .client-note-table .table tr td:last-child {
+    width: 90px !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  /* line 1933, ../sass/responsive.scss */
+  .ptsDownload .grid-box ul li h3 {
+    font-size: 16px;
+  }
+
+  /* line 1936, ../sass/responsive.scss */
+  .travel-member-user-list .table-user {
+    padding-left: 10px !important;
+  }
+  /* line 1938, ../sass/responsive.scss */
+  .travel-member-user-list .table-user tbody {
+    width: 100% !important;
+  }
+
+  /* line 1940, ../sass/responsive.scss */
+  .custom-client-wrapper-new .help-popup .overview-link .help-pop-content {
+    padding: 10px 15px;
+  }
+  /* line 1942, ../sass/responsive.scss */
+  .custom-client-wrapper-new .help-popup .overview-link .help-pop-content ul {
+    width: 48%;
+  }
+
+  /* line 1946, ../sass/responsive.scss */
+  .custom-table-heading .table-heading {
+    font-size: 16px;
+  }
+
+  /* line 1947, ../sass/responsive.scss */
+  .custom-travel-account-top .account-debits .form-flex-wrapper.top > li {
+    flex: 0 0 48% !important;
+  }
+
+  /* line 1948, ../sass/responsive.scss */
+  .custom-travel-account-top .account-debits .form-flex-wrapper.top > li:nth-child(2) ul li:nth-of-type(2) {
+    margin: 10px 0 6px;
+  }
+
+  /* line 1951, ../sass/responsive.scss */
+  .fc .fc-toolbar.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+    padding: 0 !important;
+  }
+
+  /* line 1952, ../sass/responsive.scss */
+  .client-note-table .container-wrap.new-custom-wrap-light-box .lb-container.add-client-note-popup {
+    max-width: calc(100% - 30px);
+  }
+
+  /* line 1956, ../sass/responsive.scss */
+  .flex-row {
+    flex-flow: column;
+    margin-bottom: 20px;
+  }
+  /* line 1958, ../sass/responsive.scss */
+  .flex-row .col-half {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* line 1961, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content {
+    flex-flow: column;
+    align-items: flex-start !important;
+  }
+  /* line 1964, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content h2 {
+    margin-bottom: 15px;
+  }
+
+  /* line 1967, ../sass/responsive.scss */
+  .travel-client-icons-wrapper ul li a {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  /* line 1969, ../sass/responsive.scss */
+  .issue-box .Assign {
+    flex-flow: column;
+  }
+  /* line 1970, ../sass/responsive.scss */
+  .issue-box .Assign h2 {
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px !important;
+  }
+  /* line 1973, ../sass/responsive.scss */
+  .issue-box .Assign .search {
+    width: 100%;
+  }
+
+  /* line 1976, ../sass/responsive.scss */
+  #divSearchResults {
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 1980, ../sass/responsive.scss */
+  .wrap-light-box .lb-container.open-template-popup {
+    padding: 0 !important;
+  }
+
+  /* line 1985, ../sass/responsive.scss */
+  #emailSettingsForm .incoming-server label input {
+    margin: 10px 0 !important;
+    width: 100%;
+  }
+
+  /* line 1992, ../sass/responsive.scss */
+  .custom-client-wrapper .profile-page .user-profile {
+    flex-flow: column;
+  }
+  /* line 1995, ../sass/responsive.scss */
+  .custom-client-wrapper .profile-page .user-profile > ul > li > .btn {
+    min-width: 0;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+  }
+
+  /* line 1999, ../sass/responsive.scss */
+  .custom-client-wrapper .profile-page .user-details li {
+    flex-basis: 100% !important;
+  }
+
+  /* line 2002, ../sass/responsive.scss */
+  .custom-client-wrapper .user-password {
+    padding: 0 15px;
+  }
+
+  /* line 2005, ../sass/responsive.scss */
+  .custom-client-wrapper .row.email-setting {
+    clear: both;
+  }
+  /* line 2006, ../sass/responsive.scss */
+  .custom-client-wrapper .row.email-setting li {
+    padding: 0 !important;
+  }
+
+  /* line 2008, ../sass/responsive.scss */
+  .custom-client-wrapper .port-wrapper .show-itenry {
+    flex-flow: column;
+  }
+  /* line 2009, ../sass/responsive.scss */
+  .custom-client-wrapper .port-wrapper .show-itenry label {
+    display: block;
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+
+  /* line 2011, ../sass/responsive.scss */
+  .custom-client-wrapper .incoming-server {
+    margin: 0;
+    flex-flow: column;
+    width: 100%;
+  }
+  /* line 2012, ../sass/responsive.scss */
+  .custom-client-wrapper .incoming-server > li {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* line 2013, ../sass/responsive.scss */
+  .custom-client-wrapper .incoming-server > li > * {
+    width: 48% !important;
+  }
+  /* line 2014, ../sass/responsive.scss */
+  .custom-client-wrapper .incoming-server > li > div {
+    width: 100% !important;
+    flex-flow: column;
+  }
+  /* line 2017, ../sass/responsive.scss */
+  .custom-client-wrapper .incoming-server > li > div > div {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* line 2018, ../sass/responsive.scss */
+  .custom-client-wrapper .incoming-server > li > div > div > * {
+    width: 48% !important;
+    margin: 10px 0 !important;
+  }
+
+  /* line 2025, ../sass/responsive.scss */
+  #userAdminPrivilegesList li label {
+    margin-right: 0 !important;
+  }
+
+  /* line 2028, ../sass/responsive.scss */
+  .reportTypeTitleNew {
+    flex-flow: column !important;
+  }
+  /* line 2030, ../sass/responsive.scss */
+  .reportTypeTitleNew .flex-between {
+    width: 200px;
+  }
+
+  /* line 2034, ../sass/responsive.scss */
+  .travel-member-email-temp .new-email-template ul li + li {
+    flex-flow: column;
+  }
+
+  /* line 2037, ../sass/responsive.scss */
+  .height-frame iframe {
+    min-height: 200px;
+  }
+
+  /* line 2041, ../sass/responsive.scss */
+  .travel-member-email-temp .flex-table tbody tr {
+    width: 100%;
+  }
+
+  /* line 2045, ../sass/responsive.scss */
+  .custom-client-wrapper-new .help-popup .overview-link {
+    padding: 10px 8px 20px;
+  }
+  /* line 2047, ../sass/responsive.scss */
+  .custom-client-wrapper-new .help-popup .overview-link .help-pop-content {
+    flex-flow: column;
+  }
+  /* line 2049, ../sass/responsive.scss */
+  .custom-client-wrapper-new .help-popup .overview-link .help-pop-content ul {
+    width: 100%;
+  }
+
+  /* line 2054, ../sass/responsive.scss */
+  .custom-travel-account-top .account-debits .form-flex-wrapper.top > li {
+    flex: 0 0 100% !important;
+  }
+
+  /* line 2061, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li:nth-child(2) {
+    width: 100%;
+  }
+  /* line 2063, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li:nth-child(2) label {
+    width: 165px;
+  }
+  /* line 2064, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li:nth-child(2) .filter-input-select {
+    width: 100% !important;
+  }
+  /* line 2065, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li:nth-child(2) .filter-input-select span select {
+    width: 100%;
+  }
+  /* line 2070, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li:first-child {
+    width: 100%;
+  }
+  /* line 2071, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li .filter-date-wrapper {
+    width: 100%;
+    flex-flow: wrap;
+  }
+  /* line 2072, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li .filter-date-wrapper label {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  /* line 2073, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li .filter-date-wrapper .custom-input-wrapper {
+    width: 49%;
+  }
+  /* line 2075, ../sass/responsive.scss */
+  .travel-account-payment-due .custom-table-heading .table-filter li .filter-date-wrapper .custom-input-wrapper input {
+    width: 100%;
+  }
+
+  /* line 2086, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+  /* line 2087, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading h2 {
+    margin-bottom: 15px;
+  }
+  /* line 2088, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading .table-filter {
+    flex-flow: wrap;
+  }
+  /* line 2090, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading .table-filter li:first-child {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  /* line 2092, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading .table-filter li:first-child label {
+    width: 165px;
+  }
+  /* line 2093, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading .table-filter li:first-child .filter-input-select {
+    width: 100% !important;
+  }
+  /* line 2094, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading .table-filter li:first-child .filter-input-select span select {
+    width: 100%;
+  }
+  /* line 2099, ../sass/responsive.scss */
+  .travel-account-outstanding-payment .custom-table-heading .table-filter li img {
+    height: 35px;
+  }
+
+  /* line 2104, ../sass/responsive.scss */
+  .payment-view {
+    margin-bottom: 0 !important;
+  }
+
+  /* line 2107, ../sass/responsive.scss */
+  .wrap-light-box .lb-container.addPassengerPopup {
+    max-width: calc(100% - 30px) !important;
+    padding: 0;
+  }
+  /* line 2108, ../sass/responsive.scss */
+  .wrap-light-box .lb-container.addPassengerPopup .addpassengerForm {
+    padding: 10px 20px 20px;
+  }
+
+  /* line 2117, ../sass/responsive.scss */
+  .lb-container.add-traveldate-popup li input[type="text"] {
+    width: 65%;
+  }
+  /* line 2119, ../sass/responsive.scss */
+  .lb-container.add-traveldate-popup .btn {
+    height: auto !important;
+    padding: 8px 15px !important;
+  }
+
+  /* line 2125, ../sass/responsive.scss */
+  .popup-OptionAndPrices .popup-inner .heading-content {
+    flex-flow: column;
+    align-items: flex-start !important;
+  }
+  /* line 2128, ../sass/responsive.scss */
+  .popup-OptionAndPrices .popup-inner .heading-content p {
+    position: static !important;
+    padding: 5px 10px;
+  }
+  /* line 2133, ../sass/responsive.scss */
+  .popup-OptionAndPrices .popup-inner .heading-content .heading-flex a {
+    flex-shrink: 0;
+  }
+
+  /* line 2137, ../sass/responsive.scss */
+  .custom-client-wrapper-new .custom-send-email .content-form-wrapper .flex-three-form li textarea {
+    min-height: 60vh !important;
+  }
+
+  /* line 2140, ../sass/responsive.scss */
+  .Total_Fees .total-inner {
+    min-width: auto;
+  }
+  /* line 2142, ../sass/responsive.scss */
+  .Total_Fees .total-inner span:nth-child(2) {
+    padding: 0 10px;
+  }
+
+  /* line 2144, ../sass/responsive.scss */
+  .travel-moneydue-sendemail .textarea-box iframe {
+    height: 50vh !important;
+  }
+
+  /* line 2147, ../sass/responsive.scss */
+  .travel-moneydue-sendemail.custom-send-email {
+    margin-bottom: 20px;
+  }
+
+  /* line 2152, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content .heading-flex {
+    flex-flow: column;
+    align-items: flex-start !important;
+    width: 100%;
+    padding: 0 10px;
+  }
+  /* line 2157, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content .heading-flex ul {
+    width: calc(100% - 10px);
+    margin: 8px 0;
+  }
+  /* line 2160, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content .heading-flex ul li {
+    width: 50%;
+  }
+  /* line 2162, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content .heading-flex ul li select {
+    width: 100%;
+  }
+  /* line 2164, ../sass/responsive.scss */
+  .custom-send-email .email-formating .heading-content .heading-flex ul:last-child {
+    background: none;
+    width: 100%;
+  }
+
+  /* line 2171, ../sass/responsive.scss */
+  .ReassignClients .heading h2 {
+    padding: 10px 5px !important;
+  }
+  /* line 2174, ../sass/responsive.scss */
+  .ReassignClients .search-result-table .filter {
+    margin: 0;
+    padding: 0 14px;
+  }
+  /* line 2177, ../sass/responsive.scss */
+  .ReassignClients .search-result-table .filter #dropdownUserReassignTo {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  /* line 2182, ../sass/responsive.scss */
+  .ReassignClients .search-result-table .filter input[type="text"] {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  /* line 2189, ../sass/responsive.scss */
+  .new-clients .entries {
+    flex-flow: column;
+  }
+  /* line 2191, ../sass/responsive.scss */
+  .new-clients .entries h2 {
+    margin-bottom: 15px;
+  }
+  /* line 2192, ../sass/responsive.scss */
+  .new-clients .entries label {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* line 2198, ../sass/responsive.scss */
+  .issue-box .Assign .search {
+    flex-flow: column;
+  }
+
+  /* line 2201, ../sass/responsive.scss */
+  .table th {
+    white-space: nowrap;
+  }
+
+  /* line 2202, ../sass/responsive.scss */
+  .blank {
+    display: none !important;
+  }
+
+  /* line 2203, ../sass/responsive.scss */
+  .travel-search-client .search-client ul li + li {
+    margin-top: 0;
+  }
+
+  /* line 2206, ../sass/responsive.scss */
+  .form-flex-wrapper li, .flex-three-form li {
+    flex: 0 0 100% !important;
+  }
+  /* line 2208, ../sass/responsive.scss */
+  .form-flex-wrapper li.blank, .flex-three-form li.blank {
+    display: none;
+  }
+
+  /* line 2210, ../sass/responsive.scss */
+  .range-li {
+    flex: 0 0 100% !important;
+  }
+  /* line 2212, ../sass/responsive.scss */
+  .range-li .flex-row {
+    flex-flow: column;
+  }
+  /* line 2213, ../sass/responsive.scss */
+  .range-li .flex-row span {
+    margin: 10px 0;
+  }
+
+  /* line 2217, ../sass/responsive.scss */
+  .flex-heading h2 {
+    padding: 6px 14px !important;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  /* line 2224, ../sass/responsive.scss */
+  .flex-heading .action-btn li img {
+    width: 28px;
+  }
+
+  /* line 2228, ../sass/responsive.scss */
+  .search-result-client {
+    margin-top: 20px !important;
+  }
+
+  /* line 2230, ../sass/responsive.scss */
+  .travel-search-client .heading {
+    margin-top: 15px;
+  }
+
+  /* line 2234, ../sass/responsive.scss */
+  .client-form-wrapper ul li {
+    flex: 0 0 100% !important;
+  }
+
+  /* line 2238, ../sass/responsive.scss */
+  .quick-note-field li {
+    flex-basis: 100% !important;
+  }
+  /* line 2239, ../sass/responsive.scss */
+  .quick-note-field li:first-child {
+    flex-basis: 100% !important;
+  }
+
+  /* line 2241, ../sass/responsive.scss */
+  .travel-client-icons-wrapper {
+    overflow: auto;
+  }
+  /* line 2243, ../sass/responsive.scss */
+  .travel-client-icons-wrapper ul li a {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+  /* line 2246, ../sass/responsive.scss */
+  .travel-client-icons-wrapper ul li a svg {
+    width: 14px;
+  }
+
+  /* line 2251, ../sass/responsive.scss */
+  .heading-content {
+    align-items: center;
+    position: relative;
+    align-items: center !important;
+    justify-content: space-between;
+    padding-right: 10px !important;
+  }
+  /* line 2252, ../sass/responsive.scss */
+  .heading-content h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  /* line 2255, ../sass/responsive.scss */
+  .left-border {
+    font-size: 18px !important;
+    line-height: 24px;
+  }
+
+  /* line 2256, ../sass/responsive.scss */
+  .mobile-btn-wrapper {
+    position: relative;
+    align-items: center !important;
+    justify-content: space-between;
+    padding-right: 10px !important;
+  }
+  /* line 2257, ../sass/responsive.scss */
+  .mobile-btn-wrapper h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  /* line 2259, ../sass/responsive.scss */
+  .mobile-btn-view {
+    display: flex;
+    align-content: center;
+  }
+  /* line 2261, ../sass/responsive.scss */
+  .mobile-btn-view > * {
+    margin-left: 10px;
+  }
+  /* line 2262, ../sass/responsive.scss */
+  .mobile-btn-view .btn {
+    padding: 8px 15px;
+    min-width: initial !important;
+    line-height: 1;
+  }
+
+  /* line 2269, ../sass/responsive.scss */
+  .mobile-right-10 {
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  /* line 2270, ../sass/responsive.scss */
+  .btn-slider {
+    display: flex;
+    width: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  /* line 2271, ../sass/responsive.scss */
+  .btn-slider img {
+    width: 15px;
+  }
+
+  /* line 2273, ../sass/responsive.scss */
+  .btn-view {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin: 0;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 10px 1px;
+    width: 179px;
+    z-index: 99;
+  }
+  /* line 2285, ../sass/responsive.scss */
+  .btn-view > * {
+    margin-left: 0 !important;
+    margin-bottom: 10px;
+  }
+  /* line 2289, ../sass/responsive.scss */
+  .btn-view .fr {
+    float: none;
+  }
+  /* line 2290, ../sass/responsive.scss */
+  .btn-view .btn {
+    width: 100%;
+    display: block !important;
+    text-align: center;
+    padding: 8px 11px !important;
+  }
+
+  /* line 2293, ../sass/responsive.scss */
+  .diary-pop-up {
+    width: 120px !important;
+  }
+  /* line 2294, ../sass/responsive.scss */
+  .diary-pop-up a {
+    padding: 8px;
+  }
+
+  /* line 2296, ../sass/responsive.scss */
+  .client-control-view .heading-content .green-btn, .client-control-view .heading-content .blue-btn {
+    padding: 10px 13px;
+    font-size: 14px;
+  }
+
+  /* line 2300, ../sass/responsive.scss */
+  .green-btn img, .blue-btn img, .green-btn i, .blue-btn i {
+    font-size: 14px;
+    width: 14px;
+  }
+
+  /* line 2304, ../sass/responsive.scss */
+  .sm-hide {
+    display: none !important;
+  }
+
+  /* line 2305, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li {
+    flex: 0 0 100% !important;
+  }
+  /* line 2307, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li .switch {
+    margin-right: 0;
+  }
+  /* line 2310, ../sass/responsive.scss */
+  .controls-view .flex-three-form.new-align li:nth-child(4n) .switch {
+    margin-right: 0;
+  }
+
+  /* line 2314, ../sass/responsive.scss */
+  .client-note-view .table {
+    min-width: 810px;
+  }
+
+  /* line 2317, ../sass/responsive.scss */
+  .financials-wrapper {
+    margin-top: 20px;
+  }
+
+  /* line 2320, ../sass/responsive.scss */
+  .small-hide {
+    display: none !important;
+  }
+
+  /* line 2321, ../sass/responsive.scss */
+  body .heading-flex .sm-hide {
+    display: none !important;
+  }
+
+  /* line 2322, ../sass/responsive.scss */
+  .mobile-right-10 {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  /* line 2325, ../sass/responsive.scss */
+  .mobile-money-manage img {
+    height: 35px;
+  }
+
+  /* line 2326, ../sass/responsive.scss */
+  .mobile-money-manage .btn.new-btn {
+    padding: 6px 10px !important;
+    min-width: auto;
+    height: 35px;
+  }
+
+  /* line 2331, ../sass/responsive.scss */
+  .total-wrapper .total-inner span span {
+    padding: 0 2px;
+  }
+
+  /* line 2334, ../sass/responsive.scss */
+  .supplier-view .total-wrapper .total-inner {
+    min-width: 330px;
+  }
+
+  /* line 2337, ../sass/responsive.scss */
+  .total-wrapper .total-inner span {
+    width: auto !important;
+  }
+
+  /* line 2339, ../sass/responsive.scss */
+  .client-guest-wrapper .heading-flex .btn {
+    font-size: 14px;
+    padding: 8px 10px 5px;
+  }
+
+  /* line 2345, ../sass/responsive.scss */
+  .travel-client-money .left-border {
+    font-size: 16px !important;
+  }
+  /* line 2349, ../sass/responsive.scss */
+  .travel-client-money .refund-content .new-btn {
+    height: auto !important;
+    min-width: initial;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 2358, ../sass/responsive.scss */
+  .wrap-light-box .addDiaryPopupForm.lb-container .formCustom li {
+    padding: 0 15px;
+  }
+
+  /* line 2360, ../sass/responsive.scss */
+  .fileUploadPopup .availableSwitch {
+    text-align: left;
+  }
+  /* line 2361, ../sass/responsive.scss */
+  .fileUploadPopup .grid-box {
+    padding: 20px;
+  }
+
+  /* line 2366, ../sass/responsive.scss */
+  .wrap-light-box .lb-container .col-5, .wrap-light-box .lb-container .col-7 {
+    width: 100%;
+  }
+  /* line 2367, ../sass/responsive.scss */
+  .wrap-light-box .lb-container .row {
+    margin: 0;
+  }
+
+  /* line 2370, ../sass/responsive.scss */
+  .travel-account-unclaimed .custom-table-heading, .travel-account-uassigned .custom-table-heading {
+    flex-flow: column;
+    align-items: flex-start !important;
+  }
+  /* line 2371, ../sass/responsive.scss */
+  .travel-account-unclaimed .custom-table-heading > div, .travel-account-uassigned .custom-table-heading > div {
+    padding: 15px 0 0 15px;
+  }
+
+  /* line 2374, ../sass/responsive.scss */
+  .custom-client-wrapper-new .travel-member-user-list .table-user {
+    width: 480px !important;
+  }
+}

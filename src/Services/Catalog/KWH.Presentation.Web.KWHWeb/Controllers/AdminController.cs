@@ -19,10 +19,8 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> RFIData()
-        {
-
-
+        public async Task<IActionResult> RFData()
+        { 
             var data = await adminService.GetAllRFData(token);
             //   var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
             var list = JsonConvert.DeserializeObject<List<RFIdViewModel>>(Convert.ToString(data));
@@ -30,8 +28,14 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
         }
 
+        public ActionResult AddEditRF()
+        {
+            return View();
+        }
 
-        public async Task<IActionResult> GetRFIdById(int id)
+       
+
+        public async Task<IActionResult> GetRFById(int id)
         {
             var data = await adminService.GetRFById(id, token);
             var list = JsonConvert.DeserializeObject<RFIdViewModel>(Convert.ToString(data));
