@@ -8,7 +8,8 @@ namespace KWH.WebApi.Profiles
     {
         public CommandsProfile()
         {
-            CreateMap<RFId, RFIdDtos>().ReverseMap();            
+            CreateMap<RFId, RFIdDtos>().ReverseMap();   
+            CreateMap<Section, SectionDtos>().ReverseMap();
         }
     }
 }

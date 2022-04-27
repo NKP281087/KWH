@@ -38,5 +38,26 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/UpdateRFData";
             return await httpClient.PostWithTokenAsync(model);
         }
+
+        public async Task<object> GetAllSectionData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetSectionById";
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> GetSectionById(Guid Id, string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetSectionById/" + Id;
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> SaveSectionData(RequestViewModel<SectionViewModel> model)
+        {
+            httpClient.ApiUrl = "api/Admin/SaveSectionData";
+            return await httpClient.PostWithTokenAsync(model);
+        }
+        public async Task<object> UpdateSectionData(Guid Id, RequestViewModel<SectionViewModel> model)
+        {
+            httpClient.ApiUrl = "api/Admin/UpdateSectionData/Id" + Id;
+            return await httpClient.PostWithTokenAsync(model);
+        }
     }
 }

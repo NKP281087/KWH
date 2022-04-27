@@ -55,5 +55,6 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var result = await adminService.SubmitRFData(new RequestViewModel<RFIdViewModel> { Token = token, ModelObject = model });
             return Json(result);
         }
+         
     }
 }

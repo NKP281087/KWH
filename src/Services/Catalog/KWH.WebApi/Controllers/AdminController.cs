@@ -25,7 +25,7 @@ namespace KWH.WebApi.Controllers
         [HttpGet]
         [Route("GetAllRFData")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]                 
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAllRFData()
         {
@@ -61,13 +61,13 @@ namespace KWH.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<HttpResponseMessage> SubmitRFData(RFIdViewModel model)
+        public async Task<IActionResult> SubmitRFData(RFIdViewModel model)
         {
             RFIdDtos dtos = new RFIdDtos();
 
             if (!ModelState.IsValid)
             {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest });
             }
 
             dtos.TimeIn = model.TimeIn;
@@ -77,10 +77,31 @@ namespace KWH.WebApi.Controllers
             var response = await _adminService.SubmitRFData(RFFormModel);
             if (response == null)
             {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
-            } 
-            return new HttpResponseMessage(HttpStatusCode.OK); 
+                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
         }
+
+        //public async Task<HttpResponseMessage> SubmitRFData(RFIdViewModel model)
+        //{
+        //    RFIdDtos dtos = new RFIdDtos();
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return new HttpResponseMessage(HttpStatusCode.BadRequest);
+        //    }
+
+        //    dtos.TimeIn = model.TimeIn;
+        //    dtos.TimeOut = model.TimeOut;
+
+        //    var RFFormModel = _mapper.Map<RFId>(dtos);
+        //    var response = await _adminService.SubmitRFData(RFFormModel);
+        //    if (response == null)
+        //    {
+        //        return new HttpResponseMessage(HttpStatusCode.BadRequest);
+        //    } 
+        //    return new HttpResponseMessage(HttpStatusCode.OK); 
+        //}
 
         [HttpPost]
         [Route("UpdateRFData")]
@@ -95,5 +116,63 @@ namespace KWH.WebApi.Controllers
             }
             return await _adminService.UpdateRFData(Id, model);
         }
+
+        [HttpGet]
+        [Route("GetAllSectionData")]
+        public async Task<IActionResult> GetAllSectionData()
+        {
+            var data = await _adminService.GetAllSectionData();
+            return Ok(new { StatusCode = HttpStatusCode.OK, data });
+        }
+
+        [HttpGet]
+        [Route("GetSectionById/{Id}")]
+        public async Task<IActionResult> GetSectionById(Guid Id)
+        {
+            var data = await _adminService.GetSectionById(Id); 
+            return Ok(new {StatusCode = HttpStatusCode.OK, data});
+        }
+
+        [HttpPost]
+        [Route("SaveSectionData")]
+        public async Task<IActionResult> SaveSectionData(SectionViewModel model)
+        {
+            SectionDtos Dtos = new SectionDtos();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+
+            Dtos.SectionId = new Guid();
+            Dtos.SectionName = model.SectionName;
+            Dtos.IsActive = true;
+
+            var sectionDtos = _mapper.Map<Section>(Dtos);
+            var response = await _adminService.SaveSectionData(sectionDtos);
+            if (response == null)
+            {
+                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
+        }
+        [HttpPost]
+        [Route("UpdateSectionData")]
+        public async Task<IActionResult> UpdateSectionData(Guid Id, SectionViewModel model)
+        {
+            SectionDtos Dtos = new SectionDtos();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            Dtos.SectionName = model.SectionName;
+            Dtos.IsActive = model.IsActive;
+            
+            var sectionDtos = _mapper.Map<Section>(Dtos);
+            var response = await _adminService.UpdateSectionData(Id, sectionDtos);
+
+            return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
+        }
+         
+
     }
 }

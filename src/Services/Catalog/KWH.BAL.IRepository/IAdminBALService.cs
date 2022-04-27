@@ -14,5 +14,9 @@ namespace KWH.BAL.IRepository
         Task<RFId> SubmitRFData(RFId entity);
         Task<bool> UpdateRFData(int Id, RFId entity);
 
+        Task<IEnumerable<Section>> GetAllSectionData();
+        Task<Section> GetSectionById(Guid Id);
+        Task<Section> SaveSectionData(Section entity);
+        Task<bool> UpdateSectionData(Guid Id, Section entity);
     }
 }

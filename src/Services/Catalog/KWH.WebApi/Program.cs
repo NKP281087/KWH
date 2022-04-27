@@ -28,6 +28,7 @@ builder.Services.AddDbContext<KWHContext>(options =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IAdminBALService, AdminBALService>();
+ 
 
 var app = builder.Build();
 
