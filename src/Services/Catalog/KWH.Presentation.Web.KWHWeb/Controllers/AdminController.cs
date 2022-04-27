@@ -31,9 +31,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         public ActionResult AddEditRF()
         {
             return View();
-        }
-
-       
+        }     
 
         public async Task<IActionResult> GetRFById(int id)
         {
@@ -55,6 +53,37 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var result = await adminService.SubmitRFData(new RequestViewModel<RFIdViewModel> { Token = token, ModelObject = model });
             return Json(result);
         }
-         
+
+        [HttpGet]
+        public async Task<ActionResult> GetAllSectionData()
+        {
+            var data = await adminService.GetAllSectionData(token);
+            var list = JsonConvert.DeserializeObject<IEnumerable<SectionViewModel>>(Convert.ToString(data));
+            return View(list);
+        }
+        [HttpGet]
+        public async Task<ActionResult> GetSectionById(Guid Id)
+        {
+            var data = await adminService.GetSectionById(Id, token);
+            var list = JsonConvert.DeserializeObject<SectionViewModel>(Convert.ToString(data));
+            return View("AddEditSection", list);
+
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> SaveSectionData(SectionViewModel model)
+        {
+            var result = await adminService.SaveSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            return Json(result);
+        }
+        [HttpPost]
+        public async Task<JsonResult> UpdateSectionData(Guid Id, SectionViewModel model)
+        {
+            var result = await adminService.UpdateSectionData(Id, new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            return Json(result);
+        }   
+
+
+
     }
 }
