@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Data.Entity;
 
 namespace KWH.DAL.DataContext
 {
-    public class KWHContext : DbContext
+    public partial class KWHDBContext : DbContext
     {
-        public KWHContext(DbContextOptions<KWHContext> options) : base(options)
+        public KWHDBContext(DbContextOptions<KWHDBContext> options) : base(options)
         {
         }
         public DbSet<RFId> RFId { get; set; }

@@ -12,14 +12,14 @@ namespace KWH.BAL.RepositoryImplementation
 {
     public class AdminBALService : IAdminBALService 
     {
-        private readonly KWHContext _context;
+        private readonly KWHDBContext _context;
 
-        public AdminBALService(KWHContext context)
+        public AdminBALService(KWHDBContext context)
         {
             _context = context;
         }
         public async Task<RFId> GetRFById(int id)
-        {
+        {            
             var RFData = await _context.RFId.FirstOrDefaultAsync(x => x.RFIdNo == id);
             if (RFData != null)
             {
@@ -30,7 +30,9 @@ namespace KWH.BAL.RepositoryImplementation
 
         public async Task<IEnumerable<RFId>> GetAllRFData()
         {
-            return await _context.RFId.ToListAsync();
+            var RfData = await _context.RFId.FromSqlRaw<RFId>("Execute usp_GetRFData").ToListAsync();
+            return RfData;
+            //return await _context.RFId.ToListAsync();
         }
 
         public async Task<RFId> SubmitRFData(RFId entity)
@@ -76,11 +78,13 @@ namespace KWH.BAL.RepositoryImplementation
         }
         public async Task<IEnumerable<Section>> GetAllSectionData()
         {
-            var data = await _context.Section.ToListAsync();
-            if (data == null)
-            {
-                return Enumerable.Empty<Section>();
-            }
+            var data = await _context.Section.FromSqlRaw<Section>("Execute usp_GetSectionData").ToListAsync();
+            //var data = await _context.Section.Where(x => x.IsActive == true).ToListAsync();
+            //if (data == null || data.Count==0)
+            //{
+            //     return Enumerable.Empty<Section>();
+              
+            //}
             return data;
         }
         public async Task<Section> GetSectionById(Guid SectionId)

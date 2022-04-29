@@ -1,0 +1,73 @@
+﻿@model IEnumerable<KWH.Common.ViewModel.SectionViewModel>
+@{
+    ViewData["Title"] = "GetAllSectionData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+<script src="~/js/KWHApp/Admin/section.js"></script>
+<div class="container-fluid px-4">
+    <div class="card mb-4" style="margin-top:10px">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Section Data
+            <div style="float:right !important">
+                  <img src="~/Content/images/icons/add.svg" id="btnAdd" style="cursor:pointer;">
+             </div>
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Section Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SectionName</td>
+                                <td>
+                                    <a asp-action="GetSectionById" asp-route-id="@item.SectionId">
+                                        <img src="~/Content/images/icons/admin-edit.svg">
+                                    </a>
+                                    <a asp-action="GetSectionById" asp-route-id="@item.SectionId">
+                                        <img src="~/Content/images/icons/delete.svg">
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="sectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top:156px !important">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Section</h5>
+        <button type="button" class="close" data-dismiss="modal" id="btnClose" aria-label="Close" style="border:none; background:none;">
+            <img src="~/Content/images/icons/cross.svg" style="cursor:pointer;">
+        </button>
+      </div>
+      <div class="modal-body">
+         
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Section:</label>
+            <input type="text" id="txtSectionName" class="form-control">
+          </div> 
+      </div>
+      <div class="modal-footer">
+         
+        <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 

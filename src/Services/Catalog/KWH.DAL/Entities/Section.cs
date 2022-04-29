@@ -12,6 +12,7 @@ namespace KWH.DAL.Entities
     public class Section
     {
         [Key] 
+        [Required]
         public Guid SectionId { get; set; }    
 
         [Required (ErrorMessage ="Please Enter Section Name")]
@@ -20,8 +21,8 @@ namespace KWH.DAL.Entities
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
         public bool OnHold { get; set; } = false ;
-        public DateTime CreatedOn { get; set; }= DateTime.Now;
-        public DateTime ModifiedDate { get; set; }
+        public DateTime? CreatedOn { get; set; }= DateTime.Now;
+        public DateTime? ModifiedDate { get; set; }
 
     }
 }

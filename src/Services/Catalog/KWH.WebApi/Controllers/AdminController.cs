@@ -34,7 +34,8 @@ namespace KWH.WebApi.Controllers
             {
                 return NotFound();
             }
-            return Ok(_mapper.Map<IEnumerable<RFIdDtos>>(data));
+            var result = _mapper.Map<IEnumerable<RFIdDtos>>(data);
+            return Ok(new { StatusCode = HttpStatusCode.OK, result, Message = "Success" });
         }
 
 
@@ -122,15 +123,21 @@ namespace KWH.WebApi.Controllers
         public async Task<IActionResult> GetAllSectionData()
         {
             var data = await _adminService.GetAllSectionData();
-            return Ok(new { StatusCode = HttpStatusCode.OK, data });
+
+            if (data == null && data.Count() == 0)
+            {
+                return NotFound();
+            }
+            var result = _mapper.Map<IEnumerable<Section>>(data);
+            return Ok(new { StatusCode = HttpStatusCode.OK, result });
         }
 
         [HttpGet]
         [Route("GetSectionById/{Id}")]
         public async Task<IActionResult> GetSectionById(Guid Id)
         {
-            var data = await _adminService.GetSectionById(Id); 
-            return Ok(new {StatusCode = HttpStatusCode.OK, data});
+            var data = await _adminService.GetSectionById(Id);
+            return Ok(new { StatusCode = HttpStatusCode.OK, data });
         }
 
         [HttpPost]
@@ -142,8 +149,8 @@ namespace KWH.WebApi.Controllers
             {
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
             }
-
-            Dtos.SectionId = new Guid();
+             
+            Dtos.SectionId = Guid.NewGuid(); 
             Dtos.SectionName = model.SectionName;
             Dtos.IsActive = true;
 
@@ -166,13 +173,13 @@ namespace KWH.WebApi.Controllers
             }
             Dtos.SectionName = model.SectionName;
             Dtos.IsActive = model.IsActive;
-            
+
             var sectionDtos = _mapper.Map<Section>(Dtos);
             var response = await _adminService.UpdateSectionData(Id, sectionDtos);
 
             return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
         }
-         
+
 
     }
 }

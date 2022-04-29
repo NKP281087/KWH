@@ -9,35 +9,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{2CA9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{1F7481D0-FD1C-474B-8622-ECF815026B18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.DAL", "Services\Catalog\KWH.DAL\KWH.DAL.csproj", "{923D518E-4535-46BE-8BD1-3D4F8CA29564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.DAL", "Services\Catalog\KWH.DAL\KWH.DAL.csproj", "{923D518E-4535-46BE-8BD1-3D4F8CA29564}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BAL", "BAL", "{D2729726-0435-4CA0-A13F-B672E0B7B93D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.BAL.IRepository", "Services\Catalog\KWH.BAL.IRepository\KWH.BAL.IRepository.csproj", "{83A224C9-5250-4ED3-AAEE-BB2D503E6342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.BAL.IRepository", "Services\Catalog\KWH.BAL.IRepository\KWH.BAL.IRepository.csproj", "{83A224C9-5250-4ED3-AAEE-BB2D503E6342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.BAL.RepositoryImplementation", "Services\Catalog\KWH.BAL.RepositoryImplementation\KWH.BAL.RepositoryImplementation.csproj", "{8E9DF620-AA47-4D87-8F12-695F1820563D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.BAL.RepositoryImplementation", "Services\Catalog\KWH.BAL.RepositoryImplementation\KWH.BAL.RepositoryImplementation.csproj", "{8E9DF620-AA47-4D87-8F12-695F1820563D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8F78B9D5-04D4-4A5D-941B-15DF893B7F78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.Common.Infrastrcture", "Services\Catalog\KWH.Common.Infrastrcture\KWH.Common.Infrastrcture.csproj", "{64C12A90-0C9B-44A9-BF47-2FE1A5FB3FC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.Common.Infrastrcture", "Services\Catalog\KWH.Common.Infrastrcture\KWH.Common.Infrastrcture.csproj", "{64C12A90-0C9B-44A9-BF47-2FE1A5FB3FC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.Common.ViewModel", "Services\Catalog\KWH.Common.ViewModel\KWH.Common.ViewModel.csproj", "{AFB55BF8-F255-4EAC-BEAE-765E20705FA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.Common.ViewModel", "Services\Catalog\KWH.Common.ViewModel\KWH.Common.ViewModel.csproj", "{AFB55BF8-F255-4EAC-BEAE-765E20705FA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{21BB5905-48CE-41AD-B46A-D5835FF29064}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BAL", "BAL", "{CD4DD311-769E-4FBC-A093-79244CDBD4BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.Presentation.BAL.IRepository", "Services\Catalog\KWH.Presentation.BAL.IRepository\KWH.Presentation.BAL.IRepository.csproj", "{1142455B-28D7-4F28-97A3-C0B93078A9E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.Presentation.BAL.IRepository", "Services\Catalog\KWH.Presentation.BAL.IRepository\KWH.Presentation.BAL.IRepository.csproj", "{1142455B-28D7-4F28-97A3-C0B93078A9E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.Presentation.BAL.RepositoryImplementation", "Services\Catalog\KWH.Presentation.BAL.RepositoryImplementation\KWH.Presentation.BAL.RepositoryImplementation.csproj", "{9A67BBE7-0292-4E32-99D0-31EE606FD83C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.Presentation.BAL.RepositoryImplementation", "Services\Catalog\KWH.Presentation.BAL.RepositoryImplementation\KWH.Presentation.BAL.RepositoryImplementation.csproj", "{9A67BBE7-0292-4E32-99D0-31EE606FD83C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{5916DD7F-95F2-4ADA-AFCB-299E12E1D6C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.WebApi", "Services\Catalog\KWH.WebApi\KWH.WebApi.csproj", "{F25E8F63-9104-43CE-9BA4-FF06B47444DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.WebApi", "Services\Catalog\KWH.WebApi\KWH.WebApi.csproj", "{F25E8F63-9104-43CE-9BA4-FF06B47444DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{EF3EEED7-41DA-4335-B500-B12151B82772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KWH.Presentation.Web.KWHWeb", "Services\Catalog\KWH.Presentation.Web.KWHWeb\KWH.Presentation.Web.KWHWeb.csproj", "{6CE68A3A-57EC-4FE8-A2AF-97D5FD254EC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KWH.Presentation.Web.KWHWeb", "Services\Catalog\KWH.Presentation.Web.KWHWeb\KWH.Presentation.Web.KWHWeb.csproj", "{6CE68A3A-57EC-4FE8-A2AF-97D5FD254EC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

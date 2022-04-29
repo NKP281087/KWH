@@ -41,7 +41,7 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
 
         public async Task<object> GetAllSectionData(string token)
         {
-            httpClient.ApiUrl = "api/Admin/GetSectionById";
+            httpClient.ApiUrl = "api/Admin/GetAllSectionData";
             return await httpClient.GetWithTokenAsync(token);
         }
         public async Task<object> GetSectionById(Guid Id, string token)

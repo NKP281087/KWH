@@ -22,9 +22,9 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         public async Task<IActionResult> RFData()
         { 
             var data = await adminService.GetAllRFData(token);
-            //   var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
-            var list = JsonConvert.DeserializeObject<List<RFIdViewModel>>(Convert.ToString(data));
-            return View(list);
+            var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
+            var result = JsonConvert.DeserializeObject<IEnumerable<RFIdViewModel>>(apiResponse.Result.ToString());
+            return View(result);
 
         }
 
@@ -54,12 +54,21 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             return Json(result);
         }
 
+        public ActionResult AddEditSection()
+        {
+            return View();
+        }
+
+
         [HttpGet]
         public async Task<ActionResult> GetAllSectionData()
         {
-            var data = await adminService.GetAllSectionData(token);
-            var list = JsonConvert.DeserializeObject<IEnumerable<SectionViewModel>>(Convert.ToString(data));
-            return View(list);
+            var data = await adminService.GetAllSectionData(token); 
+             
+            var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
+            var result = JsonConvert.DeserializeObject<IEnumerable<SectionViewModel>>(apiResponse.Result.ToString());
+
+            return View(result);
         }
         [HttpGet]
         public async Task<ActionResult> GetSectionById(Guid Id)
@@ -72,7 +81,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
         [HttpPost]
         public async Task<JsonResult> SaveSectionData(SectionViewModel model)
-        {
+        { 
             var result = await adminService.SaveSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
             return Json(result);
         }
@@ -81,9 +90,6 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         {
             var result = await adminService.UpdateSectionData(Id, new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
             return Json(result);
-        }   
-
-
-
+        }    
     }
 }

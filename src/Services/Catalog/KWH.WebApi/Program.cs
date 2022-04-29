@@ -14,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connection = builder.Configuration.GetConnectionString("KWHConnection");
-builder.Services.AddDbContext<KWHContext>(options =>
+builder.Services.AddDbContext<KWHDBContext>(options =>
 {
     options.UseSqlServer(connection);
 });
