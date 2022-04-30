@@ -24,8 +24,8 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    @if (Model != null && Model.Count() > 0)
+                <tbody id="tblSection">
+                  @*  @if (Model != null && Model.Count() > 0)
                     {
                         foreach (var item in Model)
                         {
@@ -41,7 +41,7 @@
                                 </td>
                             </tr>
                         }
-                    }
+                    }*@
                 </tbody>
             </table>
         </div>
@@ -60,12 +60,38 @@
          
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Section:</label>
-            <input type="text" id="txtSectionName" class="form-control">
+            <input type="text" id="txtSectionName" maxlength="10" class="form-control">
           </div> 
       </div>
       <div class="modal-footer">
          
         <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="modal fade" id="EditSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top:156px !important">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Section</h5>
+        <button type="button" class="close" data-dismiss="modal" id="btnEditClose" aria-label="Close" style="border:none; background:none;">
+            <img src="~/Content/images/icons/cross.svg" style="cursor:pointer;">
+        </button>
+      </div>
+      <div class="modal-body">
+         
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Section:</label>
+            <input type="text" id="txtEditSectionName" maxlength="10" class="form-control">
+            <input type="hidden" id="hdnSectionId" />
+          </div> 
+      </div>
+      <div class="modal-footer">
+         
+        <button type="button" id="btnUpdate" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>

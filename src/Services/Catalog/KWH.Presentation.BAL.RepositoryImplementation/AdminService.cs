@@ -54,9 +54,14 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/SaveSectionData";
             return await httpClient.PostWithTokenAsync(model);
         }
-        public async Task<object> UpdateSectionData(Guid Id, RequestViewModel<SectionViewModel> model)
+        public async Task<object> UpdateSectionData(RequestViewModel<SectionViewModel> model)
         {
-            httpClient.ApiUrl = "api/Admin/UpdateSectionData/Id" + Id;
+            httpClient.ApiUrl = "api/Admin/UpdateSectionData";
+            return await httpClient.PostWithTokenAsync(model);
+        }
+        public async Task<object> DeleteSectionData(RequestViewModel<SectionViewModel> model)
+        {
+            httpClient.ApiUrl = "api/Admin/DeleteSectionData";
             return await httpClient.PostWithTokenAsync(model);
         }
     }

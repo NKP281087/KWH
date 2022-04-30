@@ -16,7 +16,8 @@ namespace KWH.BAL.IRepository
 
         Task<IEnumerable<Section>> GetAllSectionData();
         Task<Section> GetSectionById(Guid Id);
-        Task<Section> SaveSectionData(Section entity);
-        Task<bool> UpdateSectionData(Guid Id, Section entity);
+        Task<bool> SaveSectionData(Section entity);
+        Task<bool> UpdateSectionData(Section entity);
+        Task<bool> DeleteSectionData(Guid Id);
     }
 }

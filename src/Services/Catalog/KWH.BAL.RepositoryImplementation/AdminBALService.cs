@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KWH.BAL.RepositoryImplementation
 {
-    public class AdminBALService : IAdminBALService 
+    public class AdminBALService : IAdminBALService
     {
         private readonly KWHDBContext _context;
 
@@ -19,7 +19,7 @@ namespace KWH.BAL.RepositoryImplementation
             _context = context;
         }
         public async Task<RFId> GetRFById(int id)
-        {            
+        {
             var RFData = await _context.RFId.FirstOrDefaultAsync(x => x.RFIdNo == id);
             if (RFData != null)
             {
@@ -43,8 +43,8 @@ namespace KWH.BAL.RepositoryImplementation
                 TimeOut = entity.TimeOut,
                 IsActive = entity.IsActive,
                 OnHold = false,
-                CreatedOn= DateTime.Now,
-                CreatedBy= entity.CreatedBy,
+                CreatedOn = DateTime.Now,
+                CreatedBy = entity.CreatedBy,
             };
 
             await _context.AddAsync(rFId);
@@ -55,7 +55,7 @@ namespace KWH.BAL.RepositoryImplementation
         public async Task<bool> UpdateRFData(int Id, RFId entity)
         {
             var data = await _context.RFId.FindAsync(Id);
-            if(data != null || data.RFIdNo !=Id)
+            if (data != null || data.RFIdNo != Id)
             {
                 return false;
             }
@@ -67,7 +67,7 @@ namespace KWH.BAL.RepositoryImplementation
             data.IsActive = entity.IsActive;
             data.OnHold = entity.OnHold;
 
-            if(data != null)
+            if (data != null)
             {
                 _context.RFId.Update(data);
                 await _context.SaveChangesAsync();
@@ -83,7 +83,7 @@ namespace KWH.BAL.RepositoryImplementation
             //if (data == null || data.Count==0)
             //{
             //     return Enumerable.Empty<Section>();
-              
+
             //}
             return data;
         }
@@ -96,30 +96,47 @@ namespace KWH.BAL.RepositoryImplementation
             }
             return null;
         }
-        public async Task<Section> SaveSectionData(Section entity)
+        public async Task<bool> SaveSectionData(Section entity)
         {
-            Section model = new Section
+            try
             {
-                SectionId = entity.SectionId,
-                SectionName = entity.SectionName,
-                IsActive = true,
-                CreatedOn = DateTime.Now,
-                IsDeleted = false,
-                OnHold = false
-            };
+                var data = await _context.Section.Where(x => x.SectionName.ToUpper().Trim() == entity.SectionName.ToUpper().Trim() && x.IsActive == true).FirstOrDefaultAsync();
+                if (data != null)
+                {
+                    return false;
+                }
+                Section model = new Section
+                {
+                    SectionId = entity.SectionId,
+                    SectionName = entity.SectionName,
+                    IsActive = true,
+                    CreatedOn = DateTime.Now,
+                    IsDeleted = false,
+                    OnHold = false
+                };
 
-            var obj = await _context.Section.AddAsync(model);
-            _context.SaveChanges();
-            return obj.Entity;
+                var obj = await _context.Section.AddAsync(model);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                var dd = ex;
+                return false;
+            }
         }
 
-        public async Task<bool> UpdateSectionData(Guid Id, Section entity)
+        public async Task<bool> UpdateSectionData(Section entity)
         {
-            var data = await _context.Section.FindAsync(Id);
-            if (data == null || data.SectionId != Id)
+            var data = await _context.Section.FindAsync(entity.SectionId);
+            if (data == null || data.SectionId != entity.SectionId)
             {
                 return false;
-            } 
+            }
+            else if (data.SectionName.ToUpper().Trim() == entity.SectionName.ToUpper().Trim())
+            {
+                return false;
+            }
 
             data.SectionName = entity.SectionName;
             data.ModifiedDate = DateTime.Now;
@@ -127,7 +144,18 @@ namespace KWH.BAL.RepositoryImplementation
             await _context.SaveChangesAsync();
             return true;
         }
-        
+        public async Task<bool> DeleteSectionData(Guid Id)
+        {
+            var data = await _context.Section.FindAsync(Id);
+            if (data == null || data.SectionId != Id)
+            {
+                return false;
+            }
+            data.IsActive = false;
+            _context.Section.Update(data);
+            await _context.SaveChangesAsync();
+            return true;
+        }
 
     }
 }

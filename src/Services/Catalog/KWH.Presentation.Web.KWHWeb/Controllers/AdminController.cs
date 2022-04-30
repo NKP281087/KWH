@@ -61,22 +61,22 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult> GetAllSectionData()
+        public ActionResult SectionData()
+        {     
+            return View();
+        }
+        public async Task<JsonResult> GetAllSectionData()
         {
             var data = await adminService.GetAllSectionData(token); 
-             
-            var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
-            var result = JsonConvert.DeserializeObject<IEnumerable<SectionViewModel>>(apiResponse.Result.ToString());
-
-            return View(result);
+            //var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
+            // var result = JsonConvert.DeserializeObject<IEnumerable<SectionViewModel>>(apiResponse.Result.ToString()); 
+            return Json(data);
         }
         [HttpGet]
-        public async Task<ActionResult> GetSectionById(Guid Id)
+        public async Task<JsonResult> GetSectionById(Guid Id)
         {
-            var data = await adminService.GetSectionById(Id, token);
-            var list = JsonConvert.DeserializeObject<SectionViewModel>(Convert.ToString(data));
-            return View("AddEditSection", list);
-
+            var data = await adminService.GetSectionById(Id, token); 
+            return Json(data); 
         }
 
         [HttpPost]
@@ -86,10 +86,18 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             return Json(result);
         }
         [HttpPost]
-        public async Task<JsonResult> UpdateSectionData(Guid Id, SectionViewModel model)
+        public async Task<JsonResult> UpdateSectionData(SectionViewModel model)
         {
-            var result = await adminService.UpdateSectionData(Id, new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            var result = await adminService.UpdateSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
             return Json(result);
-        }    
+        }
+        [HttpPost]
+        public async Task<JsonResult> DeleteSectionData(SectionViewModel model)
+        {
+            var result = await adminService.DeleteSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            return Json(result);
+        }
+
+
     }
 }

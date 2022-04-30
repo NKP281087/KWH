@@ -126,10 +126,10 @@ namespace KWH.WebApi.Controllers
 
             if (data == null && data.Count() == 0)
             {
-                return NotFound();
+                return NotFound(new { StatusCode = StatusCodes.Status404NotFound });
             }
             var result = _mapper.Map<IEnumerable<Section>>(data);
-            return Ok(new { StatusCode = HttpStatusCode.OK, result });
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result });
         }
 
         [HttpGet]
@@ -137,7 +137,7 @@ namespace KWH.WebApi.Controllers
         public async Task<IActionResult> GetSectionById(Guid Id)
         {
             var data = await _adminService.GetSectionById(Id);
-            return Ok(new { StatusCode = HttpStatusCode.OK, data });
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result= data });
         }
 
         [HttpPost]
@@ -147,39 +147,62 @@ namespace KWH.WebApi.Controllers
             SectionDtos Dtos = new SectionDtos();
             if (!ModelState.IsValid)
             {
-                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest, Message = "Validation Failed" });
             }
-             
-            Dtos.SectionId = Guid.NewGuid(); 
+
+            Dtos.SectionId = Guid.NewGuid();
             Dtos.SectionName = model.SectionName;
             Dtos.IsActive = true;
 
             var sectionDtos = _mapper.Map<Section>(Dtos);
             var response = await _adminService.SaveSectionData(sectionDtos);
-            if (response == null)
+
+            if (!response)
             {
-                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest });
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Section Name Already Exists Or Data Not Found!" });
             }
-            return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
+            else
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
+            }
+            
         }
         [HttpPost]
         [Route("UpdateSectionData")]
-        public async Task<IActionResult> UpdateSectionData(Guid Id, SectionViewModel model)
+        public async Task<IActionResult> UpdateSectionData(SectionViewModel model)
         {
-            SectionDtos Dtos = new SectionDtos();
+            SectionDtos Dtos = null;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest, Message = "Validation Failed" });
+            }
+            Dtos = new SectionDtos();
+            Dtos.SectionName = model.SectionName;
+            Dtos.IsActive = model.IsActive;
+            Dtos.SectionId = model.SectionId;
+
+            var sectionDtos = _mapper.Map<Section>(Dtos);
+            var response = await _adminService.UpdateSectionData(sectionDtos);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Section Name Already Exists Or Data Not Found!" });
+            }
+            else
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
+            }
+        }
+        [HttpPost]
+        [Route("DeleteSectionData")]
+        public async Task<IActionResult> DeleteSectionData(SectionViewModel model)
+        { 
             if (!ModelState.IsValid)
             {
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
-            }
-            Dtos.SectionName = model.SectionName;
-            Dtos.IsActive = model.IsActive;
-
-            var sectionDtos = _mapper.Map<Section>(Dtos);
-            var response = await _adminService.UpdateSectionData(Id, sectionDtos);
-
-            return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
+            }           
+            var response = await _adminService.DeleteSectionData(model.SectionId);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, response, Message = "Success" });
         }
-
 
     }
 }

@@ -18,6 +18,7 @@ namespace KWH.Presentation.BAL.IRepository
         Task<object> GetAllSectionData(string token);
         Task<object> GetSectionById(Guid Id, string token);
         Task<object> SaveSectionData(RequestViewModel<SectionViewModel> entity);
-        Task<object> UpdateSectionData(Guid Id, RequestViewModel<SectionViewModel> entity);
+        Task<object> UpdateSectionData(RequestViewModel<SectionViewModel> entity);
+        Task<object> DeleteSectionData(RequestViewModel<SectionViewModel> entity);
     }
 }
