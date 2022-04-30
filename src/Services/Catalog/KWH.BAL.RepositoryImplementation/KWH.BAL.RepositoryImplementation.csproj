@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KWH.BAL.IRepository\KWH.BAL.IRepository.csproj" />
+    <ProjectReference Include="..\KWH.Common.ViewModel\KWH.Common.ViewModel.csproj" />
     <ProjectReference Include="..\KWH.DAL\KWH.DAL.csproj" />
   </ItemGroup>
 

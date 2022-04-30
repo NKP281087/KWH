@@ -2,6 +2,7 @@
 using KWH.BAL.IRepository;
 using KWH.Common.Infrastrcture;
 using KWH.Common.ViewModel;
+using KWH.Common.ViewModel.Dtos;
 using KWH.DAL.Entities;
 using KWH.WebApi.Dtos;
 using Microsoft.AspNetCore.Mvc;
@@ -126,7 +127,7 @@ namespace KWH.WebApi.Controllers
 
             if (data == null && data.Count() == 0)
             {
-                return NotFound(new { StatusCode = StatusCodes.Status404NotFound });
+                return NotFound(new { StatusCode = StatusCodes.Status404NotFound, Message = "No Data Found" });
             }
             var result = _mapper.Map<IEnumerable<Section>>(data);
             return Ok(new { StatusCode = StatusCodes.Status200OK, result });
@@ -137,7 +138,7 @@ namespace KWH.WebApi.Controllers
         public async Task<IActionResult> GetSectionById(Guid Id)
         {
             var data = await _adminService.GetSectionById(Id);
-            return Ok(new { StatusCode = StatusCodes.Status200OK, result= data });
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = data });
         }
 
         [HttpPost]
@@ -165,7 +166,7 @@ namespace KWH.WebApi.Controllers
             {
                 return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Success" });
             }
-            
+
         }
         [HttpPost]
         [Route("UpdateSectionData")]
@@ -195,13 +196,61 @@ namespace KWH.WebApi.Controllers
         [HttpPost]
         [Route("DeleteSectionData")]
         public async Task<IActionResult> DeleteSectionData(SectionViewModel model)
-        { 
+        {
             if (!ModelState.IsValid)
             {
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
-            }           
+            }
             var response = await _adminService.DeleteSectionData(model.SectionId);
             return Ok(new { StatusCode = StatusCodes.Status200OK, response, Message = "Success" });
+        }
+        [HttpPost]
+        [Route("SaveClassData")]
+        public async Task<IActionResult> SaveClassData(ClassMasterDtos model)
+        {            
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }             
+            var classDtos = _mapper.Map<ClassMaster>(model);
+            var response = await _adminService.SaveClassData(classDtos);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, response, Message = "Success" });
+        }
+
+
+
+        [HttpGet]
+        [Route("GetAllClassMasterData")]
+        public async Task<IActionResult> GetAllClassMasterData()
+        {
+            var response = await _adminService.GetAllClassMasterData();
+            if (response == null && response.Count() > 0)
+            {
+                return NotFound(new { StatusCode = StatusCodes.Status404NotFound, Message = "No Data Found" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpGet]
+        [Route("GetClassMasterById")]
+        public async Task<IActionResult> GetClassMasterById(Guid Id)
+        {
+            var response = await _adminService.GetClassMasterById(Id);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "No Data Found" });
+        }
+
+        [HttpPost]
+        [Route("UpdateClassData")]
+        public async Task<IActionResult> UpdateClassData(ClassMasterDtos model)
+        {           
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest, Message = "Validation Failed" });
+            }            
+            var classDtos = _mapper.Map<ClassMaster>(model);
+            var response = await _adminService.UpdateClassData(classDtos);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Data Updated Successfully" });
+
         }
 
     }

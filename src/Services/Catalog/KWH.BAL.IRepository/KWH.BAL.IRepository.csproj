@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KWH.Common.ViewModel\KWH.Common.ViewModel.csproj" />
     <ProjectReference Include="..\KWH.DAL\KWH.DAL.csproj" />
   </ItemGroup>
 

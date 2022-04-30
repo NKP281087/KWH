@@ -10,6 +10,7 @@ namespace KWH.WebApi.Profiles
         {
             CreateMap<RFId, RFIdDtos>().ReverseMap();   
             CreateMap<Section, SectionDtos>().ReverseMap();
+          //  CreateMap<ClassMaster, ClassMasterDtos>().ReverseMap(); 
         }
     }
 }

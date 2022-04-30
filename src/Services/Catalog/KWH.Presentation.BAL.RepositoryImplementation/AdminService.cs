@@ -1,5 +1,6 @@
 ﻿using KWH.Common.Infrastrcture;
 using KWH.Common.ViewModel;
+using KWH.Common.ViewModel.Dtos;
 using KWH.Presentation.BAL.IRepository;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,26 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
         {
             httpClient.ApiUrl = "api/Admin/DeleteSectionData";
             return await httpClient.PostWithTokenAsync(model);
+        }
+        public async Task<object> GetAllClassMasterData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetAllClassMasterData";
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> GetClassMasterById(Guid Id, string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetAllClassMasterData/Id" + Id;
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> SaveClassData(RequestViewModel<ClassMasterDtos> model)
+        {
+            httpClient.ApiUrl = "api/Admin/SaveClassData";
+            return await httpClient.PostWithTokenAsync(model);
+        }
+        public async Task<object> UpdateClassData(RequestViewModel<ClassMasterDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/UpdateClassData";
+            return await httpClient.PostWithTokenAsync(entity);
         }
     }
 }

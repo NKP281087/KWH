@@ -1,9 +1,12 @@
-﻿using KWH.BAL.IRepository;
+﻿using AutoMapper;
+using KWH.BAL.IRepository;
+using KWH.Common.ViewModel;
 using KWH.DAL.DataContext;
 using KWH.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +16,12 @@ namespace KWH.BAL.RepositoryImplementation
     public class AdminBALService : IAdminBALService
     {
         private readonly KWHDBContext _context;
+        private readonly IMapper _mapper;
 
-        public AdminBALService(KWHDBContext context)
+        public AdminBALService(KWHDBContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         public async Task<RFId> GetRFById(int id)
         {
@@ -115,7 +120,7 @@ namespace KWH.BAL.RepositoryImplementation
                     OnHold = false
                 };
 
-                var obj = await _context.Section.AddAsync(model);
+                await _context.Section.AddAsync(model);
                 _context.SaveChanges();
                 return true;
             }
@@ -153,6 +158,74 @@ namespace KWH.BAL.RepositoryImplementation
             }
             data.IsActive = false;
             _context.Section.Update(data);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+
+        public async Task<IEnumerable<ClassMasterViewModel>> GetAllClassMasterData()
+        {            
+            var result =  await _context.ClassMaster.Where(x => x.IsActive == true).ToListAsync();
+            var  data = _mapper.Map<IEnumerable<ClassMasterViewModel>>(result);
+            return data;
+        }
+
+        public async Task<ClassMaster> GetClassMasterById(Guid Id)
+        {
+            var data = await _context.ClassMaster.Where(x => x.ClassId == Id).FirstOrDefaultAsync();
+            return data;
+        }
+        public async Task<bool> SaveClassData(ClassMaster entity)
+        {
+
+            var data = await _context.ClassMaster.Where(x =>
+                              x.ClassName.ToUpper().Trim() == entity.ClassName.ToUpper().Trim()
+                              && x.SectionId == entity.SectionId
+                              ).FirstOrDefaultAsync();
+            if (data != null)
+            {
+                return false;
+            }
+
+            ClassMaster _classModel = new ClassMaster()
+            {
+                ClassId = Guid.NewGuid(),
+                SectionId = entity.SectionId,
+                ClassName = entity.ClassName,
+                CreatedDate = DateTime.Now,
+                IsActive = true
+            };
+
+            await _context.ClassMaster.AddAsync(_classModel);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> UpdateClassData(ClassMaster entity)
+        {
+            var data = await _context.ClassMaster.FindAsync(entity.ClassId);
+            if (data == null || data.ClassId != entity.ClassId)
+            {
+                return false;
+            }
+            data.ClassName = entity.ClassName;
+            data.SectionId = entity.SectionId;
+            data.ModifiedDate = DateTime.Now;
+
+            _context.ClassMaster.Update(data);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        public async Task<bool> DeleteClassData(Guid Id)
+        {
+            var data = await _context.ClassMaster.FindAsync(Id);
+            if (data == null || data.ClassId != Id)
+            {
+                return false;
+            }
+            data.IsActive = false;
+            data.IsDeleted = true;
+            _context.ClassMaster.Update(data);
             await _context.SaveChangesAsync();
             return true;
         }

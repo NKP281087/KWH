@@ -1,5 +1,6 @@
 ﻿using KWH.Common.Infrastrcture;
 using KWH.Common.ViewModel;
+using KWH.Common.ViewModel.Dtos;
 using KWH.Presentation.BAL.IRepository;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -98,6 +99,38 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             return Json(result);
         }
 
+        [HttpGet]
+        public ActionResult ClassData()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetAllClassMasterData()
+        {
+            var result = await adminService.GetAllClassMasterData(token);
+            return Json(result);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetClassMasterById(Guid id)
+        {
+            var result = await adminService.GetClassMasterById(id,token);
+            return Json(result);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> SaveClassData(ClassMasterDtos model)
+        {
+            var result = await adminService.SaveClassData(new RequestViewModel<ClassMasterDtos> { Token = token, ModelObject = model });
+            return Json(result);
+        }
+        [HttpPost]
+        public async Task<JsonResult> UpdateClassData(ClassMasterDtos model)
+        {
+            var result = await adminService.UpdateClassData(new RequestViewModel<ClassMasterDtos> { Token = token, ModelObject = model });
+            return Json(result);
+        }
 
     }
 }

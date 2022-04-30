@@ -1,6 +1,6 @@
-﻿@model IEnumerable<KWH.Common.ViewModel.SectionViewModel>
+﻿@model IEnumerable<KWH.Common.ViewModel.ClassMasterViewModel>
 @{
-    ViewData["Title"] = "Section";
+    ViewData["Title"] = "Class";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,12 +19,13 @@
             <table id="datatablesSimple">
                 <thead>
                     <tr>
+                        <th>Class Name</th>
                         <th>Section Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
 
-                <tbody id="tblSection">
+                <tbody id="tblClass">
                   @*  @if (Model != null && Model.Count() > 0)
                     {
                         foreach (var item in Model)
@@ -47,11 +48,11 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="sectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top:156px !important">
+<div class="modal fade" id="classModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top:156px !important">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add New Section</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add New Class</h5>
         <button type="button" class="close" data-dismiss="modal" id="btnClose" aria-label="Close" style="border:none; background:none;">
             <img src="~/Content/images/icons/cross.svg" style="cursor:pointer;">
         </button>
@@ -59,7 +60,7 @@
       <div class="modal-body">
          
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Section:</label>
+            <label for="recipient-name" class="col-form-label">Class:</label>
             <input type="text" id="txtSectionName" maxlength="10" class="form-control">
           </div> 
       </div>
@@ -72,11 +73,11 @@
 </div>
  
 
-<div class="modal fade" id="EditSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top:156px !important">
+<div class="modal fade" id="EditClassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="top:156px !important">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update Section</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Update Class</h5>
         <button type="button" class="close" data-dismiss="modal" id="btnEditClose" aria-label="Close" style="border:none; background:none;">
             <img src="~/Content/images/icons/cross.svg" style="cursor:pointer;">
         </button>
@@ -85,8 +86,8 @@
          
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Section:</label>
-            <input type="text" id="txtEditSectionName" maxlength="10" class="form-control">
-            <input type="hidden" id="hdnSectionId" />
+            <input type="text" id="txtEditClassName" maxlength="10" class="form-control">
+            <input type="hidden" id="hdnClassIdId" />
           </div> 
       </div>
       <div class="modal-footer">

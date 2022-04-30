@@ -1,4 +1,5 @@
-﻿using KWH.DAL.Entities;
+﻿using KWH.Common.ViewModel;
+using KWH.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,11 @@ namespace KWH.BAL.IRepository
         Task<bool> SaveSectionData(Section entity);
         Task<bool> UpdateSectionData(Section entity);
         Task<bool> DeleteSectionData(Guid Id);
+
+        Task<IEnumerable<ClassMasterViewModel>> GetAllClassMasterData();
+        Task<ClassMaster> GetClassMasterById(Guid Id);
+        Task<bool> SaveClassData(ClassMaster entity);
+        Task<bool> UpdateClassData(ClassMaster entity);
+        Task<bool> DeleteClassData(Guid Id);
     }
 }
