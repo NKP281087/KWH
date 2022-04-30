@@ -101,7 +101,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
         [HttpGet]
         public ActionResult ClassData()
-        {
+        {                    
             return View();
         }
 
@@ -129,6 +129,12 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         public async Task<JsonResult> UpdateClassData(ClassMasterDtos model)
         {
             var result = await adminService.UpdateClassData(new RequestViewModel<ClassMasterDtos> { Token = token, ModelObject = model });
+            return Json(result);
+        }
+        [HttpGet]
+        public async Task<JsonResult> GetSectionDropdownData()
+        {
+            var result = await adminService.GetSectionDropdownData(token);
             return Json(result);
         }
 

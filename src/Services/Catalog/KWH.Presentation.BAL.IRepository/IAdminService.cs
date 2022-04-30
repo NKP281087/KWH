@@ -25,6 +25,6 @@ namespace KWH.Presentation.BAL.IRepository
         Task<object> GetClassMasterById(Guid Id, string token);
         Task<object> SaveClassData(RequestViewModel<ClassMasterDtos> entity);
         Task<object> UpdateClassData(RequestViewModel<ClassMasterDtos> entity); 
-         
+        Task<object> GetSectionDropdownData(string token);
     }
 }

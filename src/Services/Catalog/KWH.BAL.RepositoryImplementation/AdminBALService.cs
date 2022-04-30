@@ -164,9 +164,18 @@ namespace KWH.BAL.RepositoryImplementation
 
 
         public async Task<IEnumerable<ClassMasterViewModel>> GetAllClassMasterData()
-        {            
-            var result =  await _context.ClassMaster.Where(x => x.IsActive == true).ToListAsync();
-            var  data = _mapper.Map<IEnumerable<ClassMasterViewModel>>(result);
+        {
+            var result = await (from c in _context.ClassMaster
+                                join s in _context.Section on c.SectionId equals s.SectionId
+                                where c.IsActive == true
+                                select new ClassMasterViewModel
+                                {
+                                    SectionId = c.SectionId,
+                                    ClassName = c.ClassName,
+                                    SectionName = s.SectionName
+                                }).ToListAsync();
+
+            var data = _mapper.Map<IEnumerable<ClassMasterViewModel>>(result);
             return data;
         }
 
@@ -228,6 +237,18 @@ namespace KWH.BAL.RepositoryImplementation
             _context.ClassMaster.Update(data);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<IEnumerable<DropdownBindingViewModel>> GetSectionDropdownData()
+        {
+            var data = await (from s in _context.Section
+                              where s.IsActive == true
+                              select new DropdownBindingViewModel
+                              {
+                                  text = s.SectionName,
+                                  value = s.SectionId
+                              }).ToListAsync();
+            return data;
         }
 
     }

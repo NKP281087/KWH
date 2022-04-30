@@ -1,21 +1,37 @@
 ﻿$(document).ready(function () {
 
     GetAllData();
+    BindSectionDropdown();
     $(document).on("click", "#btnSubmit", function () {
         SubmitClassData();
     });
 
-})
+    $(document).on("click", "#btnAdd", function () {
+        $("#txtClassName").val("");
+        $('#classModal').modal('show');
 
+    });
+    $(document).on("click", "#btnClose", function () {
+        $("#txtClassName").val("");
+        $('#classModal').modal('hide');
+    });
+   
+})
+ 
 function SubmitClassData() {
     if ($("#txtClassName").val() == "") {
         $("#txtClassName").focus()
         return false;
     }
+    if ($("#ddlSection").val() == "0") {
+        $("#ddlSection").focus()
+        alert("Please Select Section");
+        return false;
+    }
 
     var data = {
         ClassName: $("#txtClassName").val(),
-        SectionId: "3FA85F64-5717-4562-B3FC-2C963F66AFA6"
+        SectionId: $("#ddlSection").val()
     }
 
     $.ajax({
@@ -26,8 +42,9 @@ function SubmitClassData() {
         dataType: "json",
         success: function (result) {
             var response = JSON.parse(result);
-            if (response.statusCode == 200 && && response.message == "Success") {
+            if (response.statusCode == 200 && response.message == "Success") {
                 alert("Data Added Successfully!");
+                $('#classModal').modal('hide');
                 GetAllData();
             }
             else {
@@ -42,6 +59,7 @@ function SubmitClassData() {
 
 function GetAllData()
 {
+    $("#tblClass").empty();
     $.ajax({
         type: "GET",
         url: baseurl + "/Admin/GetAllClassMasterData",
@@ -71,6 +89,24 @@ function GetAllData()
             else {
                 alert("No Record Found");
             }
+        }, error: function (result) {
+            alert("Something went wrong");
+        }
+    });
+}
+
+
+function BindSectionDropdown() {
+    $.ajax({
+        type: "GET",
+        url: baseurl + "/Admin/GetSectionDropdownData",
+        dataType: "json",
+        success: function (result) {
+            var response = JSON.parse(result);
+            if (response.statusCode == 200 && response.result.length > 0) {
+                bindDropDown("ddlSection", response.result, "--Select--")
+            }
+            
         }, error: function (result) {
             alert("Something went wrong");
         }

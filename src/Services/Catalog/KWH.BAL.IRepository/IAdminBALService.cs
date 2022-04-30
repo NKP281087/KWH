@@ -26,5 +26,7 @@ namespace KWH.BAL.IRepository
         Task<bool> SaveClassData(ClassMaster entity);
         Task<bool> UpdateClassData(ClassMaster entity);
         Task<bool> DeleteClassData(Guid Id);
+        Task<IEnumerable<DropdownBindingViewModel>> GetSectionDropdownData();    
+
     }
 }

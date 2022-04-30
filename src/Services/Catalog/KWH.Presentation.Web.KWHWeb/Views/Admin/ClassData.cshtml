@@ -5,12 +5,12 @@
 }
 
  
-<script src="~/js/KWHApp/Admin/section.js"></script>
+<script src="~/js/KWHApp/Admin/classMaster.js"></script>
 <div class="container-fluid px-4">
     <div class="card mb-4" style="margin-top:10px">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Section Data
+            Class Data
             <div style="float:right !important">
                   <img src="~/Content/images/icons/add.svg" id="btnAdd" style="cursor:pointer;">
              </div>
@@ -25,24 +25,7 @@
                     </tr>
                 </thead>
 
-                <tbody id="tblClass">
-                  @*  @if (Model != null && Model.Count() > 0)
-                    {
-                        foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.SectionName</td>
-                                <td>
-                                    <a asp-action="GetSectionById" asp-route-id="@item.SectionId">
-                                        <img src="~/Content/images/icons/admin-edit.svg">
-                                    </a>
-                                    <a asp-action="GetSectionById" asp-route-id="@item.SectionId">
-                                        <img src="~/Content/images/icons/delete.svg">
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-                    }*@
+                <tbody id="tblClass"> 
                 </tbody>
             </table>
         </div>
@@ -60,8 +43,14 @@
       <div class="modal-body">
          
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Class:</label>
-            <input type="text" id="txtSectionName" maxlength="10" class="form-control">
+            <label for="recipient-name" class="col-form-label">Class Name:</label>
+            <input type="text" id="txtClassName" maxlength="20" class="form-control">
+          </div> 
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Select Section:</label>
+            <select id="ddlSection" class="form-control">
+                <option value="0">--Select--</option>
+            </select> 
           </div> 
       </div>
       <div class="modal-footer">

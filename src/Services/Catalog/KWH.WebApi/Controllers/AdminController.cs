@@ -252,6 +252,13 @@ namespace KWH.WebApi.Controllers
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Data Updated Successfully" });
 
         }
+        [HttpGet]
+        [Route("GetSectionDropdownData")]
+        public async Task<IActionResult> GetSectionDropdownData()
+        {
+            var response = await _adminService.GetSectionDropdownData();
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
 
     }
 }

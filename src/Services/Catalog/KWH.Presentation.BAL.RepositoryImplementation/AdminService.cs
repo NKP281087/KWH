@@ -85,5 +85,10 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/UpdateClassData";
             return await httpClient.PostWithTokenAsync(entity);
         }
+        public async Task<object> GetSectionDropdownData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetSectionDropdownData";
+            return await httpClient.GetWithTokenAsync(token);
+        }
     }
 }
