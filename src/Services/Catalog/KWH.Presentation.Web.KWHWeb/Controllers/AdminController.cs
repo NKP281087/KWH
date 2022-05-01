@@ -141,5 +141,45 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var result = await adminService.DeleteClassData(new RequestViewModel<ClassMasterDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
+
+        [HttpGet]
+        public async Task<JsonResult> GetAllCategoryData()
+        {
+            var result = await adminService.GetAllCategoryData(token);
+            return Json(result);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetCategoryById(Guid Id)
+        {
+            var result = await adminService.GetCategoryById(Id,token);
+            return Json(result);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> SubmitCategoryData(CategoryDtos model)
+        {
+            var result = await adminService.SubmitCategoryData(new RequestViewModel<CategoryDtos> { Token=token, ModelObject = model });    
+            return Json(result);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> UpdateCategoryData(CategoryDtos model)
+        {
+            var result = await adminService.UpdateCategoryData(new RequestViewModel<CategoryDtos> { Token=token, ModelObject = model });
+            return Json(result);
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> DeleteCategoryData(CategoryDtos model)
+        {
+            var result = await adminService.DeleteCategoryData(new RequestViewModel<CategoryDtos> { Token=token, ModelObject = model });
+            return Json(result);
+        }
+        [HttpGet]
+        public ActionResult CategoryData()
+        {
+            return View();
+        }
     }
 }

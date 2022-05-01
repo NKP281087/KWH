@@ -138,7 +138,11 @@ namespace KWH.BAL.RepositoryImplementation
             {
                 return false;
             }
-            else if (data.SectionName.ToUpper().Trim() == entity.SectionName.ToUpper().Trim())
+            var checkAlready = await _context.Section.Where(x =>
+                                                                 x.IsActive == true && x.SectionId != entity.SectionId &&
+                                                                 x.SectionName.ToUpper().Trim() == entity.SectionName.ToUpper().Trim()
+                                                            ).ToListAsync();
+            if (checkAlready != null)
             {
                 return false;
             }
@@ -157,6 +161,8 @@ namespace KWH.BAL.RepositoryImplementation
                 return false;
             }
             data.IsActive = false;
+            data.IsDeleted = true;
+            data.ModifiedDate = DateTime.Now;
             _context.Section.Update(data);
             await _context.SaveChangesAsync();
             return true;
@@ -233,6 +239,7 @@ namespace KWH.BAL.RepositoryImplementation
             }
             data.IsActive = false;
             data.IsDeleted = true;
+            data.ModifiedDate = DateTime.Now;
             _context.ClassMaster.Update(data);
             await _context.SaveChangesAsync();
             return true;
@@ -248,6 +255,80 @@ namespace KWH.BAL.RepositoryImplementation
                                   value = s.SectionId
                               }).ToListAsync();
             return data;
+        }
+
+        public async Task<IEnumerable<Category>> GetAllCategoryData()
+        {
+            var data = await _context.Category.Where(c => c.IsActive == true).ToListAsync();
+            return data;
+        }
+
+        public async Task<Category> GetCategoryById(Guid Id)
+        {
+            var data = await _context.Category.Where(x => x.CategoryId == Id).FirstOrDefaultAsync();
+            return data;
+        }
+        public async Task<bool> SubmitCategoryData(Category entity)
+        {
+            try
+            {
+                var data = await _context.Category.Where(x => x.CategoryName.ToUpper().Trim() == entity.CategoryName.ToUpper().Trim()).FirstOrDefaultAsync();
+                if (data != null)
+                {
+                    return false;
+                }
+                Category category = new Category()
+                {
+                    CategoryId = new Guid(),
+                    CategoryName = entity.CategoryName,
+                    DateCreated = DateTime.Now,
+                };
+                await _context.AddAsync(category);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                var dd = ex;
+                throw;
+            }
+        }
+        public async Task<bool> UpdateCategoryData(Category entity)
+        {
+            var data = await _context.Category.FindAsync(entity.CategoryId);
+            if (data == null || data.CategoryId != entity.CategoryId)
+            {
+                return false;
+            }
+            var checkAlready = await _context.Category.Where(x => 
+                                                                 x.IsActive == true && x.CategoryId != entity.CategoryId && 
+                                                                 x.CategoryName.ToUpper().Trim() == entity.CategoryName.ToUpper().Trim()
+                                                            ).ToListAsync(); 
+            if(checkAlready != null && checkAlready.Count()>0)
+            {
+                return false;
+            }
+
+            data.CategoryName = entity.CategoryName;
+            data.DateModified = DateTime.Now;
+            _context.Update(data);
+            await _context.SaveChangesAsync();
+            return true;
+
+        }
+        public async Task<bool> DeleteCategoryData(Guid Id)
+        {
+            var data = await _context.Category.FindAsync(Id);
+            if (data == null || data.CategoryId != Id)
+            {
+                return false;
+            }
+            data.IsActive = false;
+            data.IsDeleted = true;
+            data.DateModified = DateTime.Now;
+            _context.Update(data);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
     }

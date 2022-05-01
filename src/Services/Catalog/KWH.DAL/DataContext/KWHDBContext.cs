@@ -17,6 +17,7 @@ namespace KWH.DAL.DataContext
         public DbSet<RFId> RFId { get; set; }
         public DbSet<Section> Section { get; set; }
         public DbSet<ClassMaster> ClassMaster { get; set; }
+        public DbSet<Category> Category { get; set; }   
 
     }
 }

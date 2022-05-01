@@ -214,6 +214,10 @@ namespace KWH.WebApi.Controllers
             }             
             var classDtos = _mapper.Map<ClassMaster>(model);
             var response = await _adminService.SaveClassData(classDtos);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Already Exists Or Data Not Found!" });
+            }
             return Ok(new { StatusCode = StatusCodes.Status200OK, response, Message = "Success" });
         }
 
@@ -269,5 +273,71 @@ namespace KWH.WebApi.Controllers
             var response = await _adminService.DeleteClassData(model.ClassId);
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
         }
+
+        [HttpGet]
+        [Route("GetAllCategoryData")]
+        public async Task<IActionResult> GetAllCategoryData()
+        {
+            var response = await _adminService.GetAllCategoryData();
+            if (response == null && response.Count() > 0)
+            {
+                return NotFound(new { StatusCode = StatusCodes.Status404NotFound, Message = "No Data Found" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpGet]
+        [Route("GetCategoryById/{Id}")]
+        public async Task<IActionResult> GetCategoryById(Guid Id)
+        {
+            var response = await _adminService.GetCategoryById(Id);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpPost]
+        [Route("SubmitCategoryData")]
+        public async Task<IActionResult> SubmitCategoryData(Category model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            var categoryDtos = _mapper.Map<Category>(model);
+            var response = await _adminService.SubmitCategoryData(categoryDtos);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Already Exists Or Data Not Found!" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpPost]
+        [Route("UpdateCategoryData")]
+        public async Task<IActionResult> UpdateCategoryData(Category model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            var categoryDtos = _mapper.Map<Category>(model);
+            var response = await _adminService.UpdateCategoryData(categoryDtos);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Already Exists Or Data Not Found!" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpPost]
+        [Route("DeleteCategoryData")]
+        public async Task<IActionResult> DeleteCategoryData(Category model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            var response = await _adminService.DeleteCategoryData(model.CategoryId);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        } 
     }
 }

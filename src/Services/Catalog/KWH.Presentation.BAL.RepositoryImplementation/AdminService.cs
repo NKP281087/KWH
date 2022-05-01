@@ -95,5 +95,33 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/DeleteClassData";
             return await httpClient.PostWithTokenAsync(entity);
         }
+
+        public async Task<object> GetAllCategoryData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetAllCategoryData";
+            return await httpClient.GetWithTokenAsync(token);
+        }
+
+        public async Task<object> GetCategoryById(Guid Id, string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetCategoryById/" + Id;
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> SubmitCategoryData(RequestViewModel<CategoryDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/SubmitCategoryData";
+            return await httpClient.PostWithTokenAsync(entity);
+        }
+        public async Task<object> UpdateCategoryData(RequestViewModel<CategoryDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/UpdateCategoryData";
+            return await httpClient.PostWithTokenAsync(entity);
+        }
+        public async Task<object> DeleteCategoryData(RequestViewModel<CategoryDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/DeleteCategoryData";
+            return await httpClient.PostWithTokenAsync(entity);
+        }
+
     }
 }
