@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace KWH.Common.ViewModel.Dtos
 {
-    public class ClassMasterDtos
+    public class SectionDtos
     {
-        public int ClassId { get; set; }
         public int SectionId { get; set; }
-        public string ClassName { get; set; } = string.Empty;
+        public string SectionName { get; set; } = string.Empty;
+        public bool IsActive { get; set; } = true;
     }
 }

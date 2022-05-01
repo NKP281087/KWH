@@ -13,8 +13,12 @@ namespace KWH.Common.ViewModel.Profiles
     {
         public CommandsProfile()
         {
+            CreateMap<RFId, RFIdDtos>().ReverseMap();
+            CreateMap<Section, SectionDtos>().ReverseMap();
             CreateMap<ClassMaster, ClassMasterDtos>().ReverseMap();
             CreateMap<ClassMaster, ClassMasterViewModel>().ReverseMap();
+            CreateMap<CandidateInfo, CandidateInfoDtos>().ReverseMap();
+                                     
         }
     }
 }

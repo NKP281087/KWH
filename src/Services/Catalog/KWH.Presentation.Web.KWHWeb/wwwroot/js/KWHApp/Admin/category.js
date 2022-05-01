@@ -43,7 +43,7 @@ $(document).ready(function () {
         var data =
         {
             CategoryName: $("#txtEditCategoryName").val(),
-            CategoryId: String($("#hdnCategoryId").val()),
+            CategoryId: $("#hdnCategoryId").val(),
         }
 
         $.ajax({
@@ -130,7 +130,7 @@ function BindCategoryData() {
 }
 function DeleteCategory(Id) {
     var data = {
-        CategoryId: String(Id)
+        CategoryId: Id
     }
 
     $.ajax({
@@ -156,7 +156,7 @@ function GetCategoryDataById(Id) {
     $.ajax({
         type: "GET",
         url: baseurl + "/Admin/GetCategoryById",
-        data: { Id: String(Id) },
+        data: { Id: Id },
         dataType: "json",
         success: function (result) {
             var response = JSON.parse(result);

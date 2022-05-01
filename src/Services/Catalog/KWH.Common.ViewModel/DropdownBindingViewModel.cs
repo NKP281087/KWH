@@ -9,6 +9,6 @@ namespace KWH.Common.ViewModel
     public class DropdownBindingViewModel
     {
         public string text { get; set; }
-        public Guid value { get; set; }
+        public int value { get; set; }
     }
 }

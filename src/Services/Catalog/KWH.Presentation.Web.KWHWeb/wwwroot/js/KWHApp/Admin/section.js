@@ -45,7 +45,7 @@ $(document).ready(function () {
         var data =
         {
             SectionName: $("#txtEditSectionName").val(),
-            SectionId: String($("#hdnSectionId").val()),
+            SectionId: $("#hdnSectionId").val(),
         }
 
         $.ajax({
@@ -133,7 +133,7 @@ function BindSectionData() {
 }
 function DeleteSection(Id) {
     var data = {
-        SectionId: String(Id)
+        SectionId: Id
     }    
 
     $.ajax({
@@ -159,7 +159,7 @@ function GetSectionDataById(Id) {
     $.ajax({
         type: "GET",
         url: baseurl + "/Admin/GetSectionById",
-        data: { Id: String(Id) },
+        data: { Id: Id },
         dataType: "json",
         success: function (result) {
             var response = JSON.parse(result);

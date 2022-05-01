@@ -11,12 +11,8 @@ namespace KWH.DAL.Entities
     [Table("Section")]
     public class Section
     {
-        [Key] 
-        [Required]
-        public Guid SectionId { get; set; }    
-
-        [Required (ErrorMessage ="Please Enter Section Name")]
-        [StringLength(100, ErrorMessage = "Name can't be longer than 100 characters")]
+        [Key]  
+        public int SectionId { get; set; }      
         public string SectionName { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;

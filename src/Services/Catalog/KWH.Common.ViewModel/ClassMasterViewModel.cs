@@ -8,8 +8,8 @@ namespace KWH.Common.ViewModel
 {
     public class ClassMasterViewModel
     {
-        public Guid ClassId { get; set; }
-        public Guid SectionId { get; set; }
+        public int ClassId { get; set; }
+        public int SectionId { get; set; }
         public string ClassName { get; set; } = string.Empty;
         public string SectionName { get; set; } = string.Empty;
     }

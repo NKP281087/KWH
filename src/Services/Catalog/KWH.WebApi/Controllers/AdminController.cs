@@ -3,8 +3,7 @@ using KWH.BAL.IRepository;
 using KWH.Common.Infrastrcture;
 using KWH.Common.ViewModel;
 using KWH.Common.ViewModel.Dtos;
-using KWH.DAL.Entities;
-using KWH.WebApi.Dtos;
+using KWH.DAL.Entities; 
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -63,19 +62,15 @@ namespace KWH.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> SubmitRFData(RFIdViewModel model)
-        {
-            RFIdDtos dtos = new RFIdDtos();
+        public async Task<IActionResult> SubmitRFData(RFIdDtos model)
+        {    
 
             if (!ModelState.IsValid)
             {
                 return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest });
-            }
+            }             
 
-            dtos.TimeIn = model.TimeIn;
-            dtos.TimeOut = model.TimeOut;
-
-            var RFFormModel = _mapper.Map<RFId>(dtos);
+            var RFFormModel = _mapper.Map<RFId>(model);
             var response = await _adminService.SubmitRFData(RFFormModel);
             if (response == null)
             {
@@ -135,7 +130,7 @@ namespace KWH.WebApi.Controllers
 
         [HttpGet]
         [Route("GetSectionById/{Id}")]
-        public async Task<IActionResult> GetSectionById(Guid Id)
+        public async Task<IActionResult> GetSectionById(int Id)
         {
             var data = await _adminService.GetSectionById(Id);
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = data });
@@ -143,19 +138,14 @@ namespace KWH.WebApi.Controllers
 
         [HttpPost]
         [Route("SaveSectionData")]
-        public async Task<IActionResult> SaveSectionData(SectionViewModel model)
+        public async Task<IActionResult> SaveSectionData(SectionDtos model)
         {
-            SectionDtos Dtos = new SectionDtos();
+             
             if (!ModelState.IsValid)
             {
                 return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest, Message = "Validation Failed" });
-            }
-
-            Dtos.SectionId = Guid.NewGuid();
-            Dtos.SectionName = model.SectionName;
-            Dtos.IsActive = true;
-
-            var sectionDtos = _mapper.Map<Section>(Dtos);
+            } 
+            var sectionDtos = _mapper.Map<Section>(model);
             var response = await _adminService.SaveSectionData(sectionDtos);
 
             if (!response)
@@ -170,19 +160,15 @@ namespace KWH.WebApi.Controllers
         }
         [HttpPost]
         [Route("UpdateSectionData")]
-        public async Task<IActionResult> UpdateSectionData(SectionViewModel model)
+        public async Task<IActionResult> UpdateSectionData(SectionDtos model)
         {
-            SectionDtos Dtos = null;
+            
             if (!ModelState.IsValid)
             {
                 return BadRequest(new { StatusCode = StatusCodes.Status400BadRequest, Message = "Validation Failed" });
             }
-            Dtos = new SectionDtos();
-            Dtos.SectionName = model.SectionName;
-            Dtos.IsActive = model.IsActive;
-            Dtos.SectionId = model.SectionId;
-
-            var sectionDtos = _mapper.Map<Section>(Dtos);
+            
+            var sectionDtos = _mapper.Map<Section>(model);
             var response = await _adminService.UpdateSectionData(sectionDtos);
             if (!response)
             {
@@ -195,7 +181,7 @@ namespace KWH.WebApi.Controllers
         }
         [HttpPost]
         [Route("DeleteSectionData")]
-        public async Task<IActionResult> DeleteSectionData(SectionViewModel model)
+        public async Task<IActionResult> DeleteSectionData(SectionDtos model)
         {
             if (!ModelState.IsValid)
             {
@@ -235,7 +221,7 @@ namespace KWH.WebApi.Controllers
 
         [HttpGet]
         [Route("GetClassMasterById/{Id}")]
-        public async Task<IActionResult> GetClassMasterById(Guid Id)
+        public async Task<IActionResult> GetClassMasterById(int Id)
         {
             var response = await _adminService.GetClassMasterById(Id);
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "No Data Found" });
@@ -288,7 +274,7 @@ namespace KWH.WebApi.Controllers
 
         [HttpGet]
         [Route("GetCategoryById/{Id}")]
-        public async Task<IActionResult> GetCategoryById(Guid Id)
+        public async Task<IActionResult> GetCategoryById(int Id)
         {
             var response = await _adminService.GetCategoryById(Id);
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });

@@ -29,12 +29,12 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/GetRFById/" + Id;
             return await httpClient.GetWithTokenAsync(token);
         }
-        public async Task<object> SubmitRFData(RequestViewModel<RFIdViewModel> model)
+        public async Task<object> SubmitRFData(RequestViewModel<RFIdDtos> model)
         {
             httpClient.ApiUrl = "api/Admin/SubmitRFData";
             return await httpClient.PostWithToken(model);
         }
-        public async Task<object> UpdateRFData(int Id, RequestViewModel<RFIdViewModel> model)
+        public async Task<object> UpdateRFData(int Id, RequestViewModel<RFIdDtos> model)
         {
             httpClient.ApiUrl = "api/Admin/UpdateRFData";
             return await httpClient.PostWithTokenAsync(model);
@@ -45,22 +45,22 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/GetAllSectionData";
             return await httpClient.GetWithTokenAsync(token);
         }
-        public async Task<object> GetSectionById(Guid Id, string token)
+        public async Task<object> GetSectionById(int Id, string token)
         {
             httpClient.ApiUrl = "api/Admin/GetSectionById/" + Id;
             return await httpClient.GetWithTokenAsync(token);
         }
-        public async Task<object> SaveSectionData(RequestViewModel<SectionViewModel> model)
+        public async Task<object> SaveSectionData(RequestViewModel<SectionDtos> model)
         {
             httpClient.ApiUrl = "api/Admin/SaveSectionData";
             return await httpClient.PostWithTokenAsync(model);
         }
-        public async Task<object> UpdateSectionData(RequestViewModel<SectionViewModel> model)
+        public async Task<object> UpdateSectionData(RequestViewModel<SectionDtos> model)
         {
             httpClient.ApiUrl = "api/Admin/UpdateSectionData";
             return await httpClient.PostWithTokenAsync(model);
         }
-        public async Task<object> DeleteSectionData(RequestViewModel<SectionViewModel> model)
+        public async Task<object> DeleteSectionData(RequestViewModel<SectionDtos> model)
         {
             httpClient.ApiUrl = "api/Admin/DeleteSectionData";
             return await httpClient.PostWithTokenAsync(model);
@@ -70,7 +70,7 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             httpClient.ApiUrl = "api/Admin/GetAllClassMasterData";
             return await httpClient.GetWithTokenAsync(token);
         }
-        public async Task<object> GetClassMasterById(Guid Id, string token)
+        public async Task<object> GetClassMasterById(int Id, string token)
         {
             httpClient.ApiUrl = "api/Admin/GetClassMasterById/" + Id;
             return await httpClient.GetWithTokenAsync(token);
@@ -102,7 +102,7 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             return await httpClient.GetWithTokenAsync(token);
         }
 
-        public async Task<object> GetCategoryById(Guid Id, string token)
+        public async Task<object> GetCategoryById(int Id, string token)
         {
             httpClient.ApiUrl = "api/Admin/GetCategoryById/" + Id;
             return await httpClient.GetWithTokenAsync(token);

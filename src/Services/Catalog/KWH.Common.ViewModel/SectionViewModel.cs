@@ -8,7 +8,7 @@ namespace KWH.Common.ViewModel
 {
     public class SectionViewModel
     {     
-        public Guid SectionId { get; set; } 
+        public int SectionId { get; set; } 
         public string SectionName { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true; 
     }

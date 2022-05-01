@@ -10,8 +10,8 @@ namespace KWH.DAL.Entities
     public class ClassMaster
     {
         [Key]
-        public Guid ClassId { get; set; }
-        public Guid SectionId { get; set; }
+        public int ClassId { get; set; }
+        public int SectionId { get; set; }
         public string ClassName { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; }=false;

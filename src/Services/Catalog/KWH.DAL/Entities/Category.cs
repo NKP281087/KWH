@@ -10,7 +10,7 @@ namespace KWH.DAL.Entities
     public class Category
     {
         [Key]
-        public Guid CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; } = string.Empty;    
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;

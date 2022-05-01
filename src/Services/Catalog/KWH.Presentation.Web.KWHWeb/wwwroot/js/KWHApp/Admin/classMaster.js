@@ -88,7 +88,7 @@ function UpdateClassData() {
     }
     var data =
     {
-        ClassId: String($("#hdnClassId").val()),
+        ClassId: $("#hdnClassId").val(),
         ClassName: $("#txtEditClassName").val(),
         SectionId: $("#ddlEditSection").val(),
     }
@@ -118,7 +118,7 @@ function UpdateClassData() {
 function DeleteClassDataById(Id) {
     var data =
     {
-        ClassId: String(Id)
+        ClassId: Id
     } 
 
     $.ajax({
@@ -198,7 +198,7 @@ function EditClassMasterData(Id) {
     $.ajax({
         type: "GET",
         url: baseurl + "/Admin/GetClassMasterById",
-        data: { Id: String(Id) },
+        data: { Id: Id },
         dataType: "json",
         success: function (result) {
             var response = JSON.parse(result);

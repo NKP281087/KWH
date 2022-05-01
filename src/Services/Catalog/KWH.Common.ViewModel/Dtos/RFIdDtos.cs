@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace KWH.Common.ViewModel.Dtos
 {
-    public class CategoryDtos
+    public class RFIdDtos
     {
-        public int CategoryId { get; set; }
-        public string CategoryName { get; set; } = string.Empty;
+        public string TimeIn { get; set; }
+        public string TimeOut { get; set; }
     }
 }

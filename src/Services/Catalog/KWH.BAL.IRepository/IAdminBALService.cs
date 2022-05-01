@@ -16,24 +16,28 @@ namespace KWH.BAL.IRepository
         Task<bool> UpdateRFData(int Id, RFId entity);
 
         Task<IEnumerable<Section>> GetAllSectionData();
-        Task<Section> GetSectionById(Guid Id);
+        Task<Section> GetSectionById(int Id);
         Task<bool> SaveSectionData(Section entity);
         Task<bool> UpdateSectionData(Section entity);
-        Task<bool> DeleteSectionData(Guid Id);
+        Task<bool> DeleteSectionData(int Id);
 
         Task<IEnumerable<ClassMasterViewModel>> GetAllClassMasterData();
-        Task<ClassMaster> GetClassMasterById(Guid Id);
+        Task<ClassMaster> GetClassMasterById(int Id);
         Task<bool> SaveClassData(ClassMaster entity);
         Task<bool> UpdateClassData(ClassMaster entity);
-        Task<bool> DeleteClassData(Guid Id);
+        Task<bool> DeleteClassData(int Id);
         Task<IEnumerable<DropdownBindingViewModel>> GetSectionDropdownData();
 
         Task<IEnumerable<Category>> GetAllCategoryData();
-        Task<Category> GetCategoryById(Guid Id);
+        Task<Category> GetCategoryById(int Id);
         Task<bool> SubmitCategoryData(Category entity);
         Task<bool> UpdateCategoryData(Category entity);
-        Task<bool> DeleteCategoryData(Guid Id);
+        Task<bool> DeleteCategoryData(int Id);
 
-
+        Task<IEnumerable<CandidateInfo>> GetAllCandidateInfoData();
+        Task<CandidateInfo> GetCandidateById(int Id);
+        Task<bool> SubmitCandidateData(CandidateInfo entity);
+        //Task<bool> UpdateCandidateData(CandidateInfo entity);
+        //Task<bool> DeleteCandidateData(int Id);
     }
 }

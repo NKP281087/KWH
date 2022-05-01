@@ -35,21 +35,21 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         public async Task<IActionResult> GetRFById(int id)
         {
             var data = await adminService.GetRFById(id, token);
-            var list = JsonConvert.DeserializeObject<RFIdViewModel>(Convert.ToString(data));
+            var list = JsonConvert.DeserializeObject<RFIdDtos>(Convert.ToString(data));
             return View("AddEditRF", list);
         }
 
         [HttpPost]
-        public async Task<JsonResult> UpdateRFData(int Id, RFIdViewModel model)
+        public async Task<JsonResult> UpdateRFData(int Id, RFIdDtos model)
         {
-            var result = await adminService.UpdateRFData(Id, new RequestViewModel<RFIdViewModel> { Token = token, ModelObject = model });
+            var result = await adminService.UpdateRFData(Id, new RequestViewModel<RFIdDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
 
         [HttpPost]
-        public async Task<JsonResult> SubmitRFData(RFIdViewModel model)
+        public async Task<JsonResult> SubmitRFData(RFIdDtos model)
         {
-            var result = await adminService.SubmitRFData(new RequestViewModel<RFIdViewModel> { Token = token, ModelObject = model });
+            var result = await adminService.SubmitRFData(new RequestViewModel<RFIdDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
 
@@ -72,28 +72,28 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             return Json(data);
         }
         [HttpGet]
-        public async Task<JsonResult> GetSectionById(Guid Id)
+        public async Task<JsonResult> GetSectionById(int Id)
         {
             var data = await adminService.GetSectionById(Id, token); 
             return Json(data); 
         }
 
         [HttpPost]
-        public async Task<JsonResult> SaveSectionData(SectionViewModel model)
+        public async Task<JsonResult> SaveSectionData(SectionDtos model)
         { 
-            var result = await adminService.SaveSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            var result = await adminService.SaveSectionData(new RequestViewModel<SectionDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
         [HttpPost]
-        public async Task<JsonResult> UpdateSectionData(SectionViewModel model)
+        public async Task<JsonResult> UpdateSectionData(SectionDtos model)
         {
-            var result = await adminService.UpdateSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            var result = await adminService.UpdateSectionData(new RequestViewModel<SectionDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
         [HttpPost]
-        public async Task<JsonResult> DeleteSectionData(SectionViewModel model)
+        public async Task<JsonResult> DeleteSectionData(SectionDtos model)
         {
-            var result = await adminService.DeleteSectionData(new RequestViewModel<SectionViewModel> { Token = token, ModelObject = model });
+            var result = await adminService.DeleteSectionData(new RequestViewModel<SectionDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
 
@@ -111,7 +111,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<JsonResult> GetClassMasterById(Guid id)
+        public async Task<JsonResult> GetClassMasterById(int id)
         {
             var result = await adminService.GetClassMasterById(id,token);
             return Json(result);
@@ -150,7 +150,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         }
 
         [HttpGet]
-        public async Task<JsonResult> GetCategoryById(Guid Id)
+        public async Task<JsonResult> GetCategoryById(int Id)
         {
             var result = await adminService.GetCategoryById(Id,token);
             return Json(result);

@@ -92,7 +92,7 @@ namespace KWH.BAL.RepositoryImplementation
             //}
             return data;
         }
-        public async Task<Section> GetSectionById(Guid SectionId)
+        public async Task<Section> GetSectionById(int SectionId)
         {
             var data = await _context.Section.Where(x => x.SectionId == SectionId).FirstOrDefaultAsync();
             if (data != null)
@@ -112,7 +112,6 @@ namespace KWH.BAL.RepositoryImplementation
                 }
                 Section model = new Section
                 {
-                    SectionId = entity.SectionId,
                     SectionName = entity.SectionName,
                     IsActive = true,
                     CreatedOn = DateTime.Now,
@@ -153,7 +152,7 @@ namespace KWH.BAL.RepositoryImplementation
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<bool> DeleteSectionData(Guid Id)
+        public async Task<bool> DeleteSectionData(int Id)
         {
             var data = await _context.Section.FindAsync(Id);
             if (data == null || data.SectionId != Id)
@@ -184,7 +183,7 @@ namespace KWH.BAL.RepositoryImplementation
             return data;
         }
 
-        public async Task<ClassMaster> GetClassMasterById(Guid Id)
+        public async Task<ClassMaster> GetClassMasterById(int Id)
         {
             var data = await _context.ClassMaster.Where(x => x.ClassId == Id).FirstOrDefaultAsync();
             return data;
@@ -203,7 +202,6 @@ namespace KWH.BAL.RepositoryImplementation
 
             ClassMaster _classModel = new ClassMaster()
             {
-                ClassId = Guid.NewGuid(),
                 SectionId = entity.SectionId,
                 ClassName = entity.ClassName,
                 CreatedDate = DateTime.Now,
@@ -230,7 +228,7 @@ namespace KWH.BAL.RepositoryImplementation
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<bool> DeleteClassData(Guid Id)
+        public async Task<bool> DeleteClassData(int Id)
         {
             var data = await _context.ClassMaster.FindAsync(Id);
             if (data == null || data.ClassId != Id)
@@ -263,7 +261,7 @@ namespace KWH.BAL.RepositoryImplementation
             return data;
         }
 
-        public async Task<Category> GetCategoryById(Guid Id)
+        public async Task<Category> GetCategoryById(int Id)
         {
             var data = await _context.Category.Where(x => x.CategoryId == Id).FirstOrDefaultAsync();
             return data;
@@ -279,7 +277,6 @@ namespace KWH.BAL.RepositoryImplementation
                 }
                 Category category = new Category()
                 {
-                    CategoryId = new Guid(),
                     CategoryName = entity.CategoryName,
                     DateCreated = DateTime.Now,
                 };
@@ -287,7 +284,7 @@ namespace KWH.BAL.RepositoryImplementation
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var dd = ex;
                 throw;
@@ -300,11 +297,11 @@ namespace KWH.BAL.RepositoryImplementation
             {
                 return false;
             }
-            var checkAlready = await _context.Category.Where(x => 
-                                                                 x.IsActive == true && x.CategoryId != entity.CategoryId && 
+            var checkAlready = await _context.Category.Where(x =>
+                                                                 x.IsActive == true && x.CategoryId != entity.CategoryId &&
                                                                  x.CategoryName.ToUpper().Trim() == entity.CategoryName.ToUpper().Trim()
-                                                            ).ToListAsync(); 
-            if(checkAlready != null && checkAlready.Count()>0)
+                                                            ).ToListAsync();
+            if (checkAlready != null && checkAlready.Count() > 0)
             {
                 return false;
             }
@@ -316,7 +313,7 @@ namespace KWH.BAL.RepositoryImplementation
             return true;
 
         }
-        public async Task<bool> DeleteCategoryData(Guid Id)
+        public async Task<bool> DeleteCategoryData(int Id)
         {
             var data = await _context.Category.FindAsync(Id);
             if (data == null || data.CategoryId != Id)
@@ -329,6 +326,45 @@ namespace KWH.BAL.RepositoryImplementation
             _context.Update(data);
             await _context.SaveChangesAsync();
             return true;
+        }
+        public async Task<IEnumerable<CandidateInfo>> GetAllCandidateInfoData()
+        {
+            return await _context.CandidateInfo.Where(x => x.IsActive == true).ToListAsync();
+        }
+        public async Task<CandidateInfo> GetCandidateById(int Id)
+        {
+            var data = await _context.CandidateInfo.FindAsync(Id);
+            return data;
+        }
+        public async Task<bool> SubmitCandidateData(CandidateInfo entity)
+        {
+            var data = await _context.CandidateInfo.Where(x => x.IsActive == true && x.ClassRollNo == entity.ClassRollNo && x.ClassId == entity.ClassId && x.SectionId == entity.SectionId).ToListAsync();
+            if (data != null && data.Count() > 0)
+            {
+                return false;
+            }
+            CandidateInfo canInfo = new CandidateInfo()
+            {
+                CandidateName = entity.CandidateName,
+                ClassRollNo = entity.ClassRollNo,
+                MobileNo=entity.MobileNo,
+                AlternateNo=entity.AlternateNo,
+                EmailId=entity.EmailId,
+                CategoryId=entity.CategoryId,
+                ICardNumber=entity.ICardNumber,
+                GRNumber=entity.GRNumber,
+                RFId=entity.RFId,
+                ClassId = entity.ClassId,
+                SectionId = entity.SectionId,
+                ImpageUrl=entity.ImpageUrl,
+                IsActive=true,
+                IsDeleted=false,
+                DateCreated=DateTime.Now 
+            };
+            await _context.CandidateInfo.AddAsync(canInfo);
+            await _context.SaveChangesAsync();
+            return true;
+
         }
 
     }
