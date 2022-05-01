@@ -161,8 +161,6 @@ namespace KWH.BAL.RepositoryImplementation
             await _context.SaveChangesAsync();
             return true;
         }
-
-
         public async Task<IEnumerable<ClassMasterViewModel>> GetAllClassMasterData()
         {
             var result = await (from c in _context.ClassMaster
@@ -170,6 +168,7 @@ namespace KWH.BAL.RepositoryImplementation
                                 where c.IsActive == true
                                 select new ClassMasterViewModel
                                 {
+                                    ClassId = c.ClassId,
                                     SectionId = c.SectionId,
                                     ClassName = c.ClassName,
                                     SectionName = s.SectionName

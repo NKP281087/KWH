@@ -134,9 +134,7 @@ function BindSectionData() {
 function DeleteSection(Id) {
     var data = {
         SectionId: String(Id)
-    }
-    //var sectionId = 
-    //var sectionId = "abc";
+    }    
 
     $.ajax({
         type: "POST",

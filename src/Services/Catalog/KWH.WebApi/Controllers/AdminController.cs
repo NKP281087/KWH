@@ -217,8 +217,6 @@ namespace KWH.WebApi.Controllers
             return Ok(new { StatusCode = StatusCodes.Status200OK, response, Message = "Success" });
         }
 
-
-
         [HttpGet]
         [Route("GetAllClassMasterData")]
         public async Task<IActionResult> GetAllClassMasterData()
@@ -232,7 +230,7 @@ namespace KWH.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetClassMasterById")]
+        [Route("GetClassMasterById/{Id}")]
         public async Task<IActionResult> GetClassMasterById(Guid Id)
         {
             var response = await _adminService.GetClassMasterById(Id);
@@ -249,7 +247,7 @@ namespace KWH.WebApi.Controllers
             }            
             var classDtos = _mapper.Map<ClassMaster>(model);
             var response = await _adminService.UpdateClassData(classDtos);
-            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Data Updated Successfully" });
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
 
         }
         [HttpGet]
@@ -260,5 +258,16 @@ namespace KWH.WebApi.Controllers
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
         }
 
+        [HttpPost]
+        [Route("DeleteClassData")]
+        public async Task<IActionResult> DeleteClassData(ClassMasterDtos model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            var response = await _adminService.DeleteClassData(model.ClassId);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
     }
 }

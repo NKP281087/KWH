@@ -26,9 +26,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
             var result = JsonConvert.DeserializeObject<IEnumerable<RFIdViewModel>>(apiResponse.Result.ToString());
             return View(result);
-
         }
-
         public ActionResult AddEditRF()
         {
             return View();
@@ -137,6 +135,11 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var result = await adminService.GetSectionDropdownData(token);
             return Json(result);
         }
-
+        [HttpPost]
+        public async Task<JsonResult> DeleteClassData(ClassMasterDtos model)
+        {
+            var result = await adminService.DeleteClassData(new RequestViewModel<ClassMasterDtos> { Token = token, ModelObject = model });
+            return Json(result);
+        }
     }
 }

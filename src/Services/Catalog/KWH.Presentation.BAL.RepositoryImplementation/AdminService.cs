@@ -72,7 +72,7 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
         }
         public async Task<object> GetClassMasterById(Guid Id, string token)
         {
-            httpClient.ApiUrl = "api/Admin/GetAllClassMasterData/Id" + Id;
+            httpClient.ApiUrl = "api/Admin/GetClassMasterById/" + Id;
             return await httpClient.GetWithTokenAsync(token);
         }
         public async Task<object> SaveClassData(RequestViewModel<ClassMasterDtos> model)
@@ -89,6 +89,11 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
         {
             httpClient.ApiUrl = "api/Admin/GetSectionDropdownData";
             return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> DeleteClassData(RequestViewModel<ClassMasterDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/DeleteClassData";
+            return await httpClient.PostWithTokenAsync(entity);
         }
     }
 }

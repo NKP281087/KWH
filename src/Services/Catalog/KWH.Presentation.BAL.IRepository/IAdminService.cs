@@ -26,5 +26,6 @@ namespace KWH.Presentation.BAL.IRepository
         Task<object> SaveClassData(RequestViewModel<ClassMasterDtos> entity);
         Task<object> UpdateClassData(RequestViewModel<ClassMasterDtos> entity); 
         Task<object> GetSectionDropdownData(string token);
+        Task<object> DeleteClassData(RequestViewModel<ClassMasterDtos> entity);
     }
 }
