@@ -123,5 +123,41 @@ namespace KWH.Presentation.BAL.RepositoryImplementation
             return await httpClient.PostWithTokenAsync(entity);
         }
 
+        public async Task<object> GetAllCandidateInfoData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetAllCandidateInfoData";
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> GetCandidateById(int Id, string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetCandidateById/" + Id;
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> SubmitCandidateData(RequestViewModel<CandidateInfoDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/SubmitCandidateData";
+            return await httpClient.PostWithTokenAsync(entity);
+        }
+        public async Task<object> DeleteCandidateData(RequestViewModel<CandidateInfoDtos> entity)
+        {
+            httpClient.ApiUrl = "api/Admin/DeleteCandidateData";
+            return await httpClient.PostWithTokenAsync(entity);
+        }
+        public async Task<object> GetClassDropdownData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetClassDropdownData";
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> GetSectionDropdownDataByClassId(int Id, string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetSectionDropdownDataByClassId/" + Id;
+            return await httpClient.GetWithTokenAsync(token);
+        }
+        public async Task<object> GetCategoryDropdownData(string token)
+        {
+            httpClient.ApiUrl = "api/Admin/GetCategoryDropdownData";
+            return await httpClient.GetWithTokenAsync(token);
+        }
+
     }
 }

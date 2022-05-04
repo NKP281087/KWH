@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "AddEditCandidateData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/js/KWHApp/Admin/candidate.js"></script>
+
+
+<div class="container-fluid px-4">
+    <div class="mb-4" style="margin-top:10px">
+        <div class="admin-users">
+            <div class="container-fluid">
+                <div class="mb-12">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="javascript:void()">Home</a></li>
+                        <li class="breadcrumb-item active">Add/Edit Candidate</li>
+                    </ol>
+                    <div class="mb-4">
+                        <div class="backAdminBtn ">
+                            <a asp-action="RFIData" class="btn light-yellow"><img src="~/Content/images/icons/back-button.svg" alt="back-button" /><span>Back</span></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- start Add New Member User -->
+
+
+
+                <div>
+                    <div class="tab-wrapper">
+
+                        <div class="tab-content">
+                            <div class="userForm" id="accountInfoForm">
+                                <div class="userTab card mb-4">
+                                    <div class="card-header">
+                                        <h4>Add/Edit Candidate</h4>
+
+                                    </div>
+                                    <div class="userTabInner" style="padding-bottom:35px;">
+
+                                        <div class="row">
+                                            <form asp-controller="Admin" asp-action="AddEditCandidateData" method="post">
+                                                <div class="col-12">
+                                                    <div class="row" style="display: flex;margin:0 -6px;flex-flow:wrap;">
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Class Roll No.</label>
+                                                                <input class="form-control" type="text" placeholder="Class Roll No." value="" name="ClassRollNo" id="txtClassRollNo" />
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Candidate Name</label>
+                                                                <input class="form-control" type="text" placeholder="Candidate Name" value="" name="CandidateName" id="txtCandidateName" />
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Mobile No.</label>
+                                                                <input class="form-control" type="text" placeholder="Mobile No" value="" name="MobileNo" id="txtMobileNo" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Alternate No.</label>
+                                                                <input class="form-control" type="text" placeholder="Alternate No" value="" name="AlternateNo" id="txtAlternateNo" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>EmailId</label>
+                                                                <input class="form-control" type="text" placeholder="EmailId" value="" name="EmailId" id="txtEmailId" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Category</label>
+                                                                <select class="form-control" asp-items="@(new SelectList(@ViewBag.CategoryList,"value","text"))" name="CategoryId" id="ddlCategoryId">
+                                                                    <option>--Select Category--</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>ICard Number</label>
+                                                                <input class="form-control" type="text" placeholder="ICard Number" value="" name="ICardNumber" id="txtICardNumber" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>GR Number</label>
+                                                                <input class="form-control" type="text" placeholder="GR Number" value="" name="GRNumber" id="txtGRNumber" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>RFId</label>
+                                                                <input class="form-control" type="text" placeholder="RFId" value="" name="RFId" id="txtRFId" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Class</label>
+                                                                <select class="form-control" asp-items="@(new SelectList(@ViewBag.ClassList,"value","text"))" name="ClassId" id="ddlClassId">
+                                                                    <option value="0">--Select Class--</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <label>Section</label>
+                                                                <select class="form-control" name="SectionId" id="ddlSectionId">
+                                                                    <option>--Select Section--</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-4" style="width:268px;">
+                                                            <div class="form-group">
+                                                                <div class="rightCont">
+                                                                    <button type="submit" style="margin-top:22px;" id="btnUpdateRF" class="button-42">Update</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start pts light box -->
+
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+    .button-42 {
+        background-color: initial;
+        background-image: linear-gradient(#42A1EC, #0070C9);
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+        height: 40px;
+        line-height: 40px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 50%;
+        z-index: 9;
+        border: 0;
+        transition: box-shadow .2s;
+    }
+
+        .button-42:hover {
+            box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+        }
+</style>

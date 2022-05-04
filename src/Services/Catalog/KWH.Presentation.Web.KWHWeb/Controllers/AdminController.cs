@@ -21,7 +21,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             return View();
         }
         public async Task<IActionResult> RFData()
-        { 
+        {
             var data = await adminService.GetAllRFData(token);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
             var result = JsonConvert.DeserializeObject<IEnumerable<RFIdViewModel>>(apiResponse.Result.ToString());
@@ -30,7 +30,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         public ActionResult AddEditRF()
         {
             return View();
-        }     
+        }
 
         public async Task<IActionResult> GetRFById(int id)
         {
@@ -61,12 +61,12 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
         [HttpGet]
         public ActionResult SectionData()
-        {     
+        {
             return View();
         }
         public async Task<JsonResult> GetAllSectionData()
         {
-            var data = await adminService.GetAllSectionData(token); 
+            var data = await adminService.GetAllSectionData(token);
             //var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(data));
             // var result = JsonConvert.DeserializeObject<IEnumerable<SectionViewModel>>(apiResponse.Result.ToString()); 
             return Json(data);
@@ -74,13 +74,13 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         [HttpGet]
         public async Task<JsonResult> GetSectionById(int Id)
         {
-            var data = await adminService.GetSectionById(Id, token); 
-            return Json(data); 
+            var data = await adminService.GetSectionById(Id, token);
+            return Json(data);
         }
 
         [HttpPost]
         public async Task<JsonResult> SaveSectionData(SectionDtos model)
-        { 
+        {
             var result = await adminService.SaveSectionData(new RequestViewModel<SectionDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
@@ -99,7 +99,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
         [HttpGet]
         public ActionResult ClassData()
-        {                    
+        {
             return View();
         }
 
@@ -113,7 +113,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         [HttpGet]
         public async Task<JsonResult> GetClassMasterById(int id)
         {
-            var result = await adminService.GetClassMasterById(id,token);
+            var result = await adminService.GetClassMasterById(id, token);
             return Json(result);
         }
 
@@ -152,34 +152,89 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         [HttpGet]
         public async Task<JsonResult> GetCategoryById(int Id)
         {
-            var result = await adminService.GetCategoryById(Id,token);
+            var result = await adminService.GetCategoryById(Id, token);
             return Json(result);
         }
 
         [HttpPost]
         public async Task<JsonResult> SubmitCategoryData(CategoryDtos model)
         {
-            var result = await adminService.SubmitCategoryData(new RequestViewModel<CategoryDtos> { Token=token, ModelObject = model });    
+            var result = await adminService.SubmitCategoryData(new RequestViewModel<CategoryDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
 
         [HttpPost]
         public async Task<JsonResult> UpdateCategoryData(CategoryDtos model)
         {
-            var result = await adminService.UpdateCategoryData(new RequestViewModel<CategoryDtos> { Token=token, ModelObject = model });
+            var result = await adminService.UpdateCategoryData(new RequestViewModel<CategoryDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
 
         [HttpPost]
         public async Task<JsonResult> DeleteCategoryData(CategoryDtos model)
         {
-            var result = await adminService.DeleteCategoryData(new RequestViewModel<CategoryDtos> { Token=token, ModelObject = model });
+            var result = await adminService.DeleteCategoryData(new RequestViewModel<CategoryDtos> { Token = token, ModelObject = model });
             return Json(result);
         }
         [HttpGet]
         public ActionResult CategoryData()
         {
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllCandidateInfoData()
+        {
+            var response = await adminService.GetAllCandidateInfoData(token);
+            var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(response));
+            var result = JsonConvert.DeserializeObject<IEnumerable<CandidateViewModel>>(apiResponse.Result.ToString());
+            return View(result);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAllCandidateInfoData(int Id)
+        {
+            var response = await adminService.GetCandidateById(Id, token);
+            var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(response));
+            var result = JsonConvert.DeserializeObject<CandidateViewModel>(apiResponse.Result.ToString());
+            return View(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddEditCandidateData()
+        {
+            var ClassDataResponse = await adminService.GetClassDropdownData(token);
+            var ApiResponseForClass = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(ClassDataResponse));
+            var ClassDataResult = JsonConvert.DeserializeObject<IEnumerable<DropdownBindingViewModel>>(ApiResponseForClass.Result.ToString());
+
+            var CategoryDataResponse = await adminService.GetCategoryDropdownData(token);
+            var ApiResponseForCategory = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(CategoryDataResponse));
+            var CategoryDataResult = JsonConvert.DeserializeObject<IEnumerable<DropdownBindingViewModel>>(ApiResponseForCategory.Result.ToString());
+
+            ViewBag.ClassList = ClassDataResult;
+            ViewBag.CategoryList = CategoryDataResult;
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddEditCandidateData(CandidateInfoDtos model)
+        {
+            var response = await adminService.SubmitCandidateData(new RequestViewModel<CandidateInfoDtos> { Token = token, ModelObject = model });
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> DeleteCandidateData(CandidateInfoDtos model)
+        {
+            var response = await adminService.DeleteCandidateData(new RequestViewModel<CandidateInfoDtos> { Token = token, ModelObject = model });
+            return Json(response);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetSectionDropdownDataByClassId(int Id)
+        {
+            var result = await adminService.GetSectionDropdownDataByClassId(Id, token);
+            return Json(result);
         }
     }
 }

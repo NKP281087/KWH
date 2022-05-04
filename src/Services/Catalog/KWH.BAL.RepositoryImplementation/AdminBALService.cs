@@ -6,7 +6,7 @@ using KWH.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -327,9 +327,33 @@ namespace KWH.BAL.RepositoryImplementation
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<IEnumerable<CandidateInfo>> GetAllCandidateInfoData()
+        public async Task<IEnumerable<CandidateViewModel>> GetAllCandidateInfoData()
         {
-            return await _context.CandidateInfo.Where(x => x.IsActive == true).ToListAsync();
+            var data = await (from c in _context.CandidateInfo
+                              join cl in _context.ClassMaster on c.ClassId equals cl.ClassId
+                              join s in _context.Section on c.SectionId equals s.SectionId
+                              join cn in _context.Category on c.CategoryId equals cn.CategoryId
+                              where c.IsActive == true
+                              select new CandidateViewModel
+                              {
+                                  CandidateId = c.CandidateId,
+                                  ClassRollNo = c.ClassRollNo,
+                                  CandidateName = c.CandidateName,
+                                  MobileNo = c.MobileNo,
+                                  AlternateNo = c.AlternateNo,
+                                  EmailId = c.EmailId,
+                                  CategoryId = c.CategoryId,
+                                  CategoryName = cn.CategoryName,
+                                  ICardNumber = c.ICardNumber,
+                                  GRNumber = c.GRNumber,
+                                  RFId = c.RFId,
+                                  ClassId = c.ClassId,
+                                  SectionId = c.SectionId,
+                                  ClassName = cl.ClassName,
+                                  SectionName = s.SectionName,
+                                  ImpageUrl = c.ImpageUrl
+                              }).ToListAsync();
+            return data;
         }
         public async Task<CandidateInfo> GetCandidateById(int Id)
         {
@@ -338,34 +362,128 @@ namespace KWH.BAL.RepositoryImplementation
         }
         public async Task<bool> SubmitCandidateData(CandidateInfo entity)
         {
-            var data = await _context.CandidateInfo.Where(x => x.IsActive == true && x.ClassRollNo == entity.ClassRollNo && x.ClassId == entity.ClassId && x.SectionId == entity.SectionId).ToListAsync();
-            if (data != null && data.Count() > 0)
+            try
+            { 
+            List<SqlParameter> parms = new List<SqlParameter>
+            {
+                new SqlParameter{ ParameterName = "@ClassRollNo", Value = entity.ClassRollNo},
+                new SqlParameter{ ParameterName = "@CandidateName", Value= entity.CandidateName },
+                new SqlParameter{ ParameterName = "@MobileNo", Value= entity.MobileNo },
+                new SqlParameter{ ParameterName = "@AlternateNo", Value= entity.AlternateNo },
+                new SqlParameter{ ParameterName = "@EmailId", Value= entity.EmailId },
+                new SqlParameter{ ParameterName = "@CategoryId", Value = entity.CategoryId },
+                new SqlParameter{ ParameterName = "@ICardNumber", Value = entity.ICardNumber },
+                new SqlParameter{ ParameterName = "@GRNumber", Value = entity.GRNumber },
+                new SqlParameter{ ParameterName = "@RFId", Value = entity.RFId },
+                new SqlParameter{ ParameterName = "@ClassId", Value = entity.ClassId },
+                new SqlParameter{ ParameterName = "@SectionId", Value = entity.SectionId },
+                new SqlParameter{ ParameterName = "@ImpageUrl", Value = entity.ImpageUrl }
+            };
+
+            string sql = "EXEC usp_SaveCandidateData @ClassRollNo,@CandidateName,@MobileNo,@AlternateNo,@EmailId,@CategoryId,@ICardNumber,@GRNumber" +
+                                                     ",@RFId,@ClassId,@SectionId,@ImpageUrl";
+            int rowsAffected = await _context.Database.ExecuteSqlRawAsync(sql, parms);
+                if (rowsAffected > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+
+            //var data = await _context.CandidateInfo.Where(x => x.IsActive == true && x.ClassRollNo == entity.ClassRollNo && x.ClassId == entity.ClassId && x.SectionId == entity.SectionId).ToListAsync();
+            //if (data != null && data.Count() > 0)
+            //{
+            //    return false;
+            //}
+            //CandidateInfo canInfo = new CandidateInfo()
+            //{
+            //    CandidateName = entity.CandidateName,
+            //    ClassRollNo = entity.ClassRollNo,
+            //    MobileNo=entity.MobileNo,
+            //    AlternateNo=entity.AlternateNo,
+            //    EmailId=entity.EmailId,
+            //    CategoryId=entity.CategoryId,
+            //    ICardNumber=entity.ICardNumber,
+            //    GRNumber=entity.GRNumber,
+            //    RFId=entity.RFId,
+            //    ClassId = entity.ClassId,
+            //    SectionId = entity.SectionId,
+            //    ImpageUrl=entity.ImpageUrl,
+            //    IsActive=true,
+            //    IsDeleted=false,
+            //    DateCreated=DateTime.Now 
+            //};
+            //await _context.CandidateInfo.AddAsync(canInfo);
+            //await _context.SaveChangesAsync();
+            //return true;
+
+        }
+        public async Task<bool> DeleteCandidateData(int Id)
+        {
+            var data = await _context.CandidateInfo.Where(x => x.IsActive == true && x.CandidateId == Id).FirstOrDefaultAsync();
+            if (data != null || data.CandidateId != Id)
             {
                 return false;
             }
-            CandidateInfo canInfo = new CandidateInfo()
+
+            CandidateInfo candidateInfo = new CandidateInfo()
             {
-                CandidateName = entity.CandidateName,
-                ClassRollNo = entity.ClassRollNo,
-                MobileNo=entity.MobileNo,
-                AlternateNo=entity.AlternateNo,
-                EmailId=entity.EmailId,
-                CategoryId=entity.CategoryId,
-                ICardNumber=entity.ICardNumber,
-                GRNumber=entity.GRNumber,
-                RFId=entity.RFId,
-                ClassId = entity.ClassId,
-                SectionId = entity.SectionId,
-                ImpageUrl=entity.ImpageUrl,
-                IsActive=true,
-                IsDeleted=false,
-                DateCreated=DateTime.Now 
+                CandidateId = Id,
+                IsActive = false,
+                IsDeleted = true,
+                DateModified = DateTime.Now
             };
-            await _context.CandidateInfo.AddAsync(canInfo);
+
+            _context.Update(candidateInfo);
             await _context.SaveChangesAsync();
             return true;
-
         }
+        public async Task<IEnumerable<DropdownBindingViewModel>> GetClassDropdownData()
+        {
+            var data = await (from s in _context.ClassMaster
+                              where s.IsActive == true
+                              select new DropdownBindingViewModel
+                              {
+                                  text = s.ClassName,
+                                  value = s.ClassId
+                              }).ToListAsync();
+            return data;
+        }
+
+        public async Task<IEnumerable<DropdownBindingViewModel>> GetSectionDropdownDataByClassId(int Id)
+        {
+            var data = await (from s in _context.Section
+                              join c in _context.ClassMaster on s.SectionId equals c.SectionId
+                              where s.IsActive == true && s.SectionId == Id
+                              select new DropdownBindingViewModel
+                              {
+                                  text = s.SectionName,
+                                  value = s.SectionId
+                              }).ToListAsync();
+            return data;
+        }
+
+        public async Task<IEnumerable<DropdownBindingViewModel>> GetCategoryDropdownData()
+        {
+            var data = await (from c in _context.Category 
+                              where c.IsActive == true  
+                              select new DropdownBindingViewModel
+                              {
+                                  text = c.CategoryName,
+                                  value = c.CategoryId
+                              }).ToListAsync();
+            return data;
+        }
+
+
 
     }
 }

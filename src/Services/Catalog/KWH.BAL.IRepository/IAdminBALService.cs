@@ -34,10 +34,16 @@ namespace KWH.BAL.IRepository
         Task<bool> UpdateCategoryData(Category entity);
         Task<bool> DeleteCategoryData(int Id);
 
-        Task<IEnumerable<CandidateInfo>> GetAllCandidateInfoData();
+        Task<IEnumerable<CandidateViewModel>> GetAllCandidateInfoData();
         Task<CandidateInfo> GetCandidateById(int Id);
         Task<bool> SubmitCandidateData(CandidateInfo entity);
         //Task<bool> UpdateCandidateData(CandidateInfo entity);
-        //Task<bool> DeleteCandidateData(int Id);
+        Task<bool> DeleteCandidateData(int Id);
+
+        Task<IEnumerable<DropdownBindingViewModel>> GetClassDropdownData();
+        Task<IEnumerable<DropdownBindingViewModel>> GetSectionDropdownDataByClassId(int Id);
+        Task<IEnumerable<DropdownBindingViewModel>> GetCategoryDropdownData();
+
+
     }
 }

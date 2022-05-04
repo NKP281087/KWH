@@ -188,6 +188,10 @@ namespace KWH.WebApi.Controllers
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
             }
             var response = await _adminService.DeleteSectionData(model.SectionId);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Not Deleted Successfully! Please Contact Adminstration" });
+            }
             return Ok(new { StatusCode = StatusCodes.Status200OK, response, Message = "Success" });
         }
         [HttpPost]
@@ -257,6 +261,10 @@ namespace KWH.WebApi.Controllers
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
             }
             var response = await _adminService.DeleteClassData(model.ClassId);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Not Deleted Successfully! Please Contact Adminstration" });
+            }
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
         }
 
@@ -323,7 +331,86 @@ namespace KWH.WebApi.Controllers
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
             }
             var response = await _adminService.DeleteCategoryData(model.CategoryId);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Not Deleted Successfully! Please Contact Adminstration" });
+            }
             return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
         } 
+        [HttpGet]
+        [Route("GetAllCandidateInfoData")]
+        public async Task<IActionResult> GetAllCandidateInfoData()
+        {
+            var response = await _adminService.GetAllCategoryData();
+            if (response == null && response.Count() > 0)
+            {
+                return NotFound(new { StatusCode = StatusCodes.Status404NotFound, Message = "No Data Found" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpGet]
+        [Route("GetCandidateById")]
+        public async Task<IActionResult> GetCandidateById(int Id)
+        {
+            var response = await _adminService.GetCandidateById(Id);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpPost]
+        [Route("SubmitCandidateData")]
+        public async Task<IActionResult> SubmitCandidateData(CandidateInfoDtos model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            var candidateDtos = _mapper.Map<CandidateInfo>(model);
+            var response = await _adminService.SubmitCandidateData(candidateDtos);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Already Exists Or Data Not Found!" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+        [HttpPost]
+        [Route("DeleteCandidateData")]
+        public async Task<IActionResult> DeleteCandidateData(CandidateInfoDtos model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
+            }
+            var candidateDtos = _mapper.Map<CandidateInfo>(model);
+            var response = await _adminService.DeleteCandidateData(model.CategoryId);
+            if (!response)
+            {
+                return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Not Deleted Successfully! Please Contact Adminstration" });
+            }
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
+        [HttpGet]
+        [Route("GetClassDropdownData")]
+        public async Task<IActionResult> GetClassDropdownData()
+        {
+            var response = await _adminService.GetClassDropdownData();
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+        [HttpGet]
+        [Route("GetSectionDropdownDataByClassId/{Id}")]
+        public async Task<IActionResult> GetSectionDropdownDataByClassId(int Id)
+        {
+            var response = await _adminService.GetSectionDropdownDataByClassId(Id);
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+        [HttpGet]
+        [Route("GetCategoryDropdownData")]
+        public async Task<IActionResult> GetCategoryDropdownData()
+        {
+            var response = await _adminService.GetCategoryDropdownData();
+            return Ok(new { StatusCode = StatusCodes.Status200OK, result = response, Message = "Success" });
+        }
+
     }
 }

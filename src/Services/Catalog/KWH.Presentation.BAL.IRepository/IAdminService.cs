@@ -54,5 +54,18 @@ namespace KWH.Presentation.BAL.IRepository
         Task<object> UpdateCategoryData(RequestViewModel<CategoryDtos> entity);
         Task<object> DeleteCategoryData(RequestViewModel<CategoryDtos> entity);
 
+        /// <summary>
+        /// Candidate Functionality
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        Task<object> GetAllCandidateInfoData(string token);
+        Task<object> GetCandidateById(int Id, string token);
+        Task<object> SubmitCandidateData(RequestViewModel<CandidateInfoDtos> entity);
+        Task<object> DeleteCandidateData(RequestViewModel<CandidateInfoDtos> entity);
+
+        Task<object> GetClassDropdownData(string token);
+        Task<object> GetSectionDropdownDataByClassId(int Id, string token);
+        Task<object> GetCategoryDropdownData(string token);
     }
 }
