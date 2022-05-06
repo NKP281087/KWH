@@ -332,9 +332,13 @@ namespace KWH.BAL.RepositoryImplementation
         public async Task<IEnumerable<CandidateViewModel>> GetAllCandidateInfoData()
         {
             try
-            { 
+            {
+                List<SqlParameter> parms = new List<SqlParameter>
+                {
+                    new SqlParameter{ ParameterName = "@CandidateId", Value=0}
+                };
                 IEnumerable<CandidateViewModel> candidateViewModels = null;
-                candidateViewModels = await _context.candidateViewModel.FromSqlRaw<CandidateViewModel>("Execute usp_GetCandidateData").ToListAsync(); 
+                candidateViewModels = await _context.candidateViewModel.FromSqlRaw<CandidateViewModel>("Execute usp_GetCandidateData {0}", 0).ToListAsync();
 
                 return candidateViewModels;
             }
@@ -343,10 +347,28 @@ namespace KWH.BAL.RepositoryImplementation
                 throw ex;
             }
         }
-        public async Task<CandidateInfo> GetCandidateById(int Id)
+        public async Task<CandidateViewModel> GetCandidateById(int Id)
         {
-            var data = await _context.CandidateInfo.FindAsync(Id);
-            return data;
+            try
+            {
+                CandidateViewModel candidateViewModels = null;
+                var data = await _context.candidateViewModel.FromSqlRaw<CandidateViewModel>("Execute usp_GetCandidateData {0}", Id).ToListAsync();
+                if (data != null)
+                {
+                    return candidateViewModels = data.FirstOrDefault();
+                }
+                else
+                {
+                    return candidateViewModels ?? throw new ArgumentNullException();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
         public async Task<bool> SubmitCandidateData(CandidateInfo entity)
         {
@@ -371,7 +393,7 @@ namespace KWH.BAL.RepositoryImplementation
                 string sql = "EXEC usp_SaveCandidateData @ClassRollNo,@CandidateName,@MobileNo,@AlternateNo,@EmailId,@CategoryId,@ICardNumber,@GRNumber" +
                                                          ",@RFId,@ClassId,@SectionId,@ImpageUrl";
                 int rowsAffected = await _context.Database.ExecuteSqlRawAsync(sql, parms);
-                if (rowsAffected > 0)
+                if (rowsAffected < 0)
                 {
                     return true;
                 }

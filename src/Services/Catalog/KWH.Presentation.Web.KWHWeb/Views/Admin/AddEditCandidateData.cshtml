@@ -2,35 +2,6 @@
 @{
     ViewData["Title"] = "AddEditCandidateData";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-    string ClassRollNo = string.Empty;
-    string CandidateName = string.Empty;
-    string MobileNo = string.Empty;
-    string AlternateNo = string.Empty;
-    string EmailId = string.Empty;
-    int CategoryId=0;
-    string ICardNumber = string.Empty;
-    string GRNumber = string.Empty;
-    string RFId = string.Empty;
-    int ClassId=0;
-    int SectionId=0;
-    string ImpageUrl = string.Empty;
-
-    if (Model != null && Model.CandidateId > 0)
-    {
-        ClassRollNo = Model.ClassRollNo;
-        CandidateName = Model.CandidateName;
-        MobileNo = Model.MobileNo;
-        AlternateNo = Model.AlternateNo;
-        EmailId = Model.EmailId;
-        CategoryId = Model.CandidateId;
-        ICardNumber = Model.ICardNumber;
-        GRNumber = Model.GRNumber;
-        RFId = Model.RFId;
-        ClassId = Model.ClassId;
-        SectionId = Model.SectionId;
-        ImpageUrl = Model.ImpageUrl;
-    }
 }
 
 
@@ -72,96 +43,96 @@
                                     <div class="userTabInner" style="padding-bottom:35px;">
 
                                         <div class="row">
-                                            <form asp-controller="Admin" asp-action="AddEditCandidateData" method="post">
-                                                <div class="col-12">
-                                                    <div class="row" style="display: flex;margin:0 -6px;flex-flow:wrap;">
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Class Roll No.</label>
-                                                                <input class="form-control" type="text"  placeholder="Class Roll No." value="@ClassRollNo" name="ClassRollNo" id="txtClassRollNo" />
 
-                                                            </div>
+                                            <div class="col-12">
+                                                <div class="row" style="display: flex;margin:0 -6px;flex-flow:wrap;">
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Class Roll No.</label>
+                                                            <input class="form-control" type="text" placeholder="Class Roll No." name="ClassRollNo" id="txtClassRollNo" />
+
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Candidate Name</label>
-                                                                <input class="form-control" type="text" placeholder="Candidate Name" value="@CandidateName" name="CandidateName" id="txtCandidateName" />
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Candidate Name</label>
+                                                            <input class="form-control" type="text" placeholder="Candidate Name" name="CandidateName" id="txtCandidateName" />
                                                         </div>
+                                                    </div>
 
 
 
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Mobile No.</label>
-                                                                <input class="form-control" type="text" placeholder="Mobile No" value="@MobileNo" name="MobileNo" id="txtMobileNo" />
-                                                            </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Mobile No.</label>
+                                                            <input class="form-control" type="text" placeholder="Mobile No" name="MobileNo" id="txtMobileNo" />
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Alternate No.</label>
-                                                                <input class="form-control" type="text" placeholder="Alternate No" value="@AlternateNo" name="AlternateNo" id="txtAlternateNo" />
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Alternate No.</label>
+                                                            <input class="form-control" type="text" placeholder="Alternate No" name="AlternateNo" id="txtAlternateNo" />
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>EmailId</label>
-                                                                <input class="form-control" type="text" placeholder="EmailId" value="@EmailId" name="EmailId" id="txtEmailId" />
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>EmailId</label>
+                                                            <input class="form-control" type="text" placeholder="EmailId" name="EmailId" id="txtEmailId" />
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Category</label>
-                                                                <select class="form-control" asp-items="@(new SelectList(@ViewBag.CategoryList,"value","text",selectedValue:CategoryId))" name="CategoryId" id="ddlCategoryId">
-                                                                    <option>--Select Category--</option>
-                                                                </select>
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Category</label>
+                                                            <select class="form-control" asp-items="@(new SelectList(@ViewBag.CategoryList,"value","text"))" name="CategoryId" id="ddlCategoryId">
+                                                                <option value="0">--Select Category--</option>
+                                                            </select>
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>ICard Number</label>
-                                                                <input class="form-control" type="text" placeholder="ICard Number" value="@ICardNumber" name="ICardNumber" id="txtICardNumber" />
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>ICard Number</label>
+                                                            <input class="form-control" type="text" placeholder="ICard Number" name="ICardNumber" id="txtICardNumber" />
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>GR Number</label>
-                                                                <input class="form-control" type="text" placeholder="GR Number" value="@GRNumber" name="GRNumber" id="txtGRNumber" />
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>GR Number</label>
+                                                            <input class="form-control" type="text" placeholder="GR Number" name="GRNumber" id="txtGRNumber" />
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>RFId</label>
-                                                                <input class="form-control" type="text" placeholder="RFId" value="@RFId" name="RFId" id="txtRFId" />
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>RFId</label>
+                                                            <input class="form-control" type="text" placeholder="RFId" name="RFId" id="txtRFId" />
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Class</label>
-                                                                <select class="form-control" asp-items="@(new SelectList(@ViewBag.ClassList,"value","text", selectedValue: ClassId))" name="ClassId" id="ddlClassId">
-                                                                    <option value="0">--Select Class--</option>
-                                                                </select>
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Class</label>
+                                                            <select class="form-control" asp-items="@(new SelectList(@ViewBag.ClassList,"value","text"))" name="ClassId" id="ddlClassId">
+                                                                <option value="0">--Select Class--</option>
+                                                            </select>
                                                         </div>
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <label>Section</label>
-                                                                <select class="form-control" name="SectionId" id="ddlSectionId">
-                                                                    <option>--Select Section--</option>
-                                                                </select>
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <label>Section</label>
+                                                            <select class="form-control" name="SectionId" id="ddlSectionId">
+                                                                <option value="0">--Select Section--</option>
+                                                            </select>
                                                         </div>
+                                                    </div>
 
-                                                        <div class="col-4" style="width:268px;">
-                                                            <div class="form-group">
-                                                                <div class="rightCont">
-                                                                    <button type="submit" style="margin-top:22px;" id="btnUpdateRF" class="button-42">Update</button>
-                                                                </div>
+                                                    <div class="col-4" style="width:268px;">
+                                                        <div class="form-group">
+                                                            <div class="rightCont">
+                                                                <button type="submit" style="margin-top:22px;" id="btnSubmit" class="button-42">Update</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

@@ -35,7 +35,7 @@ namespace KWH.BAL.IRepository
         Task<bool> DeleteCategoryData(int Id);
 
         Task<IEnumerable<CandidateViewModel>> GetAllCandidateInfoData();
-        Task<CandidateInfo> GetCandidateById(int Id);
+        Task<CandidateViewModel> GetCandidateById(int Id);
         Task<bool> SubmitCandidateData(CandidateInfo entity);
         //Task<bool> UpdateCandidateData(CandidateInfo entity);
         Task<bool> DeleteCandidateData(int Id);

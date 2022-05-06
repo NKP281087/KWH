@@ -28,9 +28,6 @@ namespace KWH.DAL.Entities
         public DateTime DateCreated { get; set; } = DateTime.Now;
         public Nullable<int> CreatedBy { get; set; }
         public DateTime DateModified { get; set; } = DateTime.Now;
-        public Nullable<int> ModifiedBy { get; set; }
-        public string ClassName { get; set; } = string.Empty;
-        public string SectionName { get; set; } = string.Empty;
-
+        public Nullable<int> ModifiedBy { get; set; } 
     }
 }

@@ -196,6 +196,18 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var response = await adminService.GetCandidateById(Id, token);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(response));
             var result = JsonConvert.DeserializeObject<CandidateViewModel>(apiResponse.Result.ToString());
+
+            var ClassDataResponse = await adminService.GetClassDropdownData(token);
+            var ApiResponseForClass = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(ClassDataResponse));
+            var ClassDataResult = JsonConvert.DeserializeObject<IEnumerable<DropdownBindingViewModel>>(ApiResponseForClass.Result.ToString());
+
+            var CategoryDataResponse = await adminService.GetCategoryDropdownData(token);
+            var ApiResponseForCategory = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(CategoryDataResponse));
+            var CategoryDataResult = JsonConvert.DeserializeObject<IEnumerable<DropdownBindingViewModel>>(ApiResponseForCategory.Result.ToString());
+
+            ViewBag.ClassList = ClassDataResult;
+            ViewBag.CategoryList = CategoryDataResult;
+
             return View("AddEditCandidateData", result);
         }
 
@@ -217,10 +229,10 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddEditCandidateData(CandidateInfoDtos model)
+        public async Task<JsonResult> AddEditCandidateData(CandidateInfoDtos model)
         {
-            var response = await adminService.SubmitCandidateData(new RequestViewModel<CandidateInfoDtos> { Token = token, ModelObject = model });
-            return View();
+            var result = await adminService.SubmitCandidateData(new RequestViewModel<CandidateInfoDtos> { Token = token, ModelObject = model });
+            return Json(result);
         }
 
         [HttpPost]

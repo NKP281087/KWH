@@ -4,61 +4,66 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
- 
+
 
 
 <div class="container-fluid px-4">
-<div class="card mb-4" style="margin-top:10px">
-    <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        Candidate Data
-    </div>
-    <div class="card-body">
-        <table id="datatablesSimple">
-            <thead>
-                <tr>
-                    <th>Roll No.</th>
-                    <th>Name</th>
-                    <th>Mobile No.</th>
-                    <th>EmailId</th>
-                    <th>Category</th>
-                    <th>ICard No.</th>
-                    <th>GR No.</th>
-                    <th>RFId</th>
-                    <th>Class</th>
-                    <th>Section</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+    <div class="card mb-4" style="margin-top:10px">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Candidate Data
+            <div style="float:right !important">
+                <a asp-action="AddEditCandidateData" alt="CandidateData">
+                    <img src="~/Content/images/icons/add.svg" style="cursor:pointer;">
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Roll No.</th>
+                        <th>Name</th>
+                        <th>Mobile No.</th>
+                        <th>EmailId</th>
+                        <th>Category</th>
+                        <th>ICard No.</th>
+                        <th>GR No.</th>
+                        <th>RFId</th>
+                        <th>Class</th>
+                        <th>Section</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
-            <tbody>
-                @if (Model != null && Model.Count() > 0)
-                {
-                    foreach (var item in Model)
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
                     {
-                        <tr>
-                            <td>@item.ClassRollNo</td>
-                            <td>@item.CandidateName</td>
-                            <td>@item.MobileNo</td>
-                            <td>@item.EmailId</td>
-                            <td>@item.CategoryName</td>
-                            <td>@item.ICardNumber</td>
-                            <td>@item.GRNumber</td>
-                            <td>@item.RFId</td>
-                            <td>@item.ClassName</td>
-                            <td>@item.SectionName</td>
-                           
-                            <td>
-                                <a asp-action="GetCandidateDataById" asp-route-id="@item.CandidateId">
-                                    
-                                     <img src="~/Content/images/icons/admin-edit.svg">
-                                </a>
-                            </td>
-                        </tr>
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ClassRollNo</td>
+                                <td>@item.CandidateName</td>
+                                <td>@item.MobileNo</td>
+                                <td>@item.EmailId</td>
+                                <td>@item.CategoryName</td>
+                                <td>@item.ICardNumber</td>
+                                <td>@item.GRNumber</td>
+                                <td>@item.RFId</td>
+                                <td>@item.ClassName</td>
+                                <td>@item.SectionName</td>
+
+                                <td>
+                                    <a asp-action="GetCandidateDataById" asp-route-id="@item.CandidateId">
+
+                                        <img src="~/Content/images/icons/admin-edit.svg">
+                                    </a>
+                                </td>
+                            </tr>
+                        }
                     }
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </div>

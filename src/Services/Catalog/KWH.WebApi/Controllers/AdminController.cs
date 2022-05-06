@@ -350,7 +350,7 @@ namespace KWH.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetCandidateById")]
+        [Route("GetCandidateById/{Id}")]
         public async Task<IActionResult> GetCandidateById(int Id)
         {
             var response = await _adminService.GetCandidateById(Id);
