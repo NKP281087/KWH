@@ -341,7 +341,7 @@ namespace KWH.WebApi.Controllers
         [Route("GetAllCandidateInfoData")]
         public async Task<IActionResult> GetAllCandidateInfoData()
         {
-            var response = await _adminService.GetAllCategoryData();
+            var response = await _adminService.GetAllCandidateInfoData();
             if (response == null && response.Count() > 0)
             {
                 return NotFound(new { StatusCode = StatusCodes.Status404NotFound, Message = "No Data Found" });

@@ -26,9 +26,11 @@ namespace KWH.DAL.Entities
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
         public DateTime DateCreated { get; set; } = DateTime.Now;
-        public int CreatedBy { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
         public DateTime DateModified { get; set; } = DateTime.Now;
-        public int ModifiedBy { get; set; } 
+        public Nullable<int> ModifiedBy { get; set; }
+        public string ClassName { get; set; } = string.Empty;
+        public string SectionName { get; set; } = string.Empty;
 
     }
 }

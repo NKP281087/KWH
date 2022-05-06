@@ -10,6 +10,9 @@ using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
+using System.Data;
 
 namespace KWH.BAL.RepositoryImplementation
 {
@@ -17,7 +20,6 @@ namespace KWH.BAL.RepositoryImplementation
     {
         private readonly KWHDBContext _context;
         private readonly IMapper _mapper;
-
         public AdminBALService(KWHDBContext context, IMapper mapper)
         {
             _context = context;
@@ -329,31 +331,17 @@ namespace KWH.BAL.RepositoryImplementation
         }
         public async Task<IEnumerable<CandidateViewModel>> GetAllCandidateInfoData()
         {
-            var data = await (from c in _context.CandidateInfo
-                              join cl in _context.ClassMaster on c.ClassId equals cl.ClassId
-                              join s in _context.Section on c.SectionId equals s.SectionId
-                              join cn in _context.Category on c.CategoryId equals cn.CategoryId
-                              where c.IsActive == true
-                              select new CandidateViewModel
-                              {
-                                  CandidateId = c.CandidateId,
-                                  ClassRollNo = c.ClassRollNo,
-                                  CandidateName = c.CandidateName,
-                                  MobileNo = c.MobileNo,
-                                  AlternateNo = c.AlternateNo,
-                                  EmailId = c.EmailId,
-                                  CategoryId = c.CategoryId,
-                                  CategoryName = cn.CategoryName,
-                                  ICardNumber = c.ICardNumber,
-                                  GRNumber = c.GRNumber,
-                                  RFId = c.RFId,
-                                  ClassId = c.ClassId,
-                                  SectionId = c.SectionId,
-                                  ClassName = cl.ClassName,
-                                  SectionName = s.SectionName,
-                                  ImpageUrl = c.ImpageUrl
-                              }).ToListAsync();
-            return data;
+            try
+            { 
+                IEnumerable<CandidateViewModel> candidateViewModels = null;
+                candidateViewModels = await _context.candidateViewModel.FromSqlRaw<CandidateViewModel>("Execute usp_GetCandidateData").ToListAsync(); 
+
+                return candidateViewModels;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public async Task<CandidateInfo> GetCandidateById(int Id)
         {
@@ -363,8 +351,8 @@ namespace KWH.BAL.RepositoryImplementation
         public async Task<bool> SubmitCandidateData(CandidateInfo entity)
         {
             try
-            { 
-            List<SqlParameter> parms = new List<SqlParameter>
+            {
+                List<SqlParameter> parms = new List<SqlParameter>
             {
                 new SqlParameter{ ParameterName = "@ClassRollNo", Value = entity.ClassRollNo},
                 new SqlParameter{ ParameterName = "@CandidateName", Value= entity.CandidateName },
@@ -380,9 +368,9 @@ namespace KWH.BAL.RepositoryImplementation
                 new SqlParameter{ ParameterName = "@ImpageUrl", Value = entity.ImpageUrl }
             };
 
-            string sql = "EXEC usp_SaveCandidateData @ClassRollNo,@CandidateName,@MobileNo,@AlternateNo,@EmailId,@CategoryId,@ICardNumber,@GRNumber" +
-                                                     ",@RFId,@ClassId,@SectionId,@ImpageUrl";
-            int rowsAffected = await _context.Database.ExecuteSqlRawAsync(sql, parms);
+                string sql = "EXEC usp_SaveCandidateData @ClassRollNo,@CandidateName,@MobileNo,@AlternateNo,@EmailId,@CategoryId,@ICardNumber,@GRNumber" +
+                                                         ",@RFId,@ClassId,@SectionId,@ImpageUrl";
+                int rowsAffected = await _context.Database.ExecuteSqlRawAsync(sql, parms);
                 if (rowsAffected > 0)
                 {
                     return true;
@@ -392,7 +380,7 @@ namespace KWH.BAL.RepositoryImplementation
                     return false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -473,8 +461,8 @@ namespace KWH.BAL.RepositoryImplementation
 
         public async Task<IEnumerable<DropdownBindingViewModel>> GetCategoryDropdownData()
         {
-            var data = await (from c in _context.Category 
-                              where c.IsActive == true  
+            var data = await (from c in _context.Category
+                              where c.IsActive == true
                               select new DropdownBindingViewModel
                               {
                                   text = c.CategoryName,

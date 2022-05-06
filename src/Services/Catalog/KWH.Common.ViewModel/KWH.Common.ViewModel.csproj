@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <Compile Remove="Dtos\**" />
+    <Compile Remove="Profiles\**" />
+    <EmbeddedResource Remove="Dtos\**" />
+    <EmbeddedResource Remove="Profiles\**" />
+    <None Remove="Dtos\**" />
+    <None Remove="Profiles\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KWH.DAL\KWH.DAL.csproj" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
 </Project>

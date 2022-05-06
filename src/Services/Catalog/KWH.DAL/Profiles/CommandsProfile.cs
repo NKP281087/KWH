@@ -18,6 +18,7 @@ namespace KWH.Common.ViewModel.Profiles
             CreateMap<ClassMaster, ClassMasterDtos>().ReverseMap();
             CreateMap<ClassMaster, ClassMasterViewModel>().ReverseMap();
             CreateMap<CandidateInfo, CandidateInfoDtos>().ReverseMap();
+            CreateMap<CandidateInfo, CandidateViewModel>().ReverseMap();
              
                                      
         }

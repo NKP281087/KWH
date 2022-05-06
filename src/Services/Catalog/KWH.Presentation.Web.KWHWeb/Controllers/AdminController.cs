@@ -191,12 +191,12 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             return View(result);
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllCandidateInfoData(int Id)
+        public async Task<IActionResult> GetCandidateDataById(int Id)
         {
             var response = await adminService.GetCandidateById(Id, token);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(response));
             var result = JsonConvert.DeserializeObject<CandidateViewModel>(apiResponse.Result.ToString());
-            return View(result);
+            return View("AddEditCandidateData", result);
         }
 
         [HttpGet]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace KWH.Common.ViewModel
 {
     public class CandidateViewModel
-    {
+    {         
         public int CandidateId { get; set; }
         public string ClassRollNo { get; set; } = string.Empty;
         public string CandidateName { get; set; } = string.Empty;
@@ -23,13 +24,7 @@ namespace KWH.Common.ViewModel
         public int SectionId { get; set; }
         public string ClassName { get; set; } = string.Empty;
         public string SectionName { get; set; } = string.Empty;
-        public string ImpageUrl { get; set; } = string.Empty;
-        public bool IsActive { get; set; } = true;
-        public bool IsDeleted { get; set; } = false;
-        public DateTime DateCreated { get; set; } = DateTime.Now;
-        public int CreatedBy { get; set; }
-        public DateTime DateModified { get; set; } = DateTime.Now;
-        public int ModifiedBy { get; set; }
+        public string ImpageUrl { get; set; } = string.Empty; 
     }
 }
 
