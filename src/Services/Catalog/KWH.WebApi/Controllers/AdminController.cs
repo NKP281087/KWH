@@ -382,7 +382,7 @@ namespace KWH.WebApi.Controllers
                 return BadRequest(new { StatusCode = HttpStatusCode.BadRequest, Message = "Validation Failed" });
             }
             var candidateDtos = _mapper.Map<CandidateInfo>(model);
-            var response = await _adminService.DeleteCandidateData(model.CategoryId);
+            var response = await _adminService.DeleteCandidateData(model.CandidateId);
             if (!response)
             {
                 return Ok(new { StatusCode = StatusCodes.Status200OK, Message = "Data Not Deleted Successfully! Please Contact Adminstration" });

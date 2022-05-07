@@ -9,7 +9,7 @@ namespace KWH.Common.ViewModel.Dtos
 {
     public class CandidateInfoDtos
     {
-        
+        public int CandidateId { get; set; }
         public string ClassRollNo { get; set; } = string.Empty;
         public string CandidateName { get; set; } = string.Empty;
         public string MobileNo { get; set; } = string.Empty;

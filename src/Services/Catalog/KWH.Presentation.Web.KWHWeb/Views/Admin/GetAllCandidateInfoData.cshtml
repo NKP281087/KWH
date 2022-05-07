@@ -6,7 +6,7 @@
 
 
 
-
+<script src="~/js/KWHApp/Admin/candidate.js"></script>
 <div class="container-fluid px-4">
     <div class="card mb-4" style="margin-top:10px">
         <div class="card-header">
@@ -54,9 +54,11 @@
                                 <td>@item.SectionName</td>
 
                                 <td>
-                                    <a asp-action="GetCandidateDataById" asp-route-id="@item.CandidateId">
-
+                                    <a asp-action="GetCandidateDataById" asp-route-id="@item.CandidateId"> 
                                         <img src="~/Content/images/icons/admin-edit.svg">
+                                    </a>
+                                    <a style='cursor:pointer;'> 
+                                        <img data-id="@item.CandidateId" id='btnCandidateDelete'  src="~/Content/images/icons/delete.svg">
                                     </a>
                                 </td>
                             </tr>

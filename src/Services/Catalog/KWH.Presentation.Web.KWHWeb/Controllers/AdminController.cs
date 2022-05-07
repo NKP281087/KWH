@@ -205,6 +205,15 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
             var ApiResponseForCategory = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(CategoryDataResponse));
             var CategoryDataResult = JsonConvert.DeserializeObject<IEnumerable<DropdownBindingViewModel>>(ApiResponseForCategory.Result.ToString());
 
+            if(result != null && result.ClassId>0)
+            {
+                var sectionDataResponse = await adminService.GetSectionDropdownDataByClassId(result.ClassId, token);
+                var ApiResponseForSection = JsonConvert.DeserializeObject<ApiResponse>(Convert.ToString(sectionDataResponse));
+                var sectionResult = JsonConvert.DeserializeObject<IEnumerable<DropdownBindingViewModel>>(ApiResponseForSection.Result.ToString());
+                ViewBag.SectionList = sectionResult;
+            }
+            
+
             ViewBag.ClassList = ClassDataResult;
             ViewBag.CategoryList = CategoryDataResult;
 
@@ -224,6 +233,7 @@ namespace KWH.Presentation.Web.KWHWeb.Controllers
 
             ViewBag.ClassList = ClassDataResult;
             ViewBag.CategoryList = CategoryDataResult;
+            ViewBag.SectionList = null;
 
             return View();
         }

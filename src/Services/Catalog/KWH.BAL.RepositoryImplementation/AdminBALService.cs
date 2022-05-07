@@ -376,6 +376,7 @@ namespace KWH.BAL.RepositoryImplementation
             {
                 List<SqlParameter> parms = new List<SqlParameter>
             {
+                new SqlParameter{ ParameterName = "@CandidateId", Value = entity.CandidateId},
                 new SqlParameter{ ParameterName = "@ClassRollNo", Value = entity.ClassRollNo},
                 new SqlParameter{ ParameterName = "@CandidateName", Value= entity.CandidateName },
                 new SqlParameter{ ParameterName = "@MobileNo", Value= entity.MobileNo },
@@ -390,7 +391,7 @@ namespace KWH.BAL.RepositoryImplementation
                 new SqlParameter{ ParameterName = "@ImpageUrl", Value = entity.ImpageUrl }
             };
 
-                string sql = "EXEC usp_SaveCandidateData @ClassRollNo,@CandidateName,@MobileNo,@AlternateNo,@EmailId,@CategoryId,@ICardNumber,@GRNumber" +
+                string sql = "EXEC usp_SaveCandidateData @CandidateId,@ClassRollNo,@CandidateName,@MobileNo,@AlternateNo,@EmailId,@CategoryId,@ICardNumber,@GRNumber" +
                                                          ",@RFId,@ClassId,@SectionId,@ImpageUrl";
                 int rowsAffected = await _context.Database.ExecuteSqlRawAsync(sql, parms);
                 if (rowsAffected < 0)
@@ -405,56 +406,34 @@ namespace KWH.BAL.RepositoryImplementation
             catch (Exception ex)
             {
                 throw ex;
-            }
-
-
-            //var data = await _context.CandidateInfo.Where(x => x.IsActive == true && x.ClassRollNo == entity.ClassRollNo && x.ClassId == entity.ClassId && x.SectionId == entity.SectionId).ToListAsync();
-            //if (data != null && data.Count() > 0)
-            //{
-            //    return false;
-            //}
-            //CandidateInfo canInfo = new CandidateInfo()
-            //{
-            //    CandidateName = entity.CandidateName,
-            //    ClassRollNo = entity.ClassRollNo,
-            //    MobileNo=entity.MobileNo,
-            //    AlternateNo=entity.AlternateNo,
-            //    EmailId=entity.EmailId,
-            //    CategoryId=entity.CategoryId,
-            //    ICardNumber=entity.ICardNumber,
-            //    GRNumber=entity.GRNumber,
-            //    RFId=entity.RFId,
-            //    ClassId = entity.ClassId,
-            //    SectionId = entity.SectionId,
-            //    ImpageUrl=entity.ImpageUrl,
-            //    IsActive=true,
-            //    IsDeleted=false,
-            //    DateCreated=DateTime.Now 
-            //};
-            //await _context.CandidateInfo.AddAsync(canInfo);
-            //await _context.SaveChangesAsync();
-            //return true;
-
+            } 
         }
         public async Task<bool> DeleteCandidateData(int Id)
         {
-            var data = await _context.CandidateInfo.Where(x => x.IsActive == true && x.CandidateId == Id).FirstOrDefaultAsync();
-            if (data != null || data.CandidateId != Id)
-            {
-                return false;
+            try
+            {     
+                var data = await _context.candidateViewModel.FromSqlRaw<CandidateViewModel>("Execute usp_GetCandidateData {0}", Id).ToListAsync();
+                if (data == null || data.FirstOrDefault().CandidateId != Id)
+                {    
+                    return false;
+                }
+
+                CandidateInfo candidateInfo = new CandidateInfo()
+                {
+                    CandidateId = Id,
+                    IsActive = false,
+                    IsDeleted = true,
+                    DateModified = DateTime.Now
+                };
+
+                _context.Update(candidateInfo);
+                await _context.SaveChangesAsync();
+                return true;
             }
-
-            CandidateInfo candidateInfo = new CandidateInfo()
+            catch(Exception ex)
             {
-                CandidateId = Id,
-                IsActive = false,
-                IsDeleted = true,
-                DateModified = DateTime.Now
-            };
-
-            _context.Update(candidateInfo);
-            await _context.SaveChangesAsync();
-            return true;
+                throw ex;
+            }
         }
         public async Task<IEnumerable<DropdownBindingViewModel>> GetClassDropdownData()
         {

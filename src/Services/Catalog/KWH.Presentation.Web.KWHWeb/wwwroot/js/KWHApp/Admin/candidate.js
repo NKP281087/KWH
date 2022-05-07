@@ -11,6 +11,11 @@
         SubmitData();
     })
 
+    $(document).on("click", "#btnCandidateDelete", function () {
+        var Id = $(this).data('id');
+        DeleteCandidate(Id);
+    })
+
 })
 
 function BindSectionDropdown(Id) {
@@ -91,8 +96,15 @@ function SubmitData() {
         return false;
     }
 
+    var CandidateId = 0;
+    if ($('#hdnCandidateId').val() != 0)
+    {
+        CandidateId = $('#hdnCandidateId').val();
+    }
+
     var data =
     {
+        CandidateId: CandidateId,
         ClassRollNo : $('#txtClassRollNo').val(),
         CandidateName: $('#txtCandidateName').val(),
         MobileNo     : $('#txtMobileNo').val(),
@@ -116,7 +128,14 @@ function SubmitData() {
         {     
             var response = JSON.parse(result);
             if (response.statusCode == 200 && response.message == "Success") {
-                alert("Data Added Successfully!");
+                if (CandidateId == 0) {
+                    alert("Data Added Successfully!");
+                }
+                else {
+                    alert("Data Updated Successfully!");
+
+                    window.setTimeout(function () { window.location.href = baseurl + '/Admin/GetAllCandidateInfoData' }, 1000);
+                }
                 Empty();
             }
             else {
@@ -129,7 +148,28 @@ function SubmitData() {
 
     })
 }
+function DeleteCandidate(Id) {
+    var data = {
+        CandidateId: Id
+    }
 
+    $.ajax({
+        type: "POST",
+        url: baseurl + "/Admin/DeleteCandidateData",
+        data: data,
+        dataType: "json",
+        success: function (result) {
+            var response = JSON.parse(result);
+            if (response.statusCode == 200) {
+                alert("Data Deleted Successfull");
+                window.setTimeout(function () { window.location.href = baseurl + '/Admin/GetAllCandidateInfoData' }, 1000);
+            }
+        },
+        error: function (result) {
+            alert("Something went wrong");
+        }
+    })
+}
 function validateEmail($email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     return emailReg.test($email);

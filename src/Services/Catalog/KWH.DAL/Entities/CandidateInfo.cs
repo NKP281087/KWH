@@ -16,12 +16,12 @@ namespace KWH.DAL.Entities
         public string MobileNo { get; set; } = string.Empty;
         public string AlternateNo { get; set; } = string.Empty;
         public string EmailId { get; set; } = string.Empty;
-        public int CategoryId { get; set; }
+        public Nullable<int> CategoryId { get; set; }
         public string ICardNumber { get; set; } = string.Empty;
         public string GRNumber { get; set; } = string.Empty;
         public string RFId { get; set; } = string.Empty;
-        public int ClassId { get; set; } 
-        public int SectionId { get; set; } 
+        public Nullable<int> ClassId { get; set; } 
+        public Nullable<int> SectionId { get; set; } 
         public string ImpageUrl { get; set; } = string.Empty;
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
